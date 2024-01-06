@@ -14,7 +14,7 @@ namespace FinalProject
 
         private async void StartDelay()
         {
-            await Task.Delay(5000);
+            await Task.Delay(1500);
 
             if (SessionManager.Username != null)
             {

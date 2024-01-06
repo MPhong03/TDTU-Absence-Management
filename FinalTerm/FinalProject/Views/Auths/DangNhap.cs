@@ -1,5 +1,6 @@
 ﻿using FinalProject.Config;
 using FinalProject.DTO;
+using System.Diagnostics;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinalProject.Views.Admin;
 
 namespace FinalProject.Views.Auths
 {
@@ -28,7 +30,7 @@ namespace FinalProject.Views.Auths
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                guna2MessageDialog1.Show("Vui lòng nhập đầy đủ thông tin");
             }
             else
             {
@@ -36,7 +38,7 @@ namespace FinalProject.Views.Auths
                 {
                     using (SqlConnection connection = Connection.GetConnection())
                     {
-                        string query = "SELECT COUNT(*) FROM NhanVien WHERE TenDangNhap = @Username AND MatKhau = @Password";
+                        string query = "SELECT COUNT(*) FROM TaiKhoan WHERE TenDangNhap = @Username AND MatKhau = @Password";
 
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
@@ -49,33 +51,43 @@ namespace FinalProject.Views.Auths
 
                             if (count > 0)
                             {
-                                SessionManager.SetSession(username, GetRoleForUser(username));
+                                string role = GetRoleForUser(username);
+                                SessionManager.SetSession(username, role);
 
-                                TrangChu trangChu = new TrangChu();
-                                trangChu.Show();
-
+                                if (role.ToUpper().Equals("QUẢN LÝ"))
+                                {
+                                    TrangChuAdmin admin = new TrangChuAdmin();
+                                    admin.Show();
+                                }
+                                else
+                                {
+                                    TrangChu trangChu = new TrangChu();
+                                    trangChu.Show();
+                                }
                                 this.Hide();
-                            } else
+                            }
+                            else
                             {
-                                MessageBox.Show("Lỗi đăng nhập");
+                                guna2MessageDialog1.Show("Lỗi đăng nhập");
                             }
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi kết nối cơ sở dữ liệu");
+                    Debug.WriteLine($"An exception occurred: {ex.Message}");
+                    guna2MessageDialog1.Show("Lỗi kết nối cơ sở dữ liệu");
                 }
             }
-            
-            
+
+
         }
 
         private string GetRoleForUser(string username)
         {
             using (SqlConnection connection = Connection.GetConnection())
             {
-                string query = "SELECT ChucVu FROM NhanVien WHERE TenDangNhap = @Username";
+                string query = "SELECT ChucVu FROM TaiKhoan WHERE TenDangNhap = @Username";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

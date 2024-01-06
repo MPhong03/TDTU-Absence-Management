@@ -54,6 +54,8 @@
             rememberMe = new Guna.UI2.WinForms.Guna2HtmlLabel();
             forgotPassword = new Guna.UI2.WinForms.Guna2HtmlLabel();
             loginButton = new Guna.UI2.WinForms.Guna2Button();
+            guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
+            guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -65,9 +67,12 @@
             // guna2ControlBox1
             // 
             guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.Animated = true;
             guna2ControlBox1.BackColor = Color.Transparent;
             guna2ControlBox1.CustomizableEdges = customizableEdges13;
             guna2ControlBox1.FillColor = Color.Transparent;
+            guna2ControlBox1.HoverState.FillColor = Color.Red;
+            guna2ControlBox1.HoverState.IconColor = Color.White;
             guna2ControlBox1.IconColor = Color.White;
             guna2ControlBox1.Location = new Point(899, 12);
             guna2ControlBox1.Name = "guna2ControlBox1";
@@ -78,6 +83,7 @@
             // guna2ControlBox2
             // 
             guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox2.Animated = true;
             guna2ControlBox2.BackColor = Color.Transparent;
             guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             guna2ControlBox2.CustomizableEdges = customizableEdges11;
@@ -92,6 +98,7 @@
             // guna2ControlBox3
             // 
             guna2ControlBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox3.Animated = true;
             guna2ControlBox3.BackColor = Color.Transparent;
             guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             guna2ControlBox3.CustomizableEdges = customizableEdges9;
@@ -224,6 +231,20 @@
             loginButton.Text = "Đăng nhập";
             loginButton.Click += loginButton_Click;
             // 
+            // guna2AnimateWindow1
+            // 
+            guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
+            guna2AnimateWindow1.TargetForm = this;
+            // 
+            // guna2MessageDialog1
+            // 
+            guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            guna2MessageDialog1.Caption = null;
+            guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            guna2MessageDialog1.Parent = this;
+            guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            guna2MessageDialog1.Text = null;
+            // 
             // DangNhap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -263,5 +284,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button loginButton;
         private Guna.UI2.WinForms.Guna2HtmlLabel forgotPassword;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
     }
 }

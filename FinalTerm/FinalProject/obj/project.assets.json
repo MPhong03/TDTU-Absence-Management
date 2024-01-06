@@ -606,11 +606,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CNPM\\FinalTerm\\FinalProject\\FinalProject.csproj",
+      "projectUniqueName": "D:\\CNPM\\cong-nghe-phan-mem\\FinalTerm\\FinalProject\\FinalProject.csproj",
       "projectName": "FinalProject",
-      "projectPath": "D:\\CNPM\\FinalTerm\\FinalProject\\FinalProject.csproj",
+      "projectPath": "D:\\CNPM\\cong-nghe-phan-mem\\FinalTerm\\FinalProject\\FinalProject.csproj",
       "packagesPath": "C:\\Users\\Minh Phong\\.nuget\\packages\\",
-      "outputPath": "D:\\CNPM\\FinalTerm\\FinalProject\\obj\\",
+      "outputPath": "D:\\CNPM\\cong-nghe-phan-mem\\FinalTerm\\FinalProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
