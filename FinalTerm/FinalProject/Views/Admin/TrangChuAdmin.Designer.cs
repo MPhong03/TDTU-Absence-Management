@@ -41,11 +41,11 @@ namespace FinalProject.Views.Admin
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -68,6 +68,8 @@ namespace FinalProject.Views.Admin
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2AnimateWindow1 = new Guna2AnimateWindow(components);
             tabControlAdmin = new Guna2TabControl();
             tabPageAdminHome = new TabPage();
@@ -76,6 +78,7 @@ namespace FinalProject.Views.Admin
             guna2ControlBox1 = new Guna2ControlBox();
             adminTitleWelcome = new Guna2HtmlLabel();
             tabPageAdminAccount = new TabPage();
+            refreshButton = new Guna2Button();
             deleteAccountButton = new Guna2Button();
             editAccountButton = new Guna2Button();
             accountTable = new Guna2DataGridView();
@@ -103,6 +106,7 @@ namespace FinalProject.Views.Admin
             errorMessage = new Guna2MessageDialog();
             warningMessage = new Guna2MessageDialog();
             successMesage = new Guna2MessageDialog();
+            confirmDialog = new Guna2MessageDialog();
             tabControlAdmin.SuspendLayout();
             tabPageAdminHome.SuspendLayout();
             tabPageAdminAccount.SuspendLayout();
@@ -215,6 +219,7 @@ namespace FinalProject.Views.Admin
             // tabPageAdminAccount
             // 
             tabPageAdminAccount.BackColor = Color.FromArgb(58, 55, 51);
+            tabPageAdminAccount.Controls.Add(refreshButton);
             tabPageAdminAccount.Controls.Add(deleteAccountButton);
             tabPageAdminAccount.Controls.Add(editAccountButton);
             tabPageAdminAccount.Controls.Add(accountTable);
@@ -246,11 +251,28 @@ namespace FinalProject.Views.Admin
             tabPageAdminAccount.TabIndex = 1;
             tabPageAdminAccount.Text = "TÀI KHOẢN";
             // 
+            // refreshButton
+            // 
+            refreshButton.CustomizableEdges = customizableEdges7;
+            refreshButton.DisabledState.BorderColor = Color.DarkGray;
+            refreshButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            refreshButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            refreshButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            refreshButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            refreshButton.ForeColor = Color.White;
+            refreshButton.Location = new Point(658, 508);
+            refreshButton.Name = "refreshButton";
+            refreshButton.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            refreshButton.Size = new Size(118, 29);
+            refreshButton.TabIndex = 33;
+            refreshButton.Text = "Làm mới";
+            refreshButton.Click += refreshButton_Click;
+            // 
             // deleteAccountButton
             // 
             deleteAccountButton.BackColor = Color.Transparent;
             deleteAccountButton.BorderRadius = 15;
-            deleteAccountButton.CustomizableEdges = customizableEdges7;
+            deleteAccountButton.CustomizableEdges = customizableEdges9;
             deleteAccountButton.DisabledState.BorderColor = Color.DarkGray;
             deleteAccountButton.DisabledState.CustomBorderColor = Color.DarkGray;
             deleteAccountButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -260,16 +282,17 @@ namespace FinalProject.Views.Admin
             deleteAccountButton.ForeColor = Color.White;
             deleteAccountButton.Location = new Point(526, 235);
             deleteAccountButton.Name = "deleteAccountButton";
-            deleteAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            deleteAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
             deleteAccountButton.Size = new Size(250, 40);
             deleteAccountButton.TabIndex = 32;
             deleteAccountButton.Text = "XÓA";
+            deleteAccountButton.Click += deleteAccountButton_Click;
             // 
             // editAccountButton
             // 
             editAccountButton.BackColor = Color.Transparent;
             editAccountButton.BorderRadius = 15;
-            editAccountButton.CustomizableEdges = customizableEdges9;
+            editAccountButton.CustomizableEdges = customizableEdges11;
             editAccountButton.DisabledState.BorderColor = Color.DarkGray;
             editAccountButton.DisabledState.CustomBorderColor = Color.DarkGray;
             editAccountButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -279,10 +302,11 @@ namespace FinalProject.Views.Admin
             editAccountButton.ForeColor = Color.White;
             editAccountButton.Location = new Point(262, 235);
             editAccountButton.Name = "editAccountButton";
-            editAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            editAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges12;
             editAccountButton.Size = new Size(258, 40);
             editAccountButton.TabIndex = 31;
             editAccountButton.Text = "CHỈNH SỬA";
+            editAccountButton.Click += editAccountButton_Click;
             // 
             // accountTable
             // 
@@ -314,7 +338,7 @@ namespace FinalProject.Views.Admin
             accountTable.RowHeadersVisible = false;
             accountTable.RowHeadersWidth = 51;
             accountTable.RowTemplate.Height = 29;
-            accountTable.Size = new Size(770, 254);
+            accountTable.Size = new Size(770, 221);
             accountTable.TabIndex = 30;
             accountTable.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(58, 55, 51);
             accountTable.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -337,6 +361,7 @@ namespace FinalProject.Views.Admin
             accountTable.ThemeStyle.RowsStyle.Height = 29;
             accountTable.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             accountTable.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            accountTable.CellDoubleClick += accountTable_CellDoubleClick;
             // 
             // guna2HtmlLabel9
             // 
@@ -424,7 +449,7 @@ namespace FinalProject.Views.Admin
             birthDateInput.BorderColor = Color.FromArgb(217, 221, 226);
             birthDateInput.BorderThickness = 1;
             birthDateInput.Checked = true;
-            birthDateInput.CustomizableEdges = customizableEdges11;
+            birthDateInput.CustomizableEdges = customizableEdges13;
             birthDateInput.FillColor = Color.Black;
             birthDateInput.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             birthDateInput.ForeColor = Color.FromArgb(193, 200, 207);
@@ -433,7 +458,7 @@ namespace FinalProject.Views.Admin
             birthDateInput.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             birthDateInput.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             birthDateInput.Name = "birthDateInput";
-            birthDateInput.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            birthDateInput.ShadowDecoration.CustomizableEdges = customizableEdges14;
             birthDateInput.Size = new Size(250, 36);
             birthDateInput.TabIndex = 21;
             birthDateInput.Value = new DateTime(2024, 1, 7, 8, 21, 46, 139);
@@ -441,7 +466,7 @@ namespace FinalProject.Views.Admin
             // genderComboBoxInput
             // 
             genderComboBoxInput.BackColor = Color.Transparent;
-            genderComboBoxInput.CustomizableEdges = customizableEdges13;
+            genderComboBoxInput.CustomizableEdges = customizableEdges15;
             genderComboBoxInput.DrawMode = DrawMode.OwnerDrawFixed;
             genderComboBoxInput.DropDownStyle = ComboBoxStyle.DropDownList;
             genderComboBoxInput.FillColor = Color.Transparent;
@@ -453,20 +478,20 @@ namespace FinalProject.Views.Admin
             genderComboBoxInput.Items.AddRange(new object[] { "NAM", "NỮ" });
             genderComboBoxInput.Location = new Point(523, 151);
             genderComboBoxInput.Name = "genderComboBoxInput";
-            genderComboBoxInput.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            genderComboBoxInput.ShadowDecoration.CustomizableEdges = customizableEdges16;
             genderComboBoxInput.Size = new Size(250, 36);
             genderComboBoxInput.TabIndex = 20;
             // 
             // ageInput
             // 
             ageInput.BackColor = Color.Transparent;
-            ageInput.CustomizableEdges = customizableEdges15;
+            ageInput.CustomizableEdges = customizableEdges17;
             ageInput.FillColor = Color.Black;
             ageInput.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             ageInput.ForeColor = Color.FromArgb(193, 200, 207);
             ageInput.Location = new Point(523, 109);
             ageInput.Name = "ageInput";
-            ageInput.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            ageInput.ShadowDecoration.CustomizableEdges = customizableEdges18;
             ageInput.Size = new Size(250, 36);
             ageInput.TabIndex = 19;
             ageInput.UpDownButtonFillColor = Color.FromArgb(37, 33, 29);
@@ -474,7 +499,7 @@ namespace FinalProject.Views.Admin
             // roleComboBoxInput
             // 
             roleComboBoxInput.BackColor = Color.Transparent;
-            roleComboBoxInput.CustomizableEdges = customizableEdges17;
+            roleComboBoxInput.CustomizableEdges = customizableEdges19;
             roleComboBoxInput.DrawMode = DrawMode.OwnerDrawFixed;
             roleComboBoxInput.DropDownStyle = ComboBoxStyle.DropDownList;
             roleComboBoxInput.FillColor = Color.Transparent;
@@ -486,7 +511,7 @@ namespace FinalProject.Views.Admin
             roleComboBoxInput.Items.AddRange(new object[] { "NHÂN VIÊN", "QUẢN LÝ" });
             roleComboBoxInput.Location = new Point(133, 193);
             roleComboBoxInput.Name = "roleComboBoxInput";
-            roleComboBoxInput.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            roleComboBoxInput.ShadowDecoration.CustomizableEdges = customizableEdges20;
             roleComboBoxInput.Size = new Size(250, 36);
             roleComboBoxInput.TabIndex = 18;
             // 
@@ -494,7 +519,7 @@ namespace FinalProject.Views.Admin
             // 
             addAccountButton.BackColor = Color.Transparent;
             addAccountButton.BorderRadius = 15;
-            addAccountButton.CustomizableEdges = customizableEdges19;
+            addAccountButton.CustomizableEdges = customizableEdges21;
             addAccountButton.DisabledState.BorderColor = Color.DarkGray;
             addAccountButton.DisabledState.CustomBorderColor = Color.DarkGray;
             addAccountButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -504,7 +529,7 @@ namespace FinalProject.Views.Admin
             addAccountButton.ForeColor = Color.White;
             addAccountButton.Location = new Point(6, 235);
             addAccountButton.Name = "addAccountButton";
-            addAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            addAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges22;
             addAccountButton.Size = new Size(250, 40);
             addAccountButton.TabIndex = 17;
             addAccountButton.Text = "XÁC NHẬN";
@@ -513,7 +538,7 @@ namespace FinalProject.Views.Admin
             // phoneNumberInput
             // 
             phoneNumberInput.Animated = true;
-            phoneNumberInput.CustomizableEdges = customizableEdges21;
+            phoneNumberInput.CustomizableEdges = customizableEdges23;
             phoneNumberInput.DefaultText = "";
             phoneNumberInput.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             phoneNumberInput.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -530,14 +555,14 @@ namespace FinalProject.Views.Admin
             phoneNumberInput.PasswordChar = '\0';
             phoneNumberInput.PlaceholderText = "Số điện thoại";
             phoneNumberInput.SelectedText = "";
-            phoneNumberInput.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            phoneNumberInput.ShadowDecoration.CustomizableEdges = customizableEdges24;
             phoneNumberInput.Size = new Size(250, 36);
             phoneNumberInput.TabIndex = 15;
             // 
             // staffNameInput
             // 
             staffNameInput.Animated = true;
-            staffNameInput.CustomizableEdges = customizableEdges23;
+            staffNameInput.CustomizableEdges = customizableEdges25;
             staffNameInput.DefaultText = "";
             staffNameInput.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             staffNameInput.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -554,14 +579,14 @@ namespace FinalProject.Views.Admin
             staffNameInput.PasswordChar = '\0';
             staffNameInput.PlaceholderText = "Tên nhân viên";
             staffNameInput.SelectedText = "";
-            staffNameInput.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            staffNameInput.ShadowDecoration.CustomizableEdges = customizableEdges26;
             staffNameInput.Size = new Size(250, 36);
             staffNameInput.TabIndex = 11;
             // 
             // passwordInput
             // 
             passwordInput.Animated = true;
-            passwordInput.CustomizableEdges = customizableEdges25;
+            passwordInput.CustomizableEdges = customizableEdges27;
             passwordInput.DefaultText = "";
             passwordInput.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             passwordInput.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -578,14 +603,14 @@ namespace FinalProject.Views.Admin
             passwordInput.PasswordChar = '\0';
             passwordInput.PlaceholderText = "Mật khẩu";
             passwordInput.SelectedText = "";
-            passwordInput.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            passwordInput.ShadowDecoration.CustomizableEdges = customizableEdges28;
             passwordInput.Size = new Size(250, 36);
             passwordInput.TabIndex = 10;
             // 
             // usernameInput
             // 
             usernameInput.Animated = true;
-            usernameInput.CustomizableEdges = customizableEdges27;
+            usernameInput.CustomizableEdges = customizableEdges29;
             usernameInput.DefaultText = "";
             usernameInput.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             usernameInput.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -602,7 +627,7 @@ namespace FinalProject.Views.Admin
             usernameInput.PasswordChar = '\0';
             usernameInput.PlaceholderText = "Tên đăng nhập";
             usernameInput.SelectedText = "";
-            usernameInput.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            usernameInput.ShadowDecoration.CustomizableEdges = customizableEdges30;
             usernameInput.Size = new Size(250, 36);
             usernameInput.TabIndex = 9;
             // 
@@ -621,12 +646,12 @@ namespace FinalProject.Views.Admin
             // 
             guna2ControlBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2ControlBox4.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            guna2ControlBox4.CustomizableEdges = customizableEdges29;
+            guna2ControlBox4.CustomizableEdges = customizableEdges31;
             guna2ControlBox4.FillColor = Color.Transparent;
             guna2ControlBox4.IconColor = Color.White;
             guna2ControlBox4.Location = new Point(596, 3);
             guna2ControlBox4.Name = "guna2ControlBox4";
-            guna2ControlBox4.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            guna2ControlBox4.ShadowDecoration.CustomizableEdges = customizableEdges32;
             guna2ControlBox4.Size = new Size(56, 36);
             guna2ControlBox4.TabIndex = 6;
             // 
@@ -634,12 +659,12 @@ namespace FinalProject.Views.Admin
             // 
             guna2ControlBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2ControlBox5.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            guna2ControlBox5.CustomizableEdges = customizableEdges31;
+            guna2ControlBox5.CustomizableEdges = customizableEdges33;
             guna2ControlBox5.FillColor = Color.Transparent;
             guna2ControlBox5.IconColor = Color.White;
             guna2ControlBox5.Location = new Point(658, 3);
             guna2ControlBox5.Name = "guna2ControlBox5";
-            guna2ControlBox5.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2ControlBox5.ShadowDecoration.CustomizableEdges = customizableEdges34;
             guna2ControlBox5.Size = new Size(56, 36);
             guna2ControlBox5.TabIndex = 5;
             // 
@@ -647,13 +672,13 @@ namespace FinalProject.Views.Admin
             // 
             guna2ControlBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2ControlBox6.BackColor = Color.Transparent;
-            guna2ControlBox6.CustomizableEdges = customizableEdges33;
+            guna2ControlBox6.CustomizableEdges = customizableEdges35;
             guna2ControlBox6.FillColor = Color.Transparent;
             guna2ControlBox6.HoverState.FillColor = Color.Red;
             guna2ControlBox6.IconColor = Color.White;
             guna2ControlBox6.Location = new Point(720, 3);
             guna2ControlBox6.Name = "guna2ControlBox6";
-            guna2ControlBox6.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            guna2ControlBox6.ShadowDecoration.CustomizableEdges = customizableEdges36;
             guna2ControlBox6.Size = new Size(56, 36);
             guna2ControlBox6.TabIndex = 4;
             // 
@@ -683,6 +708,15 @@ namespace FinalProject.Views.Admin
             successMesage.Parent = this;
             successMesage.Style = MessageDialogStyle.Dark;
             successMesage.Text = null;
+            // 
+            // confirmDialog
+            // 
+            confirmDialog.Buttons = MessageDialogButtons.YesNoCancel;
+            confirmDialog.Caption = "Confirm";
+            confirmDialog.Icon = MessageDialogIcon.Warning;
+            confirmDialog.Parent = this;
+            confirmDialog.Style = MessageDialogStyle.Default;
+            confirmDialog.Text = null;
             // 
             // TrangChuAdmin
             // 
@@ -742,5 +776,7 @@ namespace FinalProject.Views.Admin
         private Guna2Button editAccountButton;
         private Guna2MessageDialog warningMessage;
         private Guna2MessageDialog successMesage;
+        private Guna2Button refreshButton;
+        private Guna2MessageDialog confirmDialog;
     }
 }
