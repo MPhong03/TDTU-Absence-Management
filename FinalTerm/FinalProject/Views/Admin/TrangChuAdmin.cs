@@ -434,6 +434,10 @@ namespace FinalProject.Views.Admin
             {
                 DeleteAccountFromDatabase(username);
             }
+            else
+            {
+                return;
+            }
 
         }
     }

@@ -56,6 +56,7 @@
             loginButton = new Guna.UI2.WinForms.Guna2Button();
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(components);
             SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -286,5 +287,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel forgotPassword;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
     }
 }

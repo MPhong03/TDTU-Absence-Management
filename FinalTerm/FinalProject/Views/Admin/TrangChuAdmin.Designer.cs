@@ -31,23 +31,15 @@ namespace FinalProject.Views.Admin
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -66,16 +58,17 @@ namespace FinalProject.Views.Admin
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2AnimateWindow1 = new Guna2AnimateWindow(components);
             tabControlAdmin = new Guna2TabControl();
             tabPageAdminHome = new TabPage();
-            guna2ControlBox3 = new Guna2ControlBox();
-            guna2ControlBox2 = new Guna2ControlBox();
-            guna2ControlBox1 = new Guna2ControlBox();
             adminTitleWelcome = new Guna2HtmlLabel();
             tabPageAdminAccount = new TabPage();
             refreshButton = new Guna2Button();
@@ -100,18 +93,24 @@ namespace FinalProject.Views.Admin
             passwordInput = new Guna2TextBox();
             usernameInput = new Guna2TextBox();
             guna2HtmlLabel2 = new Guna2HtmlLabel();
-            guna2ControlBox4 = new Guna2ControlBox();
-            guna2ControlBox5 = new Guna2ControlBox();
-            guna2ControlBox6 = new Guna2ControlBox();
+            guna2ControlBox3 = new Guna2ControlBox();
+            guna2ControlBox2 = new Guna2ControlBox();
+            guna2ControlBox1 = new Guna2ControlBox();
             errorMessage = new Guna2MessageDialog();
             warningMessage = new Guna2MessageDialog();
             successMesage = new Guna2MessageDialog();
             confirmDialog = new Guna2MessageDialog();
+            guna2ShadowForm1 = new Guna2ShadowForm(components);
+            guna2BorderlessForm1 = new Guna2BorderlessForm(components);
+            guna2DragControl1 = new Guna2DragControl(components);
+            guna2Panel1 = new Guna2Panel();
+            guna2ResizeForm1 = new Guna2ResizeForm(components);
             tabControlAdmin.SuspendLayout();
             tabPageAdminHome.SuspendLayout();
             tabPageAdminAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)accountTable).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ageInput).BeginInit();
+            guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // guna2AnimateWindow1
@@ -122,14 +121,14 @@ namespace FinalProject.Views.Admin
             // tabControlAdmin
             // 
             tabControlAdmin.Alignment = TabAlignment.Left;
+            tabControlAdmin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabControlAdmin.Controls.Add(tabPageAdminHome);
             tabControlAdmin.Controls.Add(tabPageAdminAccount);
-            tabControlAdmin.Dock = DockStyle.Fill;
             tabControlAdmin.ItemSize = new Size(180, 40);
-            tabControlAdmin.Location = new Point(0, 0);
+            tabControlAdmin.Location = new Point(0, 32);
             tabControlAdmin.Name = "tabControlAdmin";
             tabControlAdmin.SelectedIndex = 0;
-            tabControlAdmin.Size = new Size(967, 551);
+            tabControlAdmin.Size = new Size(967, 519);
             tabControlAdmin.TabButtonHoverState.BorderColor = Color.Empty;
             tabControlAdmin.TabButtonHoverState.FillColor = Color.FromArgb(58, 55, 51);
             tabControlAdmin.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -153,57 +152,14 @@ namespace FinalProject.Views.Admin
             // tabPageAdminHome
             // 
             tabPageAdminHome.BackColor = Color.FromArgb(58, 55, 51);
-            tabPageAdminHome.Controls.Add(guna2ControlBox3);
-            tabPageAdminHome.Controls.Add(guna2ControlBox2);
-            tabPageAdminHome.Controls.Add(guna2ControlBox1);
             tabPageAdminHome.Controls.Add(adminTitleWelcome);
             tabPageAdminHome.Location = new Point(184, 4);
             tabPageAdminHome.Name = "tabPageAdminHome";
             tabPageAdminHome.Padding = new Padding(3);
-            tabPageAdminHome.Size = new Size(779, 543);
+            tabPageAdminHome.Size = new Size(779, 511);
             tabPageAdminHome.TabIndex = 0;
             tabPageAdminHome.Text = "TRANG CHỦ";
             tabPageAdminHome.Click += tabPageAdminHome_Click;
-            // 
-            // guna2ControlBox3
-            // 
-            guna2ControlBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            guna2ControlBox3.CustomizableEdges = customizableEdges1;
-            guna2ControlBox3.FillColor = Color.Transparent;
-            guna2ControlBox3.IconColor = Color.White;
-            guna2ControlBox3.Location = new Point(596, 3);
-            guna2ControlBox3.Name = "guna2ControlBox3";
-            guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2ControlBox3.Size = new Size(56, 36);
-            guna2ControlBox3.TabIndex = 3;
-            // 
-            // guna2ControlBox2
-            // 
-            guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            guna2ControlBox2.CustomizableEdges = customizableEdges3;
-            guna2ControlBox2.FillColor = Color.Transparent;
-            guna2ControlBox2.IconColor = Color.White;
-            guna2ControlBox2.Location = new Point(658, 3);
-            guna2ControlBox2.Name = "guna2ControlBox2";
-            guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ControlBox2.Size = new Size(56, 36);
-            guna2ControlBox2.TabIndex = 2;
-            // 
-            // guna2ControlBox1
-            // 
-            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox1.BackColor = Color.Transparent;
-            guna2ControlBox1.CustomizableEdges = customizableEdges5;
-            guna2ControlBox1.FillColor = Color.Transparent;
-            guna2ControlBox1.HoverState.FillColor = Color.Red;
-            guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(720, 3);
-            guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2ControlBox1.Size = new Size(56, 36);
-            guna2ControlBox1.TabIndex = 1;
             // 
             // adminTitleWelcome
             // 
@@ -241,28 +197,26 @@ namespace FinalProject.Views.Admin
             tabPageAdminAccount.Controls.Add(passwordInput);
             tabPageAdminAccount.Controls.Add(usernameInput);
             tabPageAdminAccount.Controls.Add(guna2HtmlLabel2);
-            tabPageAdminAccount.Controls.Add(guna2ControlBox4);
-            tabPageAdminAccount.Controls.Add(guna2ControlBox5);
-            tabPageAdminAccount.Controls.Add(guna2ControlBox6);
             tabPageAdminAccount.Location = new Point(184, 4);
             tabPageAdminAccount.Name = "tabPageAdminAccount";
             tabPageAdminAccount.Padding = new Padding(3);
-            tabPageAdminAccount.Size = new Size(779, 543);
+            tabPageAdminAccount.Size = new Size(779, 511);
             tabPageAdminAccount.TabIndex = 1;
             tabPageAdminAccount.Text = "TÀI KHOẢN";
             // 
             // refreshButton
             // 
-            refreshButton.CustomizableEdges = customizableEdges7;
+            refreshButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            refreshButton.CustomizableEdges = customizableEdges9;
             refreshButton.DisabledState.BorderColor = Color.DarkGray;
             refreshButton.DisabledState.CustomBorderColor = Color.DarkGray;
             refreshButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             refreshButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             refreshButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             refreshButton.ForeColor = Color.White;
-            refreshButton.Location = new Point(658, 508);
+            refreshButton.Location = new Point(658, 476);
             refreshButton.Name = "refreshButton";
-            refreshButton.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            refreshButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
             refreshButton.Size = new Size(118, 29);
             refreshButton.TabIndex = 33;
             refreshButton.Text = "Làm mới";
@@ -272,7 +226,7 @@ namespace FinalProject.Views.Admin
             // 
             deleteAccountButton.BackColor = Color.Transparent;
             deleteAccountButton.BorderRadius = 15;
-            deleteAccountButton.CustomizableEdges = customizableEdges9;
+            deleteAccountButton.CustomizableEdges = customizableEdges11;
             deleteAccountButton.DisabledState.BorderColor = Color.DarkGray;
             deleteAccountButton.DisabledState.CustomBorderColor = Color.DarkGray;
             deleteAccountButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -280,9 +234,9 @@ namespace FinalProject.Views.Admin
             deleteAccountButton.FillColor = Color.FromArgb(217, 83, 79);
             deleteAccountButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             deleteAccountButton.ForeColor = Color.White;
-            deleteAccountButton.Location = new Point(526, 235);
+            deleteAccountButton.Location = new Point(527, 210);
             deleteAccountButton.Name = "deleteAccountButton";
-            deleteAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            deleteAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges12;
             deleteAccountButton.Size = new Size(250, 40);
             deleteAccountButton.TabIndex = 32;
             deleteAccountButton.Text = "XÓA";
@@ -292,7 +246,7 @@ namespace FinalProject.Views.Admin
             // 
             editAccountButton.BackColor = Color.Transparent;
             editAccountButton.BorderRadius = 15;
-            editAccountButton.CustomizableEdges = customizableEdges11;
+            editAccountButton.CustomizableEdges = customizableEdges13;
             editAccountButton.DisabledState.BorderColor = Color.DarkGray;
             editAccountButton.DisabledState.CustomBorderColor = Color.DarkGray;
             editAccountButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -300,9 +254,9 @@ namespace FinalProject.Views.Admin
             editAccountButton.FillColor = Color.FromArgb(91, 192, 222);
             editAccountButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             editAccountButton.ForeColor = Color.White;
-            editAccountButton.Location = new Point(262, 235);
+            editAccountButton.Location = new Point(263, 210);
             editAccountButton.Name = "editAccountButton";
-            editAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            editAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges14;
             editAccountButton.Size = new Size(258, 40);
             editAccountButton.TabIndex = 31;
             editAccountButton.Text = "CHỈNH SỬA";
@@ -312,6 +266,7 @@ namespace FinalProject.Views.Admin
             // 
             dataGridViewCellStyle1.BackColor = Color.White;
             accountTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            accountTable.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             accountTable.BackgroundColor = Color.FromArgb(58, 55, 51);
             accountTable.BorderStyle = BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -333,12 +288,12 @@ namespace FinalProject.Views.Admin
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             accountTable.DefaultCellStyle = dataGridViewCellStyle3;
             accountTable.GridColor = Color.FromArgb(58, 55, 51);
-            accountTable.Location = new Point(6, 281);
+            accountTable.Location = new Point(6, 256);
             accountTable.Name = "accountTable";
             accountTable.RowHeadersVisible = false;
             accountTable.RowHeadersWidth = 51;
             accountTable.RowTemplate.Height = 29;
-            accountTable.Size = new Size(770, 221);
+            accountTable.Size = new Size(770, 214);
             accountTable.TabIndex = 30;
             accountTable.ThemeStyle.AlternatingRowsStyle.BackColor = Color.FromArgb(58, 55, 51);
             accountTable.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -367,7 +322,7 @@ namespace FinalProject.Views.Admin
             // 
             guna2HtmlLabel9.BackColor = Color.Transparent;
             guna2HtmlLabel9.ForeColor = SystemColors.Control;
-            guna2HtmlLabel9.Location = new Point(389, 193);
+            guna2HtmlLabel9.Location = new Point(390, 168);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             guna2HtmlLabel9.Size = new Size(68, 22);
             guna2HtmlLabel9.TabIndex = 29;
@@ -377,7 +332,7 @@ namespace FinalProject.Views.Admin
             // 
             guna2HtmlLabel8.BackColor = Color.Transparent;
             guna2HtmlLabel8.ForeColor = SystemColors.Control;
-            guna2HtmlLabel8.Location = new Point(389, 151);
+            guna2HtmlLabel8.Location = new Point(390, 126);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             guna2HtmlLabel8.Size = new Size(59, 22);
             guna2HtmlLabel8.TabIndex = 28;
@@ -387,7 +342,7 @@ namespace FinalProject.Views.Admin
             // 
             guna2HtmlLabel7.BackColor = Color.Transparent;
             guna2HtmlLabel7.ForeColor = SystemColors.Control;
-            guna2HtmlLabel7.Location = new Point(389, 109);
+            guna2HtmlLabel7.Location = new Point(390, 84);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             guna2HtmlLabel7.Size = new Size(32, 22);
             guna2HtmlLabel7.TabIndex = 27;
@@ -397,7 +352,7 @@ namespace FinalProject.Views.Admin
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
             guna2HtmlLabel6.ForeColor = SystemColors.Control;
-            guna2HtmlLabel6.Location = new Point(389, 67);
+            guna2HtmlLabel6.Location = new Point(390, 42);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             guna2HtmlLabel6.Size = new Size(91, 22);
             guna2HtmlLabel6.TabIndex = 26;
@@ -407,7 +362,7 @@ namespace FinalProject.Views.Admin
             // 
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.ForeColor = SystemColors.Control;
-            guna2HtmlLabel5.Location = new Point(6, 193);
+            guna2HtmlLabel5.Location = new Point(7, 168);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             guna2HtmlLabel5.Size = new Size(55, 22);
             guna2HtmlLabel5.TabIndex = 25;
@@ -417,7 +372,7 @@ namespace FinalProject.Views.Admin
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.ForeColor = SystemColors.Control;
-            guna2HtmlLabel4.Location = new Point(6, 151);
+            guna2HtmlLabel4.Location = new Point(7, 126);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(94, 22);
             guna2HtmlLabel4.TabIndex = 24;
@@ -427,7 +382,7 @@ namespace FinalProject.Views.Admin
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.ForeColor = SystemColors.Control;
-            guna2HtmlLabel3.Location = new Point(6, 109);
+            guna2HtmlLabel3.Location = new Point(7, 84);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(64, 22);
             guna2HtmlLabel3.TabIndex = 23;
@@ -437,7 +392,7 @@ namespace FinalProject.Views.Admin
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.ForeColor = SystemColors.Control;
-            guna2HtmlLabel1.Location = new Point(6, 67);
+            guna2HtmlLabel1.Location = new Point(7, 42);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(102, 22);
             guna2HtmlLabel1.TabIndex = 22;
@@ -449,16 +404,16 @@ namespace FinalProject.Views.Admin
             birthDateInput.BorderColor = Color.FromArgb(217, 221, 226);
             birthDateInput.BorderThickness = 1;
             birthDateInput.Checked = true;
-            birthDateInput.CustomizableEdges = customizableEdges13;
+            birthDateInput.CustomizableEdges = customizableEdges15;
             birthDateInput.FillColor = Color.Black;
             birthDateInput.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             birthDateInput.ForeColor = Color.FromArgb(193, 200, 207);
             birthDateInput.Format = DateTimePickerFormat.Long;
-            birthDateInput.Location = new Point(523, 193);
+            birthDateInput.Location = new Point(524, 168);
             birthDateInput.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             birthDateInput.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             birthDateInput.Name = "birthDateInput";
-            birthDateInput.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            birthDateInput.ShadowDecoration.CustomizableEdges = customizableEdges16;
             birthDateInput.Size = new Size(250, 36);
             birthDateInput.TabIndex = 21;
             birthDateInput.Value = new DateTime(2024, 1, 7, 8, 21, 46, 139);
@@ -466,7 +421,7 @@ namespace FinalProject.Views.Admin
             // genderComboBoxInput
             // 
             genderComboBoxInput.BackColor = Color.Transparent;
-            genderComboBoxInput.CustomizableEdges = customizableEdges15;
+            genderComboBoxInput.CustomizableEdges = customizableEdges17;
             genderComboBoxInput.DrawMode = DrawMode.OwnerDrawFixed;
             genderComboBoxInput.DropDownStyle = ComboBoxStyle.DropDownList;
             genderComboBoxInput.FillColor = Color.Transparent;
@@ -476,22 +431,22 @@ namespace FinalProject.Views.Admin
             genderComboBoxInput.ForeColor = Color.FromArgb(193, 200, 207);
             genderComboBoxInput.ItemHeight = 30;
             genderComboBoxInput.Items.AddRange(new object[] { "NAM", "NỮ" });
-            genderComboBoxInput.Location = new Point(523, 151);
+            genderComboBoxInput.Location = new Point(524, 126);
             genderComboBoxInput.Name = "genderComboBoxInput";
-            genderComboBoxInput.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            genderComboBoxInput.ShadowDecoration.CustomizableEdges = customizableEdges18;
             genderComboBoxInput.Size = new Size(250, 36);
             genderComboBoxInput.TabIndex = 20;
             // 
             // ageInput
             // 
             ageInput.BackColor = Color.Transparent;
-            ageInput.CustomizableEdges = customizableEdges17;
+            ageInput.CustomizableEdges = customizableEdges19;
             ageInput.FillColor = Color.Black;
             ageInput.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             ageInput.ForeColor = Color.FromArgb(193, 200, 207);
-            ageInput.Location = new Point(523, 109);
+            ageInput.Location = new Point(524, 84);
             ageInput.Name = "ageInput";
-            ageInput.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            ageInput.ShadowDecoration.CustomizableEdges = customizableEdges20;
             ageInput.Size = new Size(250, 36);
             ageInput.TabIndex = 19;
             ageInput.UpDownButtonFillColor = Color.FromArgb(37, 33, 29);
@@ -499,7 +454,7 @@ namespace FinalProject.Views.Admin
             // roleComboBoxInput
             // 
             roleComboBoxInput.BackColor = Color.Transparent;
-            roleComboBoxInput.CustomizableEdges = customizableEdges19;
+            roleComboBoxInput.CustomizableEdges = customizableEdges21;
             roleComboBoxInput.DrawMode = DrawMode.OwnerDrawFixed;
             roleComboBoxInput.DropDownStyle = ComboBoxStyle.DropDownList;
             roleComboBoxInput.FillColor = Color.Transparent;
@@ -509,9 +464,9 @@ namespace FinalProject.Views.Admin
             roleComboBoxInput.ForeColor = Color.FromArgb(193, 200, 207);
             roleComboBoxInput.ItemHeight = 30;
             roleComboBoxInput.Items.AddRange(new object[] { "NHÂN VIÊN", "QUẢN LÝ" });
-            roleComboBoxInput.Location = new Point(133, 193);
+            roleComboBoxInput.Location = new Point(134, 168);
             roleComboBoxInput.Name = "roleComboBoxInput";
-            roleComboBoxInput.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            roleComboBoxInput.ShadowDecoration.CustomizableEdges = customizableEdges22;
             roleComboBoxInput.Size = new Size(250, 36);
             roleComboBoxInput.TabIndex = 18;
             // 
@@ -519,7 +474,7 @@ namespace FinalProject.Views.Admin
             // 
             addAccountButton.BackColor = Color.Transparent;
             addAccountButton.BorderRadius = 15;
-            addAccountButton.CustomizableEdges = customizableEdges21;
+            addAccountButton.CustomizableEdges = customizableEdges23;
             addAccountButton.DisabledState.BorderColor = Color.DarkGray;
             addAccountButton.DisabledState.CustomBorderColor = Color.DarkGray;
             addAccountButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -527,9 +482,9 @@ namespace FinalProject.Views.Admin
             addAccountButton.FillColor = Color.FromArgb(92, 184, 92);
             addAccountButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             addAccountButton.ForeColor = Color.White;
-            addAccountButton.Location = new Point(6, 235);
+            addAccountButton.Location = new Point(7, 210);
             addAccountButton.Name = "addAccountButton";
-            addAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            addAccountButton.ShadowDecoration.CustomizableEdges = customizableEdges24;
             addAccountButton.Size = new Size(250, 40);
             addAccountButton.TabIndex = 17;
             addAccountButton.Text = "XÁC NHẬN";
@@ -538,7 +493,7 @@ namespace FinalProject.Views.Admin
             // phoneNumberInput
             // 
             phoneNumberInput.Animated = true;
-            phoneNumberInput.CustomizableEdges = customizableEdges23;
+            phoneNumberInput.CustomizableEdges = customizableEdges25;
             phoneNumberInput.DefaultText = "";
             phoneNumberInput.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             phoneNumberInput.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -550,19 +505,19 @@ namespace FinalProject.Views.Admin
             phoneNumberInput.ForeColor = Color.FromArgb(193, 200, 207);
             phoneNumberInput.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             phoneNumberInput.IconLeft = Properties.Resources.phone_46_24;
-            phoneNumberInput.Location = new Point(523, 67);
+            phoneNumberInput.Location = new Point(524, 42);
             phoneNumberInput.Name = "phoneNumberInput";
             phoneNumberInput.PasswordChar = '\0';
             phoneNumberInput.PlaceholderText = "Số điện thoại";
             phoneNumberInput.SelectedText = "";
-            phoneNumberInput.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            phoneNumberInput.ShadowDecoration.CustomizableEdges = customizableEdges26;
             phoneNumberInput.Size = new Size(250, 36);
             phoneNumberInput.TabIndex = 15;
             // 
             // staffNameInput
             // 
             staffNameInput.Animated = true;
-            staffNameInput.CustomizableEdges = customizableEdges25;
+            staffNameInput.CustomizableEdges = customizableEdges27;
             staffNameInput.DefaultText = "";
             staffNameInput.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             staffNameInput.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -574,19 +529,19 @@ namespace FinalProject.Views.Admin
             staffNameInput.ForeColor = Color.FromArgb(193, 200, 207);
             staffNameInput.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             staffNameInput.IconLeft = Properties.Resources.info_24;
-            staffNameInput.Location = new Point(133, 151);
+            staffNameInput.Location = new Point(134, 126);
             staffNameInput.Name = "staffNameInput";
             staffNameInput.PasswordChar = '\0';
             staffNameInput.PlaceholderText = "Tên nhân viên";
             staffNameInput.SelectedText = "";
-            staffNameInput.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            staffNameInput.ShadowDecoration.CustomizableEdges = customizableEdges28;
             staffNameInput.Size = new Size(250, 36);
             staffNameInput.TabIndex = 11;
             // 
             // passwordInput
             // 
             passwordInput.Animated = true;
-            passwordInput.CustomizableEdges = customizableEdges27;
+            passwordInput.CustomizableEdges = customizableEdges29;
             passwordInput.DefaultText = "";
             passwordInput.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             passwordInput.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -598,19 +553,19 @@ namespace FinalProject.Views.Admin
             passwordInput.ForeColor = Color.FromArgb(193, 200, 207);
             passwordInput.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             passwordInput.IconLeft = Properties.Resources.icons8_lock_30;
-            passwordInput.Location = new Point(133, 109);
+            passwordInput.Location = new Point(134, 84);
             passwordInput.Name = "passwordInput";
             passwordInput.PasswordChar = '\0';
             passwordInput.PlaceholderText = "Mật khẩu";
             passwordInput.SelectedText = "";
-            passwordInput.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            passwordInput.ShadowDecoration.CustomizableEdges = customizableEdges30;
             passwordInput.Size = new Size(250, 36);
             passwordInput.TabIndex = 10;
             // 
             // usernameInput
             // 
             usernameInput.Animated = true;
-            usernameInput.CustomizableEdges = customizableEdges29;
+            usernameInput.CustomizableEdges = customizableEdges31;
             usernameInput.DefaultText = "";
             usernameInput.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             usernameInput.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -622,12 +577,12 @@ namespace FinalProject.Views.Admin
             usernameInput.ForeColor = Color.FromArgb(193, 200, 207);
             usernameInput.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             usernameInput.IconLeft = Properties.Resources.icons8_user_24;
-            usernameInput.Location = new Point(133, 67);
+            usernameInput.Location = new Point(134, 42);
             usernameInput.Name = "usernameInput";
             usernameInput.PasswordChar = '\0';
             usernameInput.PlaceholderText = "Tên đăng nhập";
             usernameInput.SelectedText = "";
-            usernameInput.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            usernameInput.ShadowDecoration.CustomizableEdges = customizableEdges32;
             usernameInput.Size = new Size(250, 36);
             usernameInput.TabIndex = 9;
             // 
@@ -636,51 +591,51 @@ namespace FinalProject.Views.Admin
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             guna2HtmlLabel2.ForeColor = Color.WhiteSmoke;
-            guna2HtmlLabel2.Location = new Point(6, 31);
+            guna2HtmlLabel2.Location = new Point(6, 6);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(148, 30);
             guna2HtmlLabel2.TabIndex = 8;
             guna2HtmlLabel2.Text = "TẠO TÀI KHOẢN";
             // 
-            // guna2ControlBox4
+            // guna2ControlBox3
             // 
-            guna2ControlBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox4.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            guna2ControlBox4.CustomizableEdges = customizableEdges31;
-            guna2ControlBox4.FillColor = Color.Transparent;
-            guna2ControlBox4.IconColor = Color.White;
-            guna2ControlBox4.Location = new Point(596, 3);
-            guna2ControlBox4.Name = "guna2ControlBox4";
-            guna2ControlBox4.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            guna2ControlBox4.Size = new Size(56, 36);
-            guna2ControlBox4.TabIndex = 6;
+            guna2ControlBox3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            guna2ControlBox3.CustomizableEdges = customizableEdges1;
+            guna2ControlBox3.FillColor = Color.Transparent;
+            guna2ControlBox3.IconColor = Color.White;
+            guna2ControlBox3.Location = new Point(801, 5);
+            guna2ControlBox3.Name = "guna2ControlBox3";
+            guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ControlBox3.Size = new Size(50, 25);
+            guna2ControlBox3.TabIndex = 3;
             // 
-            // guna2ControlBox5
+            // guna2ControlBox2
             // 
-            guna2ControlBox5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox5.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            guna2ControlBox5.CustomizableEdges = customizableEdges33;
-            guna2ControlBox5.FillColor = Color.Transparent;
-            guna2ControlBox5.IconColor = Color.White;
-            guna2ControlBox5.Location = new Point(658, 3);
-            guna2ControlBox5.Name = "guna2ControlBox5";
-            guna2ControlBox5.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            guna2ControlBox5.Size = new Size(56, 36);
-            guna2ControlBox5.TabIndex = 5;
+            guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            guna2ControlBox2.CustomizableEdges = customizableEdges5;
+            guna2ControlBox2.FillColor = Color.Transparent;
+            guna2ControlBox2.IconColor = Color.White;
+            guna2ControlBox2.Location = new Point(857, 5);
+            guna2ControlBox2.Name = "guna2ControlBox2";
+            guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2ControlBox2.Size = new Size(50, 25);
+            guna2ControlBox2.TabIndex = 2;
             // 
-            // guna2ControlBox6
+            // guna2ControlBox1
             // 
-            guna2ControlBox6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox6.BackColor = Color.Transparent;
-            guna2ControlBox6.CustomizableEdges = customizableEdges35;
-            guna2ControlBox6.FillColor = Color.Transparent;
-            guna2ControlBox6.HoverState.FillColor = Color.Red;
-            guna2ControlBox6.IconColor = Color.White;
-            guna2ControlBox6.Location = new Point(720, 3);
-            guna2ControlBox6.Name = "guna2ControlBox6";
-            guna2ControlBox6.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            guna2ControlBox6.Size = new Size(56, 36);
-            guna2ControlBox6.TabIndex = 4;
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.BackColor = Color.Transparent;
+            guna2ControlBox1.CustomizableEdges = customizableEdges3;
+            guna2ControlBox1.FillColor = Color.Transparent;
+            guna2ControlBox1.HoverState.FillColor = Color.Red;
+            guna2ControlBox1.IconColor = Color.White;
+            guna2ControlBox1.Location = new Point(913, 5);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2ControlBox1.Size = new Size(50, 25);
+            guna2ControlBox1.TabIndex = 1;
             // 
             // errorMessage
             // 
@@ -718,11 +673,47 @@ namespace FinalProject.Views.Admin
             confirmDialog.Style = MessageDialogStyle.Default;
             confirmDialog.Text = null;
             // 
+            // guna2ShadowForm1
+            // 
+            guna2ShadowForm1.TargetForm = this;
+            // 
+            // guna2BorderlessForm1
+            // 
+            guna2BorderlessForm1.ContainerControl = this;
+            guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // guna2DragControl1
+            // 
+            guna2DragControl1.DockForm = true;
+            guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            guna2DragControl1.TargetControl = guna2Panel1;
+            guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // guna2Panel1
+            // 
+            guna2Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            guna2Panel1.BackColor = Color.FromArgb(58, 55, 51);
+            guna2Panel1.Controls.Add(guna2ControlBox3);
+            guna2Panel1.Controls.Add(guna2ControlBox1);
+            guna2Panel1.Controls.Add(guna2ControlBox2);
+            guna2Panel1.CustomizableEdges = customizableEdges7;
+            guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Panel1.Size = new Size(967, 33);
+            guna2Panel1.TabIndex = 1;
+            // 
+            // guna2ResizeForm1
+            // 
+            guna2ResizeForm1.TargetForm = this;
+            // 
             // TrangChuAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(967, 551);
+            Controls.Add(guna2Panel1);
             Controls.Add(tabControlAdmin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "TrangChuAdmin";
@@ -736,6 +727,7 @@ namespace FinalProject.Views.Admin
             tabPageAdminAccount.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)accountTable).EndInit();
             ((System.ComponentModel.ISupportInitialize)ageInput).EndInit();
+            guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -749,9 +741,6 @@ namespace FinalProject.Views.Admin
         private Guna2ControlBox guna2ControlBox3;
         private Guna2ControlBox guna2ControlBox2;
         private Guna2ControlBox guna2ControlBox1;
-        private Guna2ControlBox guna2ControlBox4;
-        private Guna2ControlBox guna2ControlBox5;
-        private Guna2ControlBox guna2ControlBox6;
         private Guna2HtmlLabel guna2HtmlLabel2;
         private Guna2TextBox usernameInput;
         private Guna2TextBox phoneNumberInput;
@@ -778,5 +767,10 @@ namespace FinalProject.Views.Admin
         private Guna2MessageDialog successMesage;
         private Guna2Button refreshButton;
         private Guna2MessageDialog confirmDialog;
+        private Guna2ShadowForm guna2ShadowForm1;
+        private Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna2DragControl guna2DragControl1;
+        private Guna2Panel guna2Panel1;
+        private Guna2ResizeForm guna2ResizeForm1;
     }
 }
