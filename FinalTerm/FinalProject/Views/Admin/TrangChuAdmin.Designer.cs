@@ -279,6 +279,7 @@ namespace FinalProject.Views.Admin
             accountTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             accountTable.ColumnHeadersHeight = 4;
             accountTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            accountTable.Cursor = Cursors.Cross;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
