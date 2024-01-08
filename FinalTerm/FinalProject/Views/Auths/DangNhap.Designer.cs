@@ -35,14 +35,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -124,15 +124,15 @@
             // 
             // usernameInput
             // 
-            usernameInput.BackColor = Color.Transparent;
+            usernameInput.BackColor = Color.Black;
             usernameInput.BorderRadius = 5;
-            usernameInput.CustomizableEdges = customizableEdges7;
+            usernameInput.CustomizableEdges = customizableEdges3;
             usernameInput.DefaultText = "";
             usernameInput.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             usernameInput.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             usernameInput.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             usernameInput.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            usernameInput.FillColor = Color.Transparent;
+            usernameInput.FillColor = Color.Black;
             usernameInput.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             usernameInput.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             usernameInput.ForeColor = Color.FromArgb(247, 247, 247);
@@ -143,21 +143,21 @@
             usernameInput.PasswordChar = '\0';
             usernameInput.PlaceholderText = "Tên đăng nhập";
             usernameInput.SelectedText = "";
-            usernameInput.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            usernameInput.ShadowDecoration.CustomizableEdges = customizableEdges4;
             usernameInput.Size = new Size(344, 45);
             usernameInput.TabIndex = 4;
             // 
             // passwordInput
             // 
-            passwordInput.BackColor = Color.Transparent;
+            passwordInput.BackColor = Color.Black;
             passwordInput.BorderRadius = 5;
-            passwordInput.CustomizableEdges = customizableEdges5;
+            passwordInput.CustomizableEdges = customizableEdges1;
             passwordInput.DefaultText = "";
             passwordInput.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             passwordInput.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             passwordInput.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             passwordInput.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            passwordInput.FillColor = Color.Transparent;
+            passwordInput.FillColor = Color.Black;
             passwordInput.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             passwordInput.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             passwordInput.ForeColor = Color.FromArgb(247, 247, 247);
@@ -168,7 +168,7 @@
             passwordInput.PasswordChar = '\0';
             passwordInput.PlaceholderText = "Mật khẩu";
             passwordInput.SelectedText = "";
-            passwordInput.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            passwordInput.ShadowDecoration.CustomizableEdges = customizableEdges2;
             passwordInput.Size = new Size(344, 45);
             passwordInput.TabIndex = 5;
             // 
@@ -179,10 +179,10 @@
             guna2ToggleSwitch1.CheckedState.FillColor = Color.FromArgb(94, 148, 255);
             guna2ToggleSwitch1.CheckedState.InnerBorderColor = Color.White;
             guna2ToggleSwitch1.CheckedState.InnerColor = Color.White;
-            guna2ToggleSwitch1.CustomizableEdges = customizableEdges3;
+            guna2ToggleSwitch1.CustomizableEdges = customizableEdges7;
             guna2ToggleSwitch1.Location = new Point(40, 271);
             guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
-            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2ToggleSwitch1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2ToggleSwitch1.Size = new Size(44, 25);
             guna2ToggleSwitch1.TabIndex = 6;
             guna2ToggleSwitch1.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -216,7 +216,7 @@
             // 
             loginButton.BackColor = Color.Transparent;
             loginButton.BorderRadius = 15;
-            loginButton.CustomizableEdges = customizableEdges1;
+            loginButton.CustomizableEdges = customizableEdges5;
             loginButton.DisabledState.BorderColor = Color.DarkGray;
             loginButton.DisabledState.CustomBorderColor = Color.DarkGray;
             loginButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -226,7 +226,7 @@
             loginButton.ForeColor = Color.White;
             loginButton.Location = new Point(40, 323);
             loginButton.Name = "loginButton";
-            loginButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            loginButton.ShadowDecoration.CustomizableEdges = customizableEdges6;
             loginButton.Size = new Size(344, 40);
             loginButton.TabIndex = 9;
             loginButton.Text = "Đăng nhập";
@@ -254,12 +254,12 @@
             BackgroundImage = Properties.Resources._4419157;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(967, 551);
+            Controls.Add(passwordInput);
+            Controls.Add(usernameInput);
             Controls.Add(loginButton);
             Controls.Add(forgotPassword);
             Controls.Add(rememberMe);
             Controls.Add(guna2ToggleSwitch1);
-            Controls.Add(passwordInput);
-            Controls.Add(usernameInput);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(guna2ControlBox3);
             Controls.Add(guna2ControlBox2);
