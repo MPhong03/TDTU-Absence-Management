@@ -675,7 +675,7 @@ namespace FinalProject.Views.Admin
             // 
             // confirmDialog
             // 
-            confirmDialog.Buttons = MessageDialogButtons.YesNoCancel;
+            confirmDialog.Buttons = MessageDialogButtons.YesNo;
             confirmDialog.Caption = "Confirm";
             confirmDialog.Icon = MessageDialogIcon.Warning;
             confirmDialog.Parent = this;

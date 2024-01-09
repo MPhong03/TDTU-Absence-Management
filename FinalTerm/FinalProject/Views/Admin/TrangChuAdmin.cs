@@ -221,7 +221,19 @@ namespace FinalProject.Views.Admin
                 return;
             }
 
-            AddAccountToDatabase(username, password, name, role, phone, age, gender, birth);
+            DialogResult result = confirmDialog.Show("Xác nhận thêm tài khoản");
+
+            Debug.WriteLine($"CLICK: {result.ToString()}");
+
+            if (result == DialogResult.Yes)
+            {
+                AddAccountToDatabase(username, password, name, role, phone, age, gender, birth);
+            }
+            else
+            {
+                return;
+            }
+
         }
 
         private void AddAccountToDatabase(string username, string password, string name, string role, string phone, int age, string gender, string birth)
@@ -411,8 +423,19 @@ namespace FinalProject.Views.Admin
                 return;
             }
 
-            // Edit account
-            EditAccountFromDatabase(username, password, name, role, phone, age, gender, birth);
+            DialogResult result = confirmDialog.Show("Xác nhận thay đổi thông tin tài khoản này");
+
+            Debug.WriteLine($"CLICK: {result.ToString()}");
+
+            if (result == DialogResult.Yes)
+            {
+                // Edit account
+                EditAccountFromDatabase(username, password, name, role, phone, age, gender, birth);
+            }
+            else
+            {
+                return;
+            }
 
         }
 
@@ -426,7 +449,7 @@ namespace FinalProject.Views.Admin
                 return;
             }
 
-            DialogResult result = confirmDialog.Show("Bạn có chắc muốn xóa tài khoản này");
+            DialogResult result = confirmDialog.Show("Bạn có chắc muốn xóa tài khoản này?");
 
             Debug.WriteLine($"CLICK: {result.ToString()}");
 
