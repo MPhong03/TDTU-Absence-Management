@@ -1,0 +1,130 @@
+CREATE TABLE GiangVien
+(
+  MaSoGiangVien VARCHAR(100) NOT NULL,
+  Email VARCHAR(100) NOT NULL,
+  MatKhau VARCHAR(100) NOT NULL,
+  HoVaTen VARCHAR(100) NOT NULL,
+  NgaySinh DATE NOT NULL,
+  GioiTinh VARCHAR(10) NOT NULL,
+  HocHam VARCHAR(50) NOT NULL,
+  SoDienThoai VARCHAR(20) NOT NULL,
+  CCCD VARCHAR(50) NOT NULL,
+  DiaChi VARCHAR(100) NOT NULL,
+  PRIMARY KEY (MaSoGiangVien)
+);
+
+CREATE TABLE SinhVien
+(
+  MaSoSinhVien VARCHAR(100) NOT NULL,
+  Email VARCHAR(100) NOT NULL,
+  MatKhau VARCHAR(100) NOT NULL,
+  HoVaTen VARCHAR(100) NOT NULL,
+  NgaySinh DATE NOT NULL,
+  GioiTinh VARCHAR(10) NOT NULL,
+  SoDienThoai VARCHAR(100) NOT NULL,
+  CCCD VARCHAR(100) NOT NULL,
+  ChuyenNganh VARCHAR(100) NOT NULL,
+  KhoaTuyenSinh VARCHAR(100) NOT NULL,
+  PRIMARY KEY (MaSoSinhVien)
+);
+
+CREATE TABLE MonHoc
+(
+  MaSoMonHoc VARCHAR(100) NOT NULL,
+  TenMonHoc VARCHAR(100) NOT NULL,
+  SoTinChi INT NOT NULL,
+  PRIMARY KEY (MaSoMonHoc)
+);
+
+CREATE TABLE LopDay
+(
+  MaLopDay INT NOT NULL,
+  CaDay INT NOT NULL,
+  SoBuoiDay INT NOT NULL,
+  Nhom VARCHAR(10) NOT NULL,
+  ToTH VARCHAR(10) NOT NULL,
+  Phong VARCHAR(10) NOT NULL,
+  MaSoGiangVien VARCHAR(100) NOT NULL,
+  MaSoMonHoc VARCHAR(100) NOT NULL,
+  PRIMARY KEY (MaLopDay),
+  FOREIGN KEY (MaSoGiangVien) REFERENCES GiangVien(MaSoGiangVien),
+  FOREIGN KEY (MaSoMonHoc) REFERENCES MonHoc(MaSoMonHoc)
+);
+
+CREATE TABLE YeuCauBaoVang
+(
+  NgayBaoVang DATE NOT NULL,
+  LyDoBaoVang VARCHAR(500) NOT NULL,
+  TrangThai VARCHAR(50) NOT NULL,
+  MaBaoVang INT NOT NULL,
+  MaSoGiangVien VARCHAR(100) NOT NULL,
+  PRIMARY KEY (MaBaoVang),
+  FOREIGN KEY (MaSoGiangVien) REFERENCES GiangVien(MaSoGiangVien)
+);
+
+CREATE TABLE YeuCauBaoBu
+(
+  NgayBaoBu DATE NOT NULL,
+  TrangThai VARCHAR(50) NOT NULL,
+  MaBaoBu INT NOT NULL,
+  MaBaoVang INT NOT NULL,
+  MaLopDay INT NOT NULL,
+  MaSoGiangVien VARCHAR(100) NOT NULL,
+  PRIMARY KEY (MaBaoBu),
+  FOREIGN KEY (MaBaoVang) REFERENCES YeuCauBaoVang(MaBaoVang),
+  FOREIGN KEY (MaLopDay) REFERENCES LopDay(MaLopDay),
+  FOREIGN KEY (MaSoGiangVien) REFERENCES GiangVien(MaSoGiangVien)
+);
+
+CREATE TABLE QuanTriVien
+(
+  TenDangNhap VARCHAR(100) NOT NULL,
+  MatKhau VARCHAR(100) NOT NULL,
+  PRIMARY KEY (TenDangNhap)
+);
+
+CREATE TABLE ThongBao
+(
+  NoiDung VARCHAR(1000) NOT NULL,
+  ThoiGianGui DATE NOT NULL,
+  TieuDe VARCHAR(100) NOT NULL,
+  MaThongBao INT NOT NULL,
+  TenDangNhap VARCHAR(100) NOT NULL,
+  PRIMARY KEY (MaThongBao),
+  FOREIGN KEY (TenDangNhap) REFERENCES QuanTriVien(TenDangNhap)
+);
+
+CREATE TABLE SinhVien_LopDay
+(
+  MaLopDay INT NOT NULL,
+  MaSoSinhVien VARCHAR(100) NOT NULL,
+  PRIMARY KEY (MaLopDay, MaSoSinhVien),
+  FOREIGN KEY (MaLopDay) REFERENCES LopDay(MaLopDay),
+  FOREIGN KEY (MaSoSinhVien) REFERENCES SinhVien(MaSoSinhVien)
+);
+
+CREATE TABLE ThongBao_GiangVien
+(
+  MaThongBao INT NOT NULL,
+  MaSoGiangVien VARCHAR(100) NOT NULL,
+  PRIMARY KEY (MaThongBao, MaSoGiangVien),
+  FOREIGN KEY (MaThongBao) REFERENCES ThongBao(MaThongBao),
+  FOREIGN KEY (MaSoGiangVien) REFERENCES GiangVien(MaSoGiangVien)
+);
+
+CREATE TABLE ThongBao_SinhVien
+(
+  MaThongBao INT NOT NULL,
+  MaSoSinhVien VARCHAR(100) NOT NULL,
+  PRIMARY KEY (MaThongBao, MaSoSinhVien),
+  FOREIGN KEY (MaThongBao) REFERENCES ThongBao(MaThongBao),
+  FOREIGN KEY (MaSoSinhVien) REFERENCES SinhVien(MaSoSinhVien)
+);
+
+CREATE TABLE LopDay_NgayDay
+(
+  NgayDay DATE NOT NULL,
+  MaLopDay INT NOT NULL,
+  PRIMARY KEY (NgayDay, MaLopDay),
+  FOREIGN KEY (MaLopDay) REFERENCES LopDay(MaLopDay)
+);
