@@ -41,6 +41,9 @@
             // 
             // guna2HtmlLabel1
             // 
+            this.guna2HtmlLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
@@ -49,6 +52,7 @@
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(174, 33);
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "ĐĂNG NHẬP";
+            this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // emailLogin
             // 
@@ -132,6 +136,9 @@
             // 
             // forgotPasswordButton
             // 
+            this.forgotPasswordButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.forgotPasswordButton.BackColor = System.Drawing.Color.Transparent;
             this.forgotPasswordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.forgotPasswordButton.Location = new System.Drawing.Point(109, 342);
@@ -139,6 +146,7 @@
             this.forgotPasswordButton.Size = new System.Drawing.Size(125, 22);
             this.forgotPasswordButton.TabIndex = 5;
             this.forgotPasswordButton.Text = "Quên mật khẩu?";
+            this.forgotPasswordButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // successDialog
             // 
@@ -180,6 +188,7 @@
             this.Controls.Add(this.passwordLogin);
             this.Controls.Add(this.emailLogin);
             this.Controls.Add(this.guna2HtmlLabel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormDangNhap";
             this.Text = "Absence Reporting Management";
             this.Load += new System.EventHandler(this.FormDangNhap_Load);
