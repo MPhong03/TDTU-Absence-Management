@@ -57,15 +57,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDangNhap.cs">
+    <Compile Include="Controller\AuthController.cs" />
+    <Compile Include="View\Admin\Control\AdminTrangChuForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\AdminTrangChuForm.Designer.cs">
+      <DependentUpon>AdminTrangChuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyBaoBuForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyBaoBuForm.Designer.cs">
+      <DependentUpon>QuanLyBaoBuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyBaoVangForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyBaoVangForm.Designer.cs">
+      <DependentUpon>QuanLyBaoVangForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyMonHocForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyMonHocForm.Designer.cs">
+      <DependentUpon>QuanLyMonHocForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoanForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoanForm.Designer.cs">
+      <DependentUpon>QuanLyTaiKhoanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\QuanTriVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDangNhap.Designer.cs">
+    <Compile Include="View\Admin\QuanTriVienForm.Designer.cs">
+      <DependentUpon>QuanTriVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormDangNhap.resx">
+    <EmbeddedResource Include="View\Admin\Control\AdminTrangChuForm.resx">
+      <DependentUpon>AdminTrangChuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyBaoBuForm.resx">
+      <DependentUpon>QuanLyBaoBuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyBaoVangForm.resx">
+      <DependentUpon>QuanLyBaoVangForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyMonHocForm.resx">
+      <DependentUpon>QuanLyMonHocForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoanForm.resx">
+      <DependentUpon>QuanLyTaiKhoanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\QuanTriVienForm.resx">
+      <DependentUpon>QuanTriVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -100,6 +155,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-dai-hoc-ton-duc-thang-dongphucvina.vn_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoTDTBgWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\learning %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

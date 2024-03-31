@@ -9,13 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TDTUAbsenceReportingManagement.Controller;
+using TDTUAbsenceReportingManagement.View.Admin;
 
 namespace TDTUAbsenceReportingManagement
 {
     public partial class FormDangNhap : Form
     {
         // Lấy chuỗi kết nối từ App.config
-        private readonly string connectionString = ConfigurationManager.ConnectionStrings["QuanLyBaoVangBaoBuConnectionString"].ConnectionString;
+        private readonly AuthController authController = new AuthController();
         public FormDangNhap()
         {
             InitializeComponent();
@@ -27,37 +29,27 @@ namespace TDTUAbsenceReportingManagement
             string password = passwordLogin.Text;
             string role = roleLogin.SelectedItem.ToString();
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            if (role == null || email == string.Empty || password == string.Empty)
             {
-                conn.Open();
-                SqlCommand cmd = conn.CreateCommand();
-                cmd.CommandType = CommandType.Text;
+                errorDialog.Show("Nhập đầy đủ thông tin!");
+                return;
+            }
 
-                switch (role)
+            try
+            {
+                // Gọi phương thức DangNhap trong AuthController
+                bool success = authController.DangNhap(email, password, role);
+
+                if (success)
                 {
-                    case "Quản trị viên":
-                        cmd.CommandText = "SELECT * FROM QuanTriVien WHERE TenDangNhap = @Email AND MatKhau = @Password";
-                        break;
-                    case "Giảng viên":
-                        cmd.CommandText = "SELECT * FROM GiangVien WHERE Email = @Email AND MatKhau = @Password";
-                        break;
-                    case "Sinh viên":
-                        cmd.CommandText = "SELECT * FROM SinhVien WHERE Email = @Email AND MatKhau = @Password";
-                        break;
-                }
-
-                cmd.Parameters.AddWithValue("@Email", email);
-                cmd.Parameters.AddWithValue("@Password", password);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.HasRows)
-                {
-                    // Chuyển đến form tương ứng với vai trò
                     switch (role)
                     {
                         case "Quản trị viên":
                             successDialog.Show();
+                            QuanTriVienForm form = new QuanTriVienForm();
+                            form.Show();
+
+                            this.Hide();
                             break;
                         case "Giảng viên":
                             successDialog.Show();
@@ -69,10 +61,12 @@ namespace TDTUAbsenceReportingManagement
                 }
                 else
                 {
-                    MessageBox.Show("Email hoặc mật khẩu không đúng.");
+                    errorDialog.Show("Email hoặc mật khẩu không đúng.");
                 }
-
-                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                errorDialog.Show("Lỗi đăng nhập: " + ex.Message);
             }
         }
 
