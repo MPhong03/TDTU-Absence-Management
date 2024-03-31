@@ -28,31 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.emailLogin = new Guna.UI2.WinForms.Guna2TextBox();
             this.passwordLogin = new Guna.UI2.WinForms.Guna2TextBox();
             this.roleLogin = new Guna.UI2.WinForms.Guna2ComboBox();
             this.loginButton = new Guna.UI2.WinForms.Guna2Button();
-            this.forgotPasswordButton = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.successDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.errorDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(85, 49);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(174, 33);
-            this.guna2HtmlLabel1.TabIndex = 0;
-            this.guna2HtmlLabel1.Text = "ĐĂNG NHẬP";
-            this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // emailLogin
             // 
@@ -134,20 +119,6 @@
             this.loginButton.Text = "ĐĂNG NHẬP";
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // forgotPasswordButton
-            // 
-            this.forgotPasswordButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.forgotPasswordButton.BackColor = System.Drawing.Color.Transparent;
-            this.forgotPasswordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.forgotPasswordButton.Location = new System.Drawing.Point(109, 342);
-            this.forgotPasswordButton.Name = "forgotPasswordButton";
-            this.forgotPasswordButton.Size = new System.Drawing.Size(125, 22);
-            this.forgotPasswordButton.TabIndex = 5;
-            this.forgotPasswordButton.Text = "Quên mật khẩu?";
-            this.forgotPasswordButton.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // successDialog
             // 
             this.successDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
@@ -175,6 +146,29 @@
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.guna2MessageDialog1.Text = null;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(79, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(185, 31);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "ĐĂNG NHẬP";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(105, 339);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(131, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Quên mật khẩu?";
+            // 
             // FormDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -182,12 +176,12 @@
             this.BackgroundImage = global::TDTUAbsenceReportingManagement.Properties.Resources._298221300_404727638419305_983374014522547219_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1006, 553);
-            this.Controls.Add(this.forgotPasswordButton);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.roleLogin);
             this.Controls.Add(this.passwordLogin);
             this.Controls.Add(this.emailLogin);
-            this.Controls.Add(this.guna2HtmlLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormDangNhap";
             this.Text = "Absence Reporting Management";
@@ -198,16 +192,15 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox emailLogin;
         private Guna.UI2.WinForms.Guna2TextBox passwordLogin;
         private Guna.UI2.WinForms.Guna2ComboBox roleLogin;
         private Guna.UI2.WinForms.Guna2Button loginButton;
-        private Guna.UI2.WinForms.Guna2HtmlLabel forgotPasswordButton;
         private Guna.UI2.WinForms.Guna2MessageDialog successDialog;
         private Guna.UI2.WinForms.Guna2MessageDialog errorDialog;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

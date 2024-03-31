@@ -32,6 +32,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin
         {
             AdminTrangChuForm uc = new AdminTrangChuForm();
             addUserControl(uc);
+            //homeTabButton.HoverState
         }
 
         private void accountManageTabButton_Click(object sender, EventArgs e)
@@ -57,5 +58,6 @@ namespace TDTUAbsenceReportingManagement.View.Admin
             QuanLyMonHocForm uc = new QuanLyMonHocForm();
             addUserControl(uc);
         }
+
     }
 }

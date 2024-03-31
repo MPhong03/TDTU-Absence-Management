@@ -31,7 +31,6 @@
             this.successDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.errorDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.menuSideBảButton = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.courseTabButton = new Guna.UI2.WinForms.Guna2Button();
@@ -66,27 +65,12 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
-            this.guna2Panel1.Controls.Add(this.menuSideBảButton);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1006, 52);
             this.guna2Panel1.TabIndex = 0;
-            // 
-            // menuSideBảButton
-            // 
-            this.menuSideBảButton.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.menuSideBảButton.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.menuSideBảButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.menu__1_;
-            this.menuSideBảButton.ImageOffset = new System.Drawing.Point(0, 0);
-            this.menuSideBảButton.ImageRotate = 0F;
-            this.menuSideBảButton.ImageSize = new System.Drawing.Size(32, 32);
-            this.menuSideBảButton.Location = new System.Drawing.Point(204, 1);
-            this.menuSideBảButton.Name = "menuSideBảButton";
-            this.menuSideBảButton.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.menuSideBảButton.Size = new System.Drawing.Size(46, 48);
-            this.menuSideBảButton.TabIndex = 2;
             // 
             // guna2PictureBox1
             // 
@@ -109,6 +93,7 @@
             this.guna2Panel2.Controls.Add(this.homeTabButton);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel2.Location = new System.Drawing.Point(0, 52);
+            this.guna2Panel2.MinimumSize = new System.Drawing.Size(57, 0);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(204, 501);
             this.guna2Panel2.TabIndex = 1;
@@ -122,6 +107,8 @@
             this.courseTabButton.FillColor = System.Drawing.Color.Transparent;
             this.courseTabButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.courseTabButton.ForeColor = System.Drawing.Color.Black;
+            this.courseTabButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
+            this.courseTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.learning__1_;
             this.courseTabButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.learning__2_;
             this.courseTabButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.courseTabButton.Location = new System.Drawing.Point(9, 210);
@@ -141,6 +128,8 @@
             this.baoBuTabButton.FillColor = System.Drawing.Color.Transparent;
             this.baoBuTabButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.baoBuTabButton.ForeColor = System.Drawing.Color.Black;
+            this.baoBuTabButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
+            this.baoBuTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.clock__1_;
             this.baoBuTabButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.clock;
             this.baoBuTabButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.baoBuTabButton.Location = new System.Drawing.Point(9, 159);
@@ -160,6 +149,8 @@
             this.baoVangTabButton.FillColor = System.Drawing.Color.Transparent;
             this.baoVangTabButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.baoVangTabButton.ForeColor = System.Drawing.Color.Black;
+            this.baoVangTabButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
+            this.baoVangTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.exit__1_;
             this.baoVangTabButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.exit;
             this.baoVangTabButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.baoVangTabButton.Location = new System.Drawing.Point(9, 108);
@@ -179,6 +170,8 @@
             this.accountManageTabButton.FillColor = System.Drawing.Color.Transparent;
             this.accountManageTabButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.accountManageTabButton.ForeColor = System.Drawing.Color.Black;
+            this.accountManageTabButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
+            this.accountManageTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.account;
             this.accountManageTabButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.account__1_;
             this.accountManageTabButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.accountManageTabButton.Location = new System.Drawing.Point(9, 57);
@@ -191,6 +184,7 @@
             // 
             // homeTabButton
             // 
+            this.homeTabButton.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.homeTabButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.homeTabButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.homeTabButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -198,6 +192,8 @@
             this.homeTabButton.FillColor = System.Drawing.Color.Transparent;
             this.homeTabButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.homeTabButton.ForeColor = System.Drawing.Color.Black;
+            this.homeTabButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
+            this.homeTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.home;
             this.homeTabButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.home__1_;
             this.homeTabButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.homeTabButton.Location = new System.Drawing.Point(9, 6);
@@ -225,7 +221,6 @@
             this.Controls.Add(this.adminContainerControl);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "QuanTriVienForm";
             this.Text = "QuanTriVienForm";
             this.guna2Panel1.ResumeLayout(false);
@@ -242,7 +237,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2ImageButton menuSideBảButton;
         private Guna.UI2.WinForms.Guna2Button homeTabButton;
         private Guna.UI2.WinForms.Guna2Button courseTabButton;
         private Guna.UI2.WinForms.Guna2Button baoBuTabButton;

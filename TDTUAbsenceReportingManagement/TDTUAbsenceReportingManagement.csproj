@@ -58,6 +58,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\AuthController.cs" />
+    <Compile Include="Controller\GiangVienController.cs" />
+    <Compile Include="Controller\SinhVienController.cs" />
+    <Compile Include="Model\GiangVien.cs" />
+    <Compile Include="Model\SinhVien.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Control\AdminTrangChuForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,6 +97,18 @@
     <Compile Include="View\Admin\Control\QuanLyTaiKhoanForm.Designer.cs">
       <DependentUpon>QuanLyTaiKhoanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\GiangVienForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\GiangVienForm.Designer.cs">
+      <DependentUpon>GiangVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\SinhVienForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\SinhVienForm.Designer.cs">
+      <DependentUpon>SinhVienForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\QuanTriVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +138,12 @@
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoanForm.resx">
       <DependentUpon>QuanLyTaiKhoanForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\GiangVienForm.resx">
+      <DependentUpon>GiangVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\SinhVienForm.resx">
+      <DependentUpon>SinhVienForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\QuanTriVienForm.resx">
       <DependentUpon>QuanTriVienForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,14 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -157,34 +179,40 @@
     <None Include="Resources\lock.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+    <None Include="Resources\exit %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo-dai-hoc-ton-duc-thang-dongphucvina.vn_.png" />
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\LogoTDTBgWhite.png" />
+    <None Include="Resources\logo_2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\menu %281%29.png" />
+    <None Include="Resources\menu_1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\home %281%29.png" />
+    <None Include="Resources\home.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\account %281%29.png" />
+    <None Include="Resources\account.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\exit.png" />
+    <None Include="Resources\baovang.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\clock.png" />
+    <None Include="Resources\baobu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\learning %282%29.png" />
+    <None Include="Resources\course.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\learning %281%291.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
