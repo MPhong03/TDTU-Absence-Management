@@ -57,11 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\AuthController.cs" />
-    <Compile Include="Controller\GiangVienController.cs" />
-    <Compile Include="Controller\SinhVienController.cs" />
-    <Compile Include="Model\GiangVien.cs" />
-    <Compile Include="Model\SinhVien.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -213,6 +208,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\learning %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{DD32080C-C88D-48F1-915A-D1EF608CCCE7}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{8275F4BB-C616-475F-9D18-3BC529AE1A41}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

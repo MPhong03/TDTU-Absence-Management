@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BUS;
+using DAL;
+using System;
+using System.Diagnostics;
 using System.Windows.Forms;
-using TDTUAbsenceReportingManagement.Controller;
 using TDTUAbsenceReportingManagement.View.Admin;
 
 namespace TDTUAbsenceReportingManagement
 {
     public partial class FormDangNhap : Form
     {
-        // Lấy chuỗi kết nối từ App.config
-        private readonly AuthController authController = new AuthController();
+        BUS_Auth auth;
         public FormDangNhap()
         {
             InitializeComponent();
+            auth = new BUS_Auth();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -28,7 +21,7 @@ namespace TDTUAbsenceReportingManagement
             string email = emailLogin.Text;
             string password = passwordLogin.Text;
             string role = roleLogin.SelectedItem.ToString();
-
+            
             if (role == null || email == string.Empty || password == string.Empty)
             {
                 errorDialog.Show("Nhập đầy đủ thông tin!");
@@ -37,9 +30,9 @@ namespace TDTUAbsenceReportingManagement
 
             try
             {
-                // Gọi phương thức DangNhap trong AuthController
-                bool success = authController.DangNhap(email, password, role);
-
+                // Gọi phương thức DangNhap trong DAL
+                bool success = auth.DangNhap(email, password, role);
+                Debug.Write(success);
                 if (success)
                 {
                     switch (role)
@@ -66,7 +59,8 @@ namespace TDTUAbsenceReportingManagement
             }
             catch (Exception ex)
             {
-                errorDialog.Show("Lỗi đăng nhập: " + ex.Message);
+                errorDialog.Show("Lỗi đăng nhập: " + ex);
+                Debug.Write(ex);
             }
         }
 
