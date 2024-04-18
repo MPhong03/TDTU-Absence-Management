@@ -18,7 +18,7 @@ namespace DAL
 
         public DTO_GiangVien ChiTietGiangVien(string maSoGiangVien)
         {
-            string cmd = "SELECT * FROM GiangVien WHERE MaSoGiangVien = " + maSoGiangVien;
+            string cmd = "SELECT * FROM GiangVien WHERE MaSoGiangVien = '" + maSoGiangVien + "'";
 
             DataRow row = Connection.selectQuery(cmd).Rows[0];
 
