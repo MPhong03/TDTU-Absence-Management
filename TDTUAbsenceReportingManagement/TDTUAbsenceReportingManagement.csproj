@@ -68,6 +68,12 @@
     <Compile Include="View\Admin\Control\AdminTrangChuForm.Designer.cs">
       <DependentUpon>AdminTrangChuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\ChiTietGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\ChiTietGiangVien.Designer.cs">
+      <DependentUpon>ChiTietGiangVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Control\QuanLyBaoBuForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\Admin\Control\AdminTrangChuForm.resx">
       <DependentUpon>AdminTrangChuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\ChiTietGiangVien.resx">
+      <DependentUpon>ChiTietGiangVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyBaoBuForm.resx">
       <DependentUpon>QuanLyBaoBuForm.cs</DependentUpon>

@@ -31,17 +31,17 @@
             this.successDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.errorDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.adminContainerControl = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.courseTabButton = new Guna.UI2.WinForms.Guna2Button();
             this.baoBuTabButton = new Guna.UI2.WinForms.Guna2Button();
             this.baoVangTabButton = new Guna.UI2.WinForms.Guna2Button();
             this.accountManageTabButton = new Guna.UI2.WinForms.Guna2Button();
             this.homeTabButton = new Guna.UI2.WinForms.Guna2Button();
-            this.adminContainerControl = new Guna.UI2.WinForms.Guna2ContainerControl();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // successDialog
@@ -72,17 +72,6 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1006, 52);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.logo_dai_hoc_ton_duc_thang_dongphucvina_vn_;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(54, 46);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 1;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
@@ -97,6 +86,17 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(204, 501);
             this.guna2Panel2.TabIndex = 1;
+            // 
+            // adminContainerControl
+            // 
+            this.adminContainerControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.adminContainerControl.Location = new System.Drawing.Point(204, 52);
+            this.adminContainerControl.Name = "adminContainerControl";
+            this.adminContainerControl.Size = new System.Drawing.Size(802, 501);
+            this.adminContainerControl.TabIndex = 2;
+            this.adminContainerControl.Text = "guna2ContainerControl1";
             // 
             // courseTabButton
             // 
@@ -204,14 +204,16 @@
             this.homeTabButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.homeTabButton.Click += new System.EventHandler(this.homeTabButton_Click);
             // 
-            // adminContainerControl
+            // guna2PictureBox1
             // 
-            this.adminContainerControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adminContainerControl.Location = new System.Drawing.Point(204, 52);
-            this.adminContainerControl.Name = "adminContainerControl";
-            this.adminContainerControl.Size = new System.Drawing.Size(802, 501);
-            this.adminContainerControl.TabIndex = 2;
-            this.adminContainerControl.Text = "guna2ContainerControl1";
+            this.guna2PictureBox1.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.logo_dai_hoc_ton_duc_thang_dongphucvina_vn_;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(54, 46);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // QuanTriVienForm
             // 
@@ -224,8 +226,8 @@
             this.Name = "QuanTriVienForm";
             this.Text = "QuanTriVienForm";
             this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
