@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using TDTUAbsenceReportingManagement.View.Admin.Control.ChiTietTaiKhoan;
 
 namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
 {
@@ -38,5 +39,21 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
             }
         }
 
+        private void danhSachGiangVienDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = danhSachGiangVienDataGrid.Rows[e.RowIndex];
+                string maSoGiangVien = row.Cells["MaSoGiangVien"].Value.ToString();
+
+                ChiTietGiangVien uc = new ChiTietGiangVien(maSoGiangVien);
+                QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+
+                if (quanTriVienForm != null)
+                {
+                    quanTriVienForm.addUserControl(uc);
+                }
+            }
+        }
     }
 }
