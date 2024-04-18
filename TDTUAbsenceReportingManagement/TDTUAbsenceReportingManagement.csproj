@@ -92,6 +92,12 @@
     <Compile Include="View\Admin\Control\QuanLyTaiKhoanForm.Designer.cs">
       <DependentUpon>QuanLyTaiKhoanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\ChiTietSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\ChiTietSinhVien.Designer.cs">
+      <DependentUpon>ChiTietSinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Control\QuanLyTaiKhoan\GiangVienForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoanForm.resx">
       <DependentUpon>QuanLyTaiKhoanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\ChiTietSinhVien.resx">
+      <DependentUpon>ChiTietSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\GiangVienForm.resx">
       <DependentUpon>GiangVienForm.cs</DependentUpon>
@@ -235,6 +244,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{8275F4BB-C616-475F-9D18-3BC529AE1A41}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{EFCCE05A-7E78-410E-87C1-C997DEEFA241}</Project>
+      <Name>DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

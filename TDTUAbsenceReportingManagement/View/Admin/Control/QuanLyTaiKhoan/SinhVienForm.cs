@@ -36,5 +36,22 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
                 quanTriVienForm.addUserControl(uc);
             }
         }
+
+        private void danhSachSinhVienDataGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = danhSachSinhVienDataGrid.Rows[e.RowIndex];
+                string maSoSinhVien = row.Cells["MaSoSinhVien"].Value.ToString();
+
+                ChiTietSinhVien uc = new ChiTietSinhVien(maSoSinhVien);
+                QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+
+                if (quanTriVienForm != null)
+                {
+                    quanTriVienForm.addUserControl(uc);
+                }
+            }
+        }
     }
 }

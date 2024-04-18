@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.birthDateGV = new Guna.UI2.WinForms.Guna2TextBox();
             this.themGVbtn = new Guna.UI2.WinForms.Guna2Button();
             this.huyGVbtn = new Guna.UI2.WinForms.Guna2Button();
             this.genderGV = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -41,6 +40,7 @@
             this.cccdGV = new Guna.UI2.WinForms.Guna2TextBox();
             this.emailGV = new Guna.UI2.WinForms.Guna2TextBox();
             this.maGV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.birthDateGV = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -53,27 +53,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "THÔNG TIN TÀI KHOẢN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // birthDateGV
-            // 
-            this.birthDateGV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.birthDateGV.DefaultText = "";
-            this.birthDateGV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.birthDateGV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.birthDateGV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.birthDateGV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.birthDateGV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.birthDateGV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.birthDateGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.birthDateGV.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.calendar;
-            this.birthDateGV.Location = new System.Drawing.Point(221, 351);
-            this.birthDateGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.birthDateGV.Name = "birthDateGV";
-            this.birthDateGV.PasswordChar = '\0';
-            this.birthDateGV.PlaceholderText = "Ngày sinh";
-            this.birthDateGV.SelectedText = "";
-            this.birthDateGV.Size = new System.Drawing.Size(399, 36);
-            this.birthDateGV.TabIndex = 9;
             // 
             // themGVbtn
             // 
@@ -286,15 +265,29 @@
             this.maGV.Size = new System.Drawing.Size(399, 36);
             this.maGV.TabIndex = 1;
             // 
+            // birthDateGV
+            // 
+            this.birthDateGV.Checked = true;
+            this.birthDateGV.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.birthDateGV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.birthDateGV.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.birthDateGV.Location = new System.Drawing.Point(221, 348);
+            this.birthDateGV.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.birthDateGV.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.birthDateGV.Name = "birthDateGV";
+            this.birthDateGV.Size = new System.Drawing.Size(399, 36);
+            this.birthDateGV.TabIndex = 41;
+            this.birthDateGV.Value = new System.DateTime(2024, 4, 18, 11, 33, 27, 219);
+            // 
             // ThemGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.birthDateGV);
             this.Controls.Add(this.academicRankGV);
             this.Controls.Add(this.genderGV);
             this.Controls.Add(this.huyGVbtn);
             this.Controls.Add(this.themGVbtn);
-            this.Controls.Add(this.birthDateGV);
             this.Controls.Add(this.addressGV);
             this.Controls.Add(this.passwordGV);
             this.Controls.Add(this.phoneGV);
@@ -320,10 +313,10 @@
         private Guna.UI2.WinForms.Guna2TextBox phoneGV;
         private Guna.UI2.WinForms.Guna2TextBox passwordGV;
         private Guna.UI2.WinForms.Guna2TextBox addressGV;
-        private Guna.UI2.WinForms.Guna2TextBox birthDateGV;
         private Guna.UI2.WinForms.Guna2Button themGVbtn;
         private Guna.UI2.WinForms.Guna2Button huyGVbtn;
         private Guna.UI2.WinForms.Guna2ComboBox genderGV;
         private Guna.UI2.WinForms.Guna2ComboBox academicRankGV;
+        private Guna.UI2.WinForms.Guna2DateTimePicker birthDateGV;
     }
 }

@@ -33,7 +33,6 @@
             this.huySVbtn = new Guna.UI2.WinForms.Guna2Button();
             this.themSVbtn = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.birthDateSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.courseSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.passwordSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.phoneSV = new Guna.UI2.WinForms.Guna2TextBox();
@@ -41,6 +40,7 @@
             this.cccdSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.emailSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.maSV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.birthDateSV = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.SuspendLayout();
             // 
             // academicRankSV
@@ -117,27 +117,6 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "THÔNG TIN TÀI KHOẢN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // birthDateSV
-            // 
-            this.birthDateSV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.birthDateSV.DefaultText = "";
-            this.birthDateSV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.birthDateSV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.birthDateSV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.birthDateSV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.birthDateSV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.birthDateSV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.birthDateSV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.birthDateSV.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.calendar;
-            this.birthDateSV.Location = new System.Drawing.Point(205, 348);
-            this.birthDateSV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.birthDateSV.Name = "birthDateSV";
-            this.birthDateSV.PasswordChar = '\0';
-            this.birthDateSV.PlaceholderText = "Ngày sinh";
-            this.birthDateSV.SelectedText = "";
-            this.birthDateSV.Size = new System.Drawing.Size(399, 36);
-            this.birthDateSV.TabIndex = 23;
             // 
             // courseSV
             // 
@@ -286,15 +265,29 @@
             this.maSV.Size = new System.Drawing.Size(399, 36);
             this.maSV.TabIndex = 16;
             // 
+            // birthDateSV
+            // 
+            this.birthDateSV.Checked = true;
+            this.birthDateSV.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.birthDateSV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.birthDateSV.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.birthDateSV.Location = new System.Drawing.Point(205, 345);
+            this.birthDateSV.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.birthDateSV.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.birthDateSV.Name = "birthDateSV";
+            this.birthDateSV.Size = new System.Drawing.Size(399, 36);
+            this.birthDateSV.TabIndex = 41;
+            this.birthDateSV.Value = new System.DateTime(2024, 4, 18, 11, 33, 27, 219);
+            // 
             // ThemSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.birthDateSV);
             this.Controls.Add(this.academicRankSV);
             this.Controls.Add(this.genderSV);
             this.Controls.Add(this.huySVbtn);
             this.Controls.Add(this.themSVbtn);
-            this.Controls.Add(this.birthDateSV);
             this.Controls.Add(this.courseSV);
             this.Controls.Add(this.passwordSV);
             this.Controls.Add(this.phoneSV);
@@ -316,7 +309,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox genderSV;
         private Guna.UI2.WinForms.Guna2Button huySVbtn;
         private Guna.UI2.WinForms.Guna2Button themSVbtn;
-        private Guna.UI2.WinForms.Guna2TextBox birthDateSV;
         private Guna.UI2.WinForms.Guna2TextBox courseSV;
         private Guna.UI2.WinForms.Guna2TextBox passwordSV;
         private Guna.UI2.WinForms.Guna2TextBox phoneSV;
@@ -325,5 +317,6 @@
         private Guna.UI2.WinForms.Guna2TextBox emailSV;
         private Guna.UI2.WinForms.Guna2TextBox maSV;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker birthDateSV;
     }
 }

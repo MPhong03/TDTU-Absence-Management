@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DTO;
 
 namespace BUS
 {
@@ -19,5 +20,11 @@ namespace BUS
         {
             return sv.DanhSachSinhVien();
         }
+
+        public DTO_SinhVien HienThongTinSV(string maSV)
+        {
+            return sv.HienThongTinSV(maSV);
+        }
+
     }
 }
