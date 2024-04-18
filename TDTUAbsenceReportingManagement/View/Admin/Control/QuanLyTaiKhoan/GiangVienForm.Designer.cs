@@ -53,7 +53,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.danhSachGiangVienDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.danhSachGiangVienDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.danhSachGiangVienDataGrid.ColumnHeadersHeight = 18;
+            this.danhSachGiangVienDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -81,7 +82,7 @@
             this.danhSachGiangVienDataGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.danhSachGiangVienDataGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.danhSachGiangVienDataGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.danhSachGiangVienDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.danhSachGiangVienDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.danhSachGiangVienDataGrid.ThemeStyle.HeaderStyle.Height = 18;
             this.danhSachGiangVienDataGrid.ThemeStyle.ReadOnly = false;
             this.danhSachGiangVienDataGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -106,6 +107,7 @@
             this.themGiangVienButton.Size = new System.Drawing.Size(260, 31);
             this.themGiangVienButton.TabIndex = 1;
             this.themGiangVienButton.Text = "Thêm tài khoản";
+            this.themGiangVienButton.Click += new System.EventHandler(this.themGiangVienButton_Click);
             // 
             // nhapDanhSachGiangVienButton
             // 

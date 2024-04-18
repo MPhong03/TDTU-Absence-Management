@@ -82,6 +82,7 @@
             this.themSinhVienButton.Size = new System.Drawing.Size(260, 31);
             this.themSinhVienButton.TabIndex = 5;
             this.themSinhVienButton.Text = "Thêm tài khoản";
+            this.themSinhVienButton.Click += new System.EventHandler(this.themSinhVienButton_Click);
             // 
             // danhSachSinhVienDataGrid
             // 
@@ -98,7 +99,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.danhSachSinhVienDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.danhSachSinhVienDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.danhSachSinhVienDataGrid.ColumnHeadersHeight = 18;
+            this.danhSachSinhVienDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -126,7 +128,7 @@
             this.danhSachSinhVienDataGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.danhSachSinhVienDataGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.danhSachSinhVienDataGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.danhSachSinhVienDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.danhSachSinhVienDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.danhSachSinhVienDataGrid.ThemeStyle.HeaderStyle.Height = 18;
             this.danhSachSinhVienDataGrid.ThemeStyle.ReadOnly = false;
             this.danhSachSinhVienDataGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;

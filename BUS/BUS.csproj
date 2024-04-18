@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS_Auth.cs" />
+    <Compile Include="BUS_GiangVien.cs" />
+    <Compile Include="BUS_SinhVien.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

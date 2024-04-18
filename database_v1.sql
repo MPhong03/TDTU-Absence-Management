@@ -1,3 +1,5 @@
+use [database_v1]
+
 CREATE TABLE GiangVien
 (
   MaSoGiangVien VARCHAR(100) NOT NULL,

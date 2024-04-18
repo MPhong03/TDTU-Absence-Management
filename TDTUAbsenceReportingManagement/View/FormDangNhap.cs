@@ -14,8 +14,8 @@ namespace TDTUAbsenceReportingManagement
         {
             InitializeComponent();
             auth = new BUS_Auth();
+            
         }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             string email = emailLogin.Text;
@@ -64,9 +64,6 @@ namespace TDTUAbsenceReportingManagement
             }
         }
 
-        private void FormDangNhap_Load(object sender, EventArgs e)
-        {
-            roleLogin.SelectedIndex = 0;
-        }
+      
     }
 }

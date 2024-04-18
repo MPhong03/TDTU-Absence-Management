@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="DAL_Auth.cs" />
+    <Compile Include="DAL_GiangVien.cs" />
+    <Compile Include="DAL_SinhVien.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

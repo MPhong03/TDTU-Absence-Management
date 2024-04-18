@@ -104,6 +104,18 @@
     <Compile Include="View\Admin\Control\QuanLyTaiKhoan\SinhVienForm.Designer.cs">
       <DependentUpon>SinhVienForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Control\ThemGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\ThemGiangVien.Designer.cs">
+      <DependentUpon>ThemGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Control\ThemSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\ThemSinhVien.Designer.cs">
+      <DependentUpon>ThemSinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\QuanTriVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\SinhVienForm.resx">
       <DependentUpon>SinhVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\ThemGiangVien.resx">
+      <DependentUpon>ThemGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\ThemSinhVien.resx">
+      <DependentUpon>ThemSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\QuanTriVienForm.resx">
       <DependentUpon>QuanTriVienForm.cs</DependentUpon>
@@ -218,6 +236,24 @@
       <Project>{8275F4BB-C616-475F-9D18-3BC529AE1A41}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\idcard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

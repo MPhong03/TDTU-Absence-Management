@@ -57,5 +57,6 @@ namespace TDTUAbsenceReportingManagement.View.Admin
             guna2Button1.CustomBorderColor = Color.Black;
             guna2Button1.ForeColor = Color.Black;
         }
+
     }
 }

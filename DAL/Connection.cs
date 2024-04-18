@@ -9,7 +9,10 @@ namespace DAL
 
         public static void connect()
         {
-            string s = "Data Source=PHONYY\\DANGMINHPHONG; Initial Catalog=database_v1; Integrated Security=True;";
+             // Đăng nhập của Phong
+            //string s = "Data Source=PHONYY\\DANGMINHPHONG; Initial Catalog=database_v1; Integrated Security=True;";
+            // Đăng nhập của Hưng
+            string s = "Data Source=MSI\\SQLEXPRESS; Initial Catalog=database_v1; Integrated Security=True;";
             conn = new SqlConnection(s);
             conn.Open();
 

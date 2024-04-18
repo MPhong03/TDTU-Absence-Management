@@ -20,7 +20,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin
             addUserControl(uc);
         }
 
-        private void addUserControl(UserControl userControl)
+        internal void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
             adminContainerControl.Controls.Clear();
@@ -58,6 +58,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin
             QuanLyMonHocForm uc = new QuanLyMonHocForm();
             addUserControl(uc);
         }
+
 
     }
 }
