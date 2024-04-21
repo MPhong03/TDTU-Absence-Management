@@ -150,7 +150,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.ChiTietTaiKhoan
         }
         private void GoBack()
         {
-            GiangVienForm uc = new GiangVienForm();
+            QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
             QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
 
             if (quanTriVienForm != null)
