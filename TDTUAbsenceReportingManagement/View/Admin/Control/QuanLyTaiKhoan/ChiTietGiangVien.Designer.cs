@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.academicRankGV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.genderGV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.addressGV = new Guna.UI2.WinForms.Guna2TextBox();
@@ -46,6 +46,11 @@
             this.themLopHocButton = new Guna.UI2.WinForms.Guna2Button();
             this.xoaLopHocButton = new Guna.UI2.WinForms.Guna2Button();
             this.ngaySinhGV = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.deleteGVButton = new Guna.UI2.WinForms.Guna2Button();
+            this.questionDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.errorDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.successDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.warningMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,15 +65,15 @@
             this.academicRankGV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.academicRankGV.ItemHeight = 30;
             this.academicRankGV.Items.AddRange(new object[] {
-            "GS.",
-            "PGS.",
-            "TS.",
-            "ThS.",
-            "NCS.",
-            "CN.",
-            "GS.TS.",
-            "PGS.TS.",
-            "ThS.NCS."});
+            "GS",
+            "PGS",
+            "TS",
+            "ThS",
+            "NCS",
+            "CN",
+            "GS.TS",
+            "PGS.TS",
+            "ThS.NCS"});
             this.academicRankGV.Location = new System.Drawing.Point(409, 169);
             this.academicRankGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.academicRankGV.Name = "academicRankGV";
@@ -253,9 +258,10 @@
             this.saveChangeButton.ForeColor = System.Drawing.Color.White;
             this.saveChangeButton.Location = new System.Drawing.Point(17, 220);
             this.saveChangeButton.Name = "saveChangeButton";
-            this.saveChangeButton.Size = new System.Drawing.Size(386, 31);
+            this.saveChangeButton.Size = new System.Drawing.Size(255, 31);
             this.saveChangeButton.TabIndex = 25;
             this.saveChangeButton.Text = "Lưu chỉnh sửa";
+            this.saveChangeButton.Click += new System.EventHandler(this.saveChangeButton_Click);
             // 
             // cancelButton
             // 
@@ -267,33 +273,35 @@
             this.cancelButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(161)))), ((int)(((byte)(27)))));
             this.cancelButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Location = new System.Drawing.Point(409, 220);
+            this.cancelButton.Location = new System.Drawing.Point(540, 220);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(386, 31);
+            this.cancelButton.Size = new System.Drawing.Size(255, 31);
             this.cancelButton.TabIndex = 26;
             this.cancelButton.Text = "Hủy";
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.guna2DataGridView1.ColumnHeadersHeight = 4;
+            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(17, 257);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
@@ -313,7 +321,7 @@
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
             this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -372,10 +380,64 @@
             this.ngaySinhGV.TabIndex = 30;
             this.ngaySinhGV.Value = new System.DateTime(2024, 4, 18, 11, 33, 17, 21);
             // 
+            // deleteGVButton
+            // 
+            this.deleteGVButton.BorderRadius = 10;
+            this.deleteGVButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteGVButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteGVButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteGVButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteGVButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
+            this.deleteGVButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.deleteGVButton.ForeColor = System.Drawing.Color.White;
+            this.deleteGVButton.Location = new System.Drawing.Point(279, 220);
+            this.deleteGVButton.Name = "deleteGVButton";
+            this.deleteGVButton.Size = new System.Drawing.Size(255, 31);
+            this.deleteGVButton.TabIndex = 31;
+            this.deleteGVButton.Text = "Xóa";
+            this.deleteGVButton.Click += new System.EventHandler(this.deleteGVButton_Click);
+            // 
+            // questionDialog
+            // 
+            this.questionDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            this.questionDialog.Caption = "Confirm";
+            this.questionDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            this.questionDialog.Parent = null;
+            this.questionDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.questionDialog.Text = null;
+            // 
+            // errorDialog
+            // 
+            this.errorDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.errorDialog.Caption = "Error";
+            this.errorDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.errorDialog.Parent = null;
+            this.errorDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.errorDialog.Text = null;
+            // 
+            // successDialog
+            // 
+            this.successDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.successDialog.Caption = null;
+            this.successDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.successDialog.Parent = null;
+            this.successDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.successDialog.Text = null;
+            // 
+            // warningMessage
+            // 
+            this.warningMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.warningMessage.Caption = "Warning";
+            this.warningMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.warningMessage.Parent = null;
+            this.warningMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.warningMessage.Text = null;
+            // 
             // ChiTietGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.deleteGVButton);
             this.Controls.Add(this.ngaySinhGV);
             this.Controls.Add(this.xoaLopHocButton);
             this.Controls.Add(this.themLopHocButton);
@@ -416,5 +478,10 @@
         private Guna.UI2.WinForms.Guna2Button themLopHocButton;
         private Guna.UI2.WinForms.Guna2Button xoaLopHocButton;
         private Guna.UI2.WinForms.Guna2DateTimePicker ngaySinhGV;
+        private Guna.UI2.WinForms.Guna2Button deleteGVButton;
+        private Guna.UI2.WinForms.Guna2MessageDialog questionDialog;
+        private Guna.UI2.WinForms.Guna2MessageDialog errorDialog;
+        private Guna.UI2.WinForms.Guna2MessageDialog successDialog;
+        private Guna.UI2.WinForms.Guna2MessageDialog warningMessage;
     }
 }

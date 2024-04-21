@@ -41,13 +41,15 @@
             this.emailGV = new Guna.UI2.WinForms.Guna2TextBox();
             this.maGV = new Guna.UI2.WinForms.Guna2TextBox();
             this.birthDateGV = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.warningMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.successMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(260, 10);
+            this.label1.Location = new System.Drawing.Point(223, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(319, 31);
             this.label1.TabIndex = 0;
@@ -64,11 +66,12 @@
             this.themGVbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.themGVbtn.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.themGVbtn.ForeColor = System.Drawing.Color.White;
-            this.themGVbtn.Location = new System.Drawing.Point(221, 505);
+            this.themGVbtn.Location = new System.Drawing.Point(184, 499);
             this.themGVbtn.Name = "themGVbtn";
             this.themGVbtn.Size = new System.Drawing.Size(180, 40);
             this.themGVbtn.TabIndex = 11;
             this.themGVbtn.Text = "Thêm";
+            this.themGVbtn.Click += new System.EventHandler(this.themGVbtn_Click);
             // 
             // huyGVbtn
             // 
@@ -80,11 +83,12 @@
             this.huyGVbtn.FillColor = System.Drawing.Color.Gold;
             this.huyGVbtn.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.huyGVbtn.ForeColor = System.Drawing.Color.White;
-            this.huyGVbtn.Location = new System.Drawing.Point(440, 505);
+            this.huyGVbtn.Location = new System.Drawing.Point(403, 499);
             this.huyGVbtn.Name = "huyGVbtn";
             this.huyGVbtn.Size = new System.Drawing.Size(180, 40);
             this.huyGVbtn.TabIndex = 12;
             this.huyGVbtn.Text = "Hủy";
+            this.huyGVbtn.Click += new System.EventHandler(this.huyGVbtn_Click);
             // 
             // genderGV
             // 
@@ -96,7 +100,10 @@
             this.genderGV.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.genderGV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.genderGV.ItemHeight = 30;
-            this.genderGV.Location = new System.Drawing.Point(221, 392);
+            this.genderGV.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.genderGV.Location = new System.Drawing.Point(184, 386);
             this.genderGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.genderGV.Name = "genderGV";
             this.genderGV.Size = new System.Drawing.Size(399, 36);
@@ -112,7 +119,17 @@
             this.academicRankGV.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.academicRankGV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.academicRankGV.ItemHeight = 30;
-            this.academicRankGV.Location = new System.Drawing.Point(221, 443);
+            this.academicRankGV.Items.AddRange(new object[] {
+            "GS",
+            "PGS",
+            "TS",
+            "ThS",
+            "NCS",
+            "CN",
+            "GS.TS",
+            "PGS.TS",
+            "ThS.NCS"});
+            this.academicRankGV.Location = new System.Drawing.Point(184, 437);
             this.academicRankGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.academicRankGV.Name = "academicRankGV";
             this.academicRankGV.Size = new System.Drawing.Size(399, 36);
@@ -130,7 +147,7 @@
             this.addressGV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.addressGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.addressGV.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.address;
-            this.addressGV.Location = new System.Drawing.Point(221, 306);
+            this.addressGV.Location = new System.Drawing.Point(184, 300);
             this.addressGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.addressGV.Name = "addressGV";
             this.addressGV.PasswordChar = '\0';
@@ -151,7 +168,7 @@
             this.passwordGV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.passwordGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passwordGV.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources._lock;
-            this.passwordGV.Location = new System.Drawing.Point(221, 265);
+            this.passwordGV.Location = new System.Drawing.Point(184, 259);
             this.passwordGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.passwordGV.Name = "passwordGV";
             this.passwordGV.PasswordChar = '\0';
@@ -172,7 +189,7 @@
             this.phoneGV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.phoneGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phoneGV.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.phone;
-            this.phoneGV.Location = new System.Drawing.Point(221, 221);
+            this.phoneGV.Location = new System.Drawing.Point(184, 215);
             this.phoneGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.phoneGV.Name = "phoneGV";
             this.phoneGV.PasswordChar = '\0';
@@ -180,6 +197,7 @@
             this.phoneGV.SelectedText = "";
             this.phoneGV.Size = new System.Drawing.Size(399, 36);
             this.phoneGV.TabIndex = 5;
+            this.phoneGV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneGV_KeyPress);
             // 
             // fullNameGV
             // 
@@ -193,7 +211,7 @@
             this.fullNameGV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.fullNameGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fullNameGV.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.user;
-            this.fullNameGV.Location = new System.Drawing.Point(221, 177);
+            this.fullNameGV.Location = new System.Drawing.Point(184, 171);
             this.fullNameGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.fullNameGV.Name = "fullNameGV";
             this.fullNameGV.PasswordChar = '\0';
@@ -214,7 +232,7 @@
             this.cccdGV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cccdGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cccdGV.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.idcard;
-            this.cccdGV.Location = new System.Drawing.Point(221, 133);
+            this.cccdGV.Location = new System.Drawing.Point(184, 127);
             this.cccdGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.cccdGV.Name = "cccdGV";
             this.cccdGV.PasswordChar = '\0';
@@ -222,6 +240,7 @@
             this.cccdGV.SelectedText = "";
             this.cccdGV.Size = new System.Drawing.Size(399, 36);
             this.cccdGV.TabIndex = 3;
+            this.cccdGV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cccdGV_KeyPress);
             // 
             // emailGV
             // 
@@ -235,7 +254,7 @@
             this.emailGV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.emailGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailGV.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.email;
-            this.emailGV.Location = new System.Drawing.Point(221, 89);
+            this.emailGV.Location = new System.Drawing.Point(184, 83);
             this.emailGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.emailGV.Name = "emailGV";
             this.emailGV.PasswordChar = '\0';
@@ -256,7 +275,7 @@
             this.maGV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.maGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.maGV.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.id;
-            this.maGV.Location = new System.Drawing.Point(221, 45);
+            this.maGV.Location = new System.Drawing.Point(184, 39);
             this.maGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.maGV.Name = "maGV";
             this.maGV.PasswordChar = '\0';
@@ -271,7 +290,7 @@
             this.birthDateGV.FillColor = System.Drawing.Color.LightSkyBlue;
             this.birthDateGV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.birthDateGV.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.birthDateGV.Location = new System.Drawing.Point(221, 348);
+            this.birthDateGV.Location = new System.Drawing.Point(184, 342);
             this.birthDateGV.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.birthDateGV.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.birthDateGV.Name = "birthDateGV";
@@ -279,10 +298,29 @@
             this.birthDateGV.TabIndex = 41;
             this.birthDateGV.Value = new System.DateTime(2024, 4, 18, 11, 33, 27, 219);
             // 
+            // warningMessage
+            // 
+            this.warningMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.warningMessage.Caption = "Warning";
+            this.warningMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.warningMessage.Parent = null;
+            this.warningMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.warningMessage.Text = null;
+            // 
+            // successMessage
+            // 
+            this.successMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.successMessage.Caption = "Success";
+            this.successMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.successMessage.Parent = null;
+            this.successMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.successMessage.Text = null;
+            // 
             // ThemGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.Controls.Add(this.birthDateGV);
             this.Controls.Add(this.academicRankGV);
             this.Controls.Add(this.genderGV);
@@ -298,6 +336,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ThemGiangVien";
             this.Size = new System.Drawing.Size(808, 548);
+            this.Load += new System.EventHandler(this.ThemGiangVien_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,5 +357,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox genderGV;
         private Guna.UI2.WinForms.Guna2ComboBox academicRankGV;
         private Guna.UI2.WinForms.Guna2DateTimePicker birthDateGV;
+        private Guna.UI2.WinForms.Guna2MessageDialog warningMessage;
+        private Guna.UI2.WinForms.Guna2MessageDialog successMessage;
     }
 }

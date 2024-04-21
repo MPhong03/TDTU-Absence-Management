@@ -24,7 +24,6 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
 
         private void GiangVienForm_Load(object sender, EventArgs e)
         {
-             xoaGiangVienButton.Enabled = false;
              danhSachGiangVienDataGrid.DataSource = gv.HienDanhSachGV();
         }
 
@@ -36,6 +35,8 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
             if (quanTriVienForm != null)
             {
                 quanTriVienForm.addUserControl(uc);
+
+                this.Hide();
             }
         }
 

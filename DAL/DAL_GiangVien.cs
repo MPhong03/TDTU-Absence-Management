@@ -37,5 +37,67 @@ namespace DAL
 
             return giangVien;
         }
+
+        public string LayMaGiangVienGanNhat()
+        {
+            string cmd = "SELECT TOP 1 MaSoGiangVien FROM GiangVien ORDER BY MaSoGiangVien DESC";
+
+            DataRow row = Connection.selectQuery(cmd).Rows[0];
+
+            return row["MaSoGiangVien"].ToString();
+        }
+
+        public string KiemTraEmail(string email)
+        {
+            string cmd = "SELECT MaSoGiangVien FROM GiangVien WHERE Email = '" + email +"'";
+
+            DataRow row = Connection.selectQuery(cmd).Rows[0];
+
+            return row["MaSoGiangVien"].ToString();
+        }
+
+        public bool ThemGiangVien(DTO_GiangVien giangVien)
+        {
+            string cmd = "INSERT INTO GiangVien" +
+                "(MaSoGiangVien, Email, MatKhau, HoVaTen, NgaySinh, GioiTinh, HocHam, SoDienThoai, CCCD, DiaChi) " +
+                "VALUES (" 
+                + "'" + giangVien.MaSoGiangVien +  "'" + "," 
+                + "'" + giangVien.Email + "'" + ","
+                + "'" + giangVien.MatKhau + "'" + ","
+                + "N'" + giangVien.HoVaTen + "'" + ","
+                + "'" + giangVien.NgaySinh.ToString("yyyy-MM-dd") + "'" + ","
+                + "N'" + giangVien.GioiTinh + "'" + ","
+                + "N'" + giangVien.HocHam + "'" + ","
+                + "'" + giangVien.SoDienThoai + "'" + ","
+                + "'" + giangVien.CCCD + "'" + ","
+                + "N'" + giangVien.DiaChi +  "'" + ")";
+
+            return Connection.actionQuery(cmd);
+        }
+
+        public bool XoaGiangVien(string id)
+        {
+            string cmd = "DELETE FROM GiangVien WHERE MaSoGiangVien = '" + id + "'";
+
+            return Connection.actionQuery(cmd);
+        }
+
+        public bool SuaGiangVien(DTO_GiangVien giangVien)
+        {
+            string cmd = "UPDATE GiangVien SET " +
+                "Email = '" + giangVien.Email + "', " +
+                "MatKhau = '" + giangVien.MatKhau + "', " +
+                "HoVaTen = N'" + giangVien.HoVaTen + "', " +
+                "NgaySinh = '" + giangVien.NgaySinh.ToString("yyyy-MM-dd") + "', " +
+                "GioiTinh = N'" + giangVien.GioiTinh + "', " +
+                "HocHam = N'" + giangVien.HocHam + "', " +
+                "SoDienThoai = '" + giangVien.SoDienThoai + "', " +
+                "CCCD = '" + giangVien.CCCD + "', " +
+                "DiaChi = N'" + giangVien.DiaChi + "' " +
+                "WHERE MaSoGiangVien = '" + giangVien.MaSoGiangVien + "'";
+
+            return Connection.actionQuery(cmd);
+        }
+
     }
 }
