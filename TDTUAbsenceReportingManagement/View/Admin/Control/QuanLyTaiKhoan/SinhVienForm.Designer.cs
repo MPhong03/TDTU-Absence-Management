@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.nhapDanhSachSinhVienButton = new Guna.UI2.WinForms.Guna2Button();
             this.themSinhVienButton = new Guna.UI2.WinForms.Guna2Button();
             this.danhSachSinhVienDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -46,9 +46,9 @@
             this.nhapDanhSachSinhVienButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(164)))), ((int)(((byte)(77)))));
             this.nhapDanhSachSinhVienButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nhapDanhSachSinhVienButton.ForeColor = System.Drawing.Color.White;
-            this.nhapDanhSachSinhVienButton.Location = new System.Drawing.Point(430, 3);
+            this.nhapDanhSachSinhVienButton.Location = new System.Drawing.Point(405, 3);
             this.nhapDanhSachSinhVienButton.Name = "nhapDanhSachSinhVienButton";
-            this.nhapDanhSachSinhVienButton.Size = new System.Drawing.Size(290, 31);
+            this.nhapDanhSachSinhVienButton.Size = new System.Drawing.Size(405, 31);
             this.nhapDanhSachSinhVienButton.TabIndex = 6;
             this.nhapDanhSachSinhVienButton.Text = "Import CSV";
             // 
@@ -61,38 +61,38 @@
             this.themSinhVienButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
             this.themSinhVienButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.themSinhVienButton.ForeColor = System.Drawing.Color.White;
-            this.themSinhVienButton.Location = new System.Drawing.Point(85, 3);
+            this.themSinhVienButton.Location = new System.Drawing.Point(3, 3);
             this.themSinhVienButton.Name = "themSinhVienButton";
-            this.themSinhVienButton.Size = new System.Drawing.Size(290, 31);
+            this.themSinhVienButton.Size = new System.Drawing.Size(400, 31);
             this.themSinhVienButton.TabIndex = 5;
             this.themSinhVienButton.Text = "Thêm tài khoản";
             this.themSinhVienButton.Click += new System.EventHandler(this.themSinhVienButton_Click);
             // 
             // danhSachSinhVienDataGrid
             // 
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            this.danhSachSinhVienDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.danhSachSinhVienDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.danhSachSinhVienDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.danhSachSinhVienDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.danhSachSinhVienDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.danhSachSinhVienDataGrid.ColumnHeadersHeight = 18;
             this.danhSachSinhVienDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.danhSachSinhVienDataGrid.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.danhSachSinhVienDataGrid.DefaultCellStyle = dataGridViewCellStyle12;
             this.danhSachSinhVienDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.danhSachSinhVienDataGrid.Location = new System.Drawing.Point(3, 40);
             this.danhSachSinhVienDataGrid.Name = "danhSachSinhVienDataGrid";

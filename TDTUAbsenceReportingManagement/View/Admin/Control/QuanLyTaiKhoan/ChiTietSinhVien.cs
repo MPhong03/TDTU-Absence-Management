@@ -150,13 +150,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
                 sv.SuaTaiKhoanSV(maSV_sua.Text, emailSV_sua.Text, passwordSV_sua.Text, fullNameSV_sua.Text, birthDate,
                                     genderSV_sua.Text, phoneSV_sua.Text, cccdSV_sua.Text, academicRankSV_sua.Text, courseSV_sua.Text);
 
-                QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
-                QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
-
-                if (quanTriVienForm != null)
-                {
-                    quanTriVienForm.addUserControl(uc);
-                }
+                GoBack();
             }
         }
 
@@ -166,17 +160,16 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
             if(confirm == DialogResult.Yes)
             {
                 sv.XoaTaiKhoanSV(maSV_sua.Text);
-                QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
-                QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
-
-                if (quanTriVienForm != null)
-                {
-                    quanTriVienForm.addUserControl(uc);
-                }
+                GoBack();
             }
         }
 
         private void huy_sua_SVbtn_Click(object sender, EventArgs e)
+        {
+            GoBack();
+        }
+
+        private void GoBack()
         {
             QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
             QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;

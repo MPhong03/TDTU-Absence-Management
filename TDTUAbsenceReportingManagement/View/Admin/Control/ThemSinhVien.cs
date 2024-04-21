@@ -24,6 +24,8 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
             InitializeComponent();
             sv = new BUS_SinhVien();
             messageDIalogSV.Parent = this.ParentForm;
+            genderSV.SelectedIndex = 0;
+            academicRankSV.SelectedIndex = 0;
         }
 
         private void ThemSinhVien_Load(object sender, EventArgs e)
@@ -76,13 +78,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
                         sv.ThemTaiKhoanSV(maSV.Text, emailSV.Text, passwordSV.Text, fullNameSV.Text, birthDate,
                                             genderSV.Text, phoneSV.Text, cccdSV.Text, academicRankSV.Text, courseSV.Text);
 
-                        QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
-                        QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
-
-                        if (quanTriVienForm != null)
-                        {
-                            quanTriVienForm.addUserControl(uc);
-                        }
+                        GoBack();
                     }
                     else
                     {
@@ -97,13 +93,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
 
         private void huySVbtn_Click(object sender, EventArgs e)
         {
-            QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
-            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
-
-            if (quanTriVienForm != null)
-            {
-                quanTriVienForm.addUserControl(uc);
-            }
+            GoBack();
         }
 
         private void cccdSV_KeyPress(object sender, KeyPressEventArgs e)
@@ -218,6 +208,17 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
                 }
             }
             return false;
+        }
+
+        private void GoBack()
+        {
+            QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
+            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+
+            if (quanTriVienForm != null)
+            {
+                quanTriVienForm.addUserControl(uc);
+            }
         }
     }
 }

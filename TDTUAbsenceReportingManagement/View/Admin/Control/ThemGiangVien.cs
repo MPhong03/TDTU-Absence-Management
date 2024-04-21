@@ -41,13 +41,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
 
         private void huyGVbtn_Click(object sender, EventArgs e)
         {
-            GiangVienForm uc = new GiangVienForm();
-            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
-
-            if (quanTriVienForm != null)
-            {
-                quanTriVienForm.addUserControl(uc);
-            }
+           GoBack();
         }
 
         private void cccdGV_KeyPress(object sender, KeyPressEventArgs e)
@@ -142,10 +136,22 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
 
             if (result) {
                 successMessage.Show("Thêm giảng viên thành công!");
+                GoBack();
             }
             else
             {
                 warningMessage.Show("Xảy ra lỗi trong quá trình thêm!");
+            }
+        }
+
+        private void GoBack()
+        {
+            QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
+            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+
+            if (quanTriVienForm != null)
+            {
+                quanTriVienForm.addUserControl(uc);
             }
         }
     }
