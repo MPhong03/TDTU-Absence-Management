@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.genderSV_sua = new Guna.UI2.WinForms.Guna2ComboBox();
             this.courseSV_sua = new Guna.UI2.WinForms.Guna2TextBox();
             this.passwordSV_sua = new Guna.UI2.WinForms.Guna2TextBox();
@@ -44,6 +44,9 @@
             this.luu_sua_SVbtn = new Guna.UI2.WinForms.Guna2Button();
             this.danhsachLopHocDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
             this.birthDateSV_sua = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.xoaSVbtn = new Guna.UI2.WinForms.Guna2Button();
+            this.messageDialogCTSV = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.messageDialog_Xoa = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)(this.danhsachLopHocDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +110,7 @@
             this.passwordSV_sua.SelectedText = "";
             this.passwordSV_sua.Size = new System.Drawing.Size(320, 36);
             this.passwordSV_sua.TabIndex = 32;
+            this.passwordSV_sua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordSV_sua_KeyPress);
             // 
             // phoneSV_sua
             // 
@@ -128,6 +132,7 @@
             this.phoneSV_sua.SelectedText = "";
             this.phoneSV_sua.Size = new System.Drawing.Size(320, 36);
             this.phoneSV_sua.TabIndex = 31;
+            this.phoneSV_sua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneSV_sua_KeyPress);
             // 
             // fullNameSV_sua
             // 
@@ -170,6 +175,7 @@
             this.cccdSV_sua.SelectedText = "";
             this.cccdSV_sua.Size = new System.Drawing.Size(320, 36);
             this.cccdSV_sua.TabIndex = 29;
+            this.cccdSV_sua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cccdSV_sua_KeyPress);
             // 
             // emailSV_sua
             // 
@@ -240,14 +246,15 @@
             this.huy_sua_SVbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.huy_sua_SVbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.huy_sua_SVbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.huy_sua_SVbtn.FillColor = System.Drawing.Color.Gold;
+            this.huy_sua_SVbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(161)))), ((int)(((byte)(27)))));
             this.huy_sua_SVbtn.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.huy_sua_SVbtn.ForeColor = System.Drawing.Color.White;
-            this.huy_sua_SVbtn.Location = new System.Drawing.Point(413, 233);
+            this.huy_sua_SVbtn.Location = new System.Drawing.Point(533, 233);
             this.huy_sua_SVbtn.Name = "huy_sua_SVbtn";
-            this.huy_sua_SVbtn.Size = new System.Drawing.Size(320, 40);
+            this.huy_sua_SVbtn.Size = new System.Drawing.Size(200, 40);
             this.huy_sua_SVbtn.TabIndex = 38;
             this.huy_sua_SVbtn.Text = "Hủy";
+            this.huy_sua_SVbtn.Click += new System.EventHandler(this.huy_sua_SVbtn_Click);
             // 
             // luu_sua_SVbtn
             // 
@@ -261,31 +268,33 @@
             this.luu_sua_SVbtn.ForeColor = System.Drawing.Color.White;
             this.luu_sua_SVbtn.Location = new System.Drawing.Point(55, 233);
             this.luu_sua_SVbtn.Name = "luu_sua_SVbtn";
-            this.luu_sua_SVbtn.Size = new System.Drawing.Size(320, 40);
+            this.luu_sua_SVbtn.Size = new System.Drawing.Size(200, 40);
             this.luu_sua_SVbtn.TabIndex = 37;
             this.luu_sua_SVbtn.Text = "Lưu chỉnh sửa";
+            this.luu_sua_SVbtn.Click += new System.EventHandler(this.luu_sua_SVbtn_Click);
             // 
             // danhsachLopHocDataGrid
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.danhsachLopHocDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.danhsachLopHocDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.danhsachLopHocDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.danhsachLopHocDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            this.danhsachLopHocDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.danhsachLopHocDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.danhsachLopHocDataGrid.ColumnHeadersHeight = 4;
+            this.danhsachLopHocDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.danhsachLopHocDataGrid.DefaultCellStyle = dataGridViewCellStyle24;
             this.danhsachLopHocDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.danhsachLopHocDataGrid.Location = new System.Drawing.Point(55, 295);
             this.danhsachLopHocDataGrid.Name = "danhsachLopHocDataGrid";
@@ -305,7 +314,7 @@
             this.danhsachLopHocDataGrid.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.danhsachLopHocDataGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.danhsachLopHocDataGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.danhsachLopHocDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.danhsachLopHocDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.danhsachLopHocDataGrid.ThemeStyle.HeaderStyle.Height = 4;
             this.danhsachLopHocDataGrid.ThemeStyle.ReadOnly = false;
             this.danhsachLopHocDataGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -330,10 +339,46 @@
             this.birthDateSV_sua.TabIndex = 40;
             this.birthDateSV_sua.Value = new System.DateTime(2024, 4, 18, 11, 33, 27, 219);
             // 
+            // xoaSVbtn
+            // 
+            this.xoaSVbtn.BorderRadius = 10;
+            this.xoaSVbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.xoaSVbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.xoaSVbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.xoaSVbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.xoaSVbtn.FillColor = System.Drawing.Color.Red;
+            this.xoaSVbtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.xoaSVbtn.ForeColor = System.Drawing.Color.White;
+            this.xoaSVbtn.Location = new System.Drawing.Point(297, 233);
+            this.xoaSVbtn.Name = "xoaSVbtn";
+            this.xoaSVbtn.Size = new System.Drawing.Size(200, 40);
+            this.xoaSVbtn.TabIndex = 41;
+            this.xoaSVbtn.Text = "Xóa";
+            this.xoaSVbtn.Click += new System.EventHandler(this.xoaSVbtn_Click);
+            // 
+            // messageDialogCTSV
+            // 
+            this.messageDialogCTSV.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.messageDialogCTSV.Caption = null;
+            this.messageDialogCTSV.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.messageDialogCTSV.Parent = null;
+            this.messageDialogCTSV.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.messageDialogCTSV.Text = null;
+            // 
+            // messageDialog_Xoa
+            // 
+            this.messageDialog_Xoa.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            this.messageDialog_Xoa.Caption = null;
+            this.messageDialog_Xoa.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.messageDialog_Xoa.Parent = null;
+            this.messageDialog_Xoa.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.messageDialog_Xoa.Text = null;
+            // 
             // ChiTietSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.xoaSVbtn);
             this.Controls.Add(this.birthDateSV_sua);
             this.Controls.Add(this.danhsachLopHocDataGrid);
             this.Controls.Add(this.huy_sua_SVbtn);
@@ -369,5 +414,8 @@
         private Guna.UI2.WinForms.Guna2Button luu_sua_SVbtn;
         private Guna.UI2.WinForms.Guna2DataGridView danhsachLopHocDataGrid;
         private Guna.UI2.WinForms.Guna2DateTimePicker birthDateSV_sua;
+        private Guna.UI2.WinForms.Guna2Button xoaSVbtn;
+        private Guna.UI2.WinForms.Guna2MessageDialog messageDialogCTSV;
+        private Guna.UI2.WinForms.Guna2MessageDialog messageDialog_Xoa;
     }
 }

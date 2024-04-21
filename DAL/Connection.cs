@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DAL
@@ -18,12 +19,27 @@ namespace DAL
 
         }
 
-        public static void actionQuery(string sql)
+        public static bool actionQuery(string sql)
         {
-            connect();
-            SqlCommand cmd = new SqlCommand(sql, conn);
-
-            cmd.ExecuteNonQuery();
+            try
+            {
+                connect();
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception in actionQuery: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (conn != null && conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
         }
 
         public static DataTable selectQuery(string sql)
@@ -34,5 +50,6 @@ namespace DAL
             dataAdapter.Fill(dt);
             return dt;
         }
+
     }
 }

@@ -36,11 +36,12 @@
             this.courseSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.passwordSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.phoneSV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.fullNameGV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.fullNameSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.cccdSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.emailSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.maSV = new Guna.UI2.WinForms.Guna2TextBox();
             this.birthDateSV = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.messageDIalogSV = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.SuspendLayout();
             // 
             // academicRankSV
@@ -53,6 +54,10 @@
             this.academicRankSV.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.academicRankSV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.academicRankSV.ItemHeight = 30;
+            this.academicRankSV.Items.AddRange(new object[] {
+            "Khoa học máy tính",
+            "Kỹ thuật phần mềm",
+            "Mạng máy tính và truyền thông dữ liệu"});
             this.academicRankSV.Location = new System.Drawing.Point(205, 440);
             this.academicRankSV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.academicRankSV.Name = "academicRankSV";
@@ -69,6 +74,9 @@
             this.genderSV.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.genderSV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.genderSV.ItemHeight = 30;
+            this.genderSV.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.genderSV.Location = new System.Drawing.Point(205, 389);
             this.genderSV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.genderSV.Name = "genderSV";
@@ -90,6 +98,7 @@
             this.huySVbtn.Size = new System.Drawing.Size(180, 40);
             this.huySVbtn.TabIndex = 25;
             this.huySVbtn.Text = "Hủy";
+            this.huySVbtn.Click += new System.EventHandler(this.huySVbtn_Click);
             // 
             // themSVbtn
             // 
@@ -106,6 +115,7 @@
             this.themSVbtn.Size = new System.Drawing.Size(180, 40);
             this.themSVbtn.TabIndex = 24;
             this.themSVbtn.Text = "Thêm";
+            this.themSVbtn.Click += new System.EventHandler(this.themSVbtn_Click);
             // 
             // label1
             // 
@@ -138,6 +148,8 @@
             this.courseSV.SelectedText = "";
             this.courseSV.Size = new System.Drawing.Size(399, 36);
             this.courseSV.TabIndex = 22;
+            this.courseSV.TextChanged += new System.EventHandler(this.courseSV_TextChanged);
+            this.courseSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.courseSV_KeyPress);
             // 
             // passwordSV
             // 
@@ -159,6 +171,7 @@
             this.passwordSV.SelectedText = "";
             this.passwordSV.Size = new System.Drawing.Size(399, 36);
             this.passwordSV.TabIndex = 21;
+            this.passwordSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordSV_KeyPress);
             // 
             // phoneSV
             // 
@@ -180,27 +193,29 @@
             this.phoneSV.SelectedText = "";
             this.phoneSV.Size = new System.Drawing.Size(399, 36);
             this.phoneSV.TabIndex = 20;
+            this.phoneSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneSV_KeyPress);
             // 
-            // fullNameGV
+            // fullNameSV
             // 
-            this.fullNameGV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fullNameGV.DefaultText = "";
-            this.fullNameGV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.fullNameGV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.fullNameGV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fullNameGV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.fullNameGV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fullNameGV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.fullNameGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.fullNameGV.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.user;
-            this.fullNameGV.Location = new System.Drawing.Point(205, 174);
-            this.fullNameGV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.fullNameGV.Name = "fullNameGV";
-            this.fullNameGV.PasswordChar = '\0';
-            this.fullNameGV.PlaceholderText = "Họ và tên";
-            this.fullNameGV.SelectedText = "";
-            this.fullNameGV.Size = new System.Drawing.Size(399, 36);
-            this.fullNameGV.TabIndex = 19;
+            this.fullNameSV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fullNameSV.DefaultText = "";
+            this.fullNameSV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.fullNameSV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.fullNameSV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fullNameSV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.fullNameSV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fullNameSV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.fullNameSV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fullNameSV.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.user;
+            this.fullNameSV.Location = new System.Drawing.Point(205, 174);
+            this.fullNameSV.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.fullNameSV.Name = "fullNameSV";
+            this.fullNameSV.PasswordChar = '\0';
+            this.fullNameSV.PlaceholderText = "Họ và tên";
+            this.fullNameSV.SelectedText = "";
+            this.fullNameSV.Size = new System.Drawing.Size(399, 36);
+            this.fullNameSV.TabIndex = 19;
+            this.fullNameSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fullNameSV_KeyPress);
             // 
             // cccdSV
             // 
@@ -222,6 +237,7 @@
             this.cccdSV.SelectedText = "";
             this.cccdSV.Size = new System.Drawing.Size(399, 36);
             this.cccdSV.TabIndex = 18;
+            this.cccdSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cccdSV_KeyPress);
             // 
             // emailSV
             // 
@@ -279,6 +295,15 @@
             this.birthDateSV.TabIndex = 41;
             this.birthDateSV.Value = new System.DateTime(2024, 4, 18, 11, 33, 27, 219);
             // 
+            // messageDIalogSV
+            // 
+            this.messageDIalogSV.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.messageDIalogSV.Caption = null;
+            this.messageDIalogSV.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.messageDIalogSV.Parent = null;
+            this.messageDIalogSV.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.messageDIalogSV.Text = null;
+            // 
             // ThemSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -291,13 +316,14 @@
             this.Controls.Add(this.courseSV);
             this.Controls.Add(this.passwordSV);
             this.Controls.Add(this.phoneSV);
-            this.Controls.Add(this.fullNameGV);
+            this.Controls.Add(this.fullNameSV);
             this.Controls.Add(this.cccdSV);
             this.Controls.Add(this.emailSV);
             this.Controls.Add(this.maSV);
             this.Controls.Add(this.label1);
             this.Name = "ThemSinhVien";
             this.Size = new System.Drawing.Size(808, 548);
+            this.Load += new System.EventHandler(this.ThemSinhVien_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,11 +338,12 @@
         private Guna.UI2.WinForms.Guna2TextBox courseSV;
         private Guna.UI2.WinForms.Guna2TextBox passwordSV;
         private Guna.UI2.WinForms.Guna2TextBox phoneSV;
-        private Guna.UI2.WinForms.Guna2TextBox fullNameGV;
+        private Guna.UI2.WinForms.Guna2TextBox fullNameSV;
         private Guna.UI2.WinForms.Guna2TextBox cccdSV;
         private Guna.UI2.WinForms.Guna2TextBox emailSV;
         private Guna.UI2.WinForms.Guna2TextBox maSV;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DateTimePicker birthDateSV;
+        private Guna.UI2.WinForms.Guna2MessageDialog messageDIalogSV;
     }
 }

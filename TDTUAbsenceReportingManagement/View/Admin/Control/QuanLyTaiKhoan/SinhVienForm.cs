@@ -22,7 +22,6 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
 
         private void SinhVienForm_Load(object sender, EventArgs e)
         {
-            xoaSinhVienButton.Enabled = false;
             danhSachSinhVienDataGrid.DataSource = sv.HienDanhSachSV();
         }
 
