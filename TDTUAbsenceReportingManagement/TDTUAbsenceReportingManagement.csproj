@@ -110,6 +110,12 @@
     <Compile Include="View\Admin\Control\QuanLyTaiKhoan\GiangVienForm.Designer.cs">
       <DependentUpon>GiangVienForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\QuanLyLopHoc\ChiTietLopHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\QuanLyLopHoc\ChiTietLopHoc.Designer.cs">
+      <DependentUpon>ChiTietLopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Control\QuanLyTaiKhoan\SinhVienForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\GiangVienForm.resx">
       <DependentUpon>GiangVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\QuanLyLopHoc\ChiTietLopHoc.resx">
+      <DependentUpon>ChiTietLopHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\SinhVienForm.resx">
       <DependentUpon>SinhVienForm.cs</DependentUpon>
@@ -276,6 +285,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

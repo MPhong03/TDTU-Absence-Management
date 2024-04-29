@@ -11,13 +11,16 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan;
+using TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanLyLopHoc;
 
 namespace TDTUAbsenceReportingManagement.View.Admin.Control.ChiTietTaiKhoan
 {
     public partial class ChiTietGiangVien : UserControl
     {
         BUS_GiangVien bus_GiangVien;
+        BUS_LopDay bus_LopDay;
         private string maSoGiangVien = string.Empty;
+        private string maLopDayDangChon = string.Empty;
         private static string pattern = @"^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$";
         public ChiTietGiangVien(string maSoGiangVien)
         {
@@ -26,6 +29,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.ChiTietTaiKhoan
             this.maSoGiangVien = maSoGiangVien;
 
             bus_GiangVien = new BUS_GiangVien();
+            bus_LopDay = new BUS_LopDay();
 
             questionDialog.Parent = this.ParentForm;
             errorDialog.Parent = this.ParentForm;
@@ -50,6 +54,14 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.ChiTietTaiKhoan
                 ngaySinhGV.Value = gv.NgaySinh;
                 genderGV.SelectedItem = gv.GioiTinh;
                 academicRankGV.SelectedItem = gv.HocHam;
+
+                var gvClasses = bus_LopDay.DanhSachLopDayTheoMaSoGiangVien(gv.MaSoGiangVien);
+                if (gvClasses != null)
+                {
+                    danhSachLopDay.DataSource = gvClasses;
+                }
+
+                xoaLopHocButton.Enabled = false;
             }
         }
 
@@ -172,6 +184,77 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.ChiTietTaiKhoan
             if (!Regex.IsMatch(password, @"[A-Z]")) return false;
 
             return true;
+        }
+
+        private void themLopHocButton_Click(object sender, EventArgs e)
+        {
+            ChiTietLopHoc uc = new ChiTietLopHoc(maSoGiangVien, 0, false);
+            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+
+            if (quanTriVienForm != null)
+            {
+                quanTriVienForm.addUserControl(uc);
+
+                this.Hide();
+            }
+        }
+
+        private void danhSachLopDay_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < danhSachLopDay.Rows.Count - 1)
+            {
+                DataGridViewRow selectedRow = danhSachLopDay.SelectedRows[0];
+
+                maLopDayDangChon = selectedRow.Cells["MaLopDay"].Value.ToString();
+
+                xoaLopHocButton.Enabled = true;
+            }
+        }
+
+        private void xoaLopHocButton_Click(object sender, EventArgs e)
+        {
+            if (danhSachLopDay.SelectedRows.Count > 0)
+            {
+                DialogResult confirm = questionDialog.Show("Xác nhận xóa lớp dạy này");
+                if (confirm == DialogResult.Yes)
+                {
+                    var result = bus_LopDay.XoaLopDay(int.Parse(maLopDayDangChon));
+
+                    if (result)
+                    {
+                        DialogResult goBack = successDialog.Show("Xóa lớp dạy thành công");
+
+                        if (goBack == DialogResult.OK)
+                        {
+                            ChiTietGiangVien_Load(sender, e);
+                        }
+                    }
+                    else
+                    {
+                        errorDialog.Show("Xảy ra lỗi khi xóa lớp dạy");
+                    }
+                }
+            }
+        }
+
+        private void danhSachLopDay_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < danhSachLopDay.Rows.Count - 1)
+            {
+                DataGridViewRow selectedRow = danhSachLopDay.SelectedRows[0];
+
+                maLopDayDangChon = selectedRow.Cells["MaLopDay"].Value.ToString();
+
+                ChiTietLopHoc uc = new ChiTietLopHoc(maSoGiangVien, int.Parse(maLopDayDangChon), true);
+                QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+
+                if (quanTriVienForm != null)
+                {
+                    quanTriVienForm.addUserControl(uc);
+
+                    this.Hide();
+                }
+            }
         }
     }
 }

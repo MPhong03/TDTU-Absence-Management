@@ -19,21 +19,33 @@ namespace DAL
         public DTO_SinhVien HienThongTinSV(string maSV)
         {
             string cmd = "SELECT * FROM SinhVien WHERE MaSoSinhVien = '" + maSV + "'";
-            DataRow row = Connection.selectQuery(cmd).Rows[0];
-            DTO_SinhVien sinhvien = new DTO_SinhVien(
-                row["MaSoSinhVien"].ToString(),
-                row["Email"].ToString(),
-                row["MatKhau"].ToString(),
-                row["HoVaTen"].ToString(),
-                DateTime.Parse(row["NgaySinh"].ToString()),
-                row["GioiTinh"].ToString(),
-                row["SoDienThoai"].ToString(),
-                row["CCCD"].ToString(),
-                row["ChuyenNganh"].ToString(),
-                row["KhoaTuyenSinh"].ToString()
-            );
 
-            return sinhvien;
+            DataTable result = Connection.selectQuery(cmd);
+
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+                DTO_SinhVien sinhvien = new DTO_SinhVien(
+                    row["MaSoSinhVien"].ToString(),
+                    row["Email"].ToString(),
+                    row["MatKhau"].ToString(),
+                    row["HoVaTen"].ToString(),
+                    DateTime.Parse(row["NgaySinh"].ToString()),
+                    row["GioiTinh"].ToString(),
+                    row["SoDienThoai"].ToString(),
+                    row["CCCD"].ToString(),
+                    row["ChuyenNganh"].ToString(),
+                    row["KhoaTuyenSinh"].ToString()
+                );
+
+                return sinhvien;
+
+            }
+            else 
+            { 
+                return null; 
+            }
+
         }
 
         public DataTable getSVDesc()
@@ -57,7 +69,7 @@ namespace DAL
         public void ThemSinhVienMoi(string maSV,string email,string pass,string fname, DateTime dateBirth,
                                          string gender,string phone,string cccd, string academic,string course)
         {
-            String cmd = "INSERT INTO SinhVien VALUES ('" +maSV+ "','" +email+ "','" +pass+ "',N'" +fname+ "','" +dateBirth+ "'," +
+            String cmd = "INSERT INTO SinhVien VALUES ('" +maSV+ "','" +email+ "','" +pass+ "',N'" +fname+ "','" +dateBirth.ToString("yyyy-MM-dd") + "'," +
                                                         "N'" + gender+ "','" +phone+ "','" +cccd+ "',N'" + academic+ "','" +course+ "')";
             Connection.actionQuery(cmd);
         }
@@ -65,7 +77,7 @@ namespace DAL
         public void SuaSinhVien(string maSV, string email, string pass, string fname, DateTime dateBirth,
                                         string gender, string phone, string cccd, string academic, string course)
         {
-            String cmd = "UPDATE SinhVien SET Email = '" + email + "', MatKhau = '" + pass + "', HoVaTen = N'" + fname + "', NgaySinh = '" + dateBirth + "'," +
+            String cmd = "UPDATE SinhVien SET Email = '" + email + "', MatKhau = '" + pass + "', HoVaTen = N'" + fname + "', NgaySinh = '" + dateBirth.ToString("yyyy-MM-dd") + "'," +
                                                         "GioiTinh = N'" + gender + "', SoDienThoai = '" + phone + "', CCCD = '" + cccd + "', " +
                                                         "ChuyenNganh = N'" + academic + "' WHERE MaSoSinhVien = '" +maSV+ "' AND KhoaTuyenSinh = '" + course + "'";
             Connection.actionQuery(cmd);

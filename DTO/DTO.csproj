@@ -42,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO_GiangVien.cs" />
+    <Compile Include="DTO_LopDay.cs" />
+    <Compile Include="DTO_LopDay_NgayDay.cs" />
+    <Compile Include="DTO_MonHoc.cs" />
     <Compile Include="DTO_QuanTriVien.cs" />
     <Compile Include="DTO_SinhVien.cs" />
+    <Compile Include="DTO_SinhVien_LopDay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

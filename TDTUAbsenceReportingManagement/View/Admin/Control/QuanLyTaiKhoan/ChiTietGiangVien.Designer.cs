@@ -33,16 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.academicRankGV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.genderGV = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.addressGV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.passwordGV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.phoneGV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.fullNameGV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cccdGV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.emailGV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.maGV = new Guna.UI2.WinForms.Guna2TextBox();
             this.saveChangeButton = new Guna.UI2.WinForms.Guna2Button();
             this.cancelButton = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.danhSachLopDay = new Guna.UI2.WinForms.Guna2DataGridView();
             this.themLopHocButton = new Guna.UI2.WinForms.Guna2Button();
             this.xoaLopHocButton = new Guna.UI2.WinForms.Guna2Button();
             this.ngaySinhGV = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -51,7 +44,14 @@
             this.errorDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.successDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.warningMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            this.addressGV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.passwordGV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.phoneGV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.fullNameGV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cccdGV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.emailGV = new Guna.UI2.WinForms.Guna2TextBox();
+            this.maGV = new Guna.UI2.WinForms.Guna2TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachLopDay)).BeginInit();
             this.SuspendLayout();
             // 
             // academicRankGV
@@ -98,6 +98,200 @@
             this.genderGV.Name = "genderGV";
             this.genderGV.Size = new System.Drawing.Size(382, 36);
             this.genderGV.TabIndex = 23;
+            // 
+            // saveChangeButton
+            // 
+            this.saveChangeButton.BorderRadius = 10;
+            this.saveChangeButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.saveChangeButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.saveChangeButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.saveChangeButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.saveChangeButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
+            this.saveChangeButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.saveChangeButton.ForeColor = System.Drawing.Color.White;
+            this.saveChangeButton.Location = new System.Drawing.Point(17, 220);
+            this.saveChangeButton.Name = "saveChangeButton";
+            this.saveChangeButton.Size = new System.Drawing.Size(255, 31);
+            this.saveChangeButton.TabIndex = 25;
+            this.saveChangeButton.Text = "Lưu chỉnh sửa";
+            this.saveChangeButton.Click += new System.EventHandler(this.saveChangeButton_Click);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.BorderRadius = 10;
+            this.cancelButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.cancelButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.cancelButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.cancelButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.cancelButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(161)))), ((int)(((byte)(27)))));
+            this.cancelButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
+            this.cancelButton.Location = new System.Drawing.Point(540, 220);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(255, 31);
+            this.cancelButton.TabIndex = 26;
+            this.cancelButton.Text = "Hủy";
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // danhSachLopDay
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.danhSachLopDay.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.danhSachLopDay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.danhSachLopDay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.danhSachLopDay.ColumnHeadersHeight = 18;
+            this.danhSachLopDay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.danhSachLopDay.DefaultCellStyle = dataGridViewCellStyle3;
+            this.danhSachLopDay.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.danhSachLopDay.Location = new System.Drawing.Point(17, 257);
+            this.danhSachLopDay.Name = "danhSachLopDay";
+            this.danhSachLopDay.RowHeadersVisible = false;
+            this.danhSachLopDay.RowHeadersWidth = 51;
+            this.danhSachLopDay.RowTemplate.Height = 24;
+            this.danhSachLopDay.Size = new System.Drawing.Size(778, 238);
+            this.danhSachLopDay.TabIndex = 27;
+            this.danhSachLopDay.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.danhSachLopDay.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.danhSachLopDay.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.danhSachLopDay.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.danhSachLopDay.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.danhSachLopDay.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.danhSachLopDay.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.danhSachLopDay.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.danhSachLopDay.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.danhSachLopDay.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.danhSachLopDay.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.danhSachLopDay.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.danhSachLopDay.ThemeStyle.HeaderStyle.Height = 18;
+            this.danhSachLopDay.ThemeStyle.ReadOnly = false;
+            this.danhSachLopDay.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.danhSachLopDay.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.danhSachLopDay.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.danhSachLopDay.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.danhSachLopDay.ThemeStyle.RowsStyle.Height = 24;
+            this.danhSachLopDay.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.danhSachLopDay.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.danhSachLopDay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachLopDay_CellClick);
+            this.danhSachLopDay.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachLopDay_CellDoubleClick);
+            // 
+            // themLopHocButton
+            // 
+            this.themLopHocButton.BorderRadius = 10;
+            this.themLopHocButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.themLopHocButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.themLopHocButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.themLopHocButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.themLopHocButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
+            this.themLopHocButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.themLopHocButton.ForeColor = System.Drawing.Color.White;
+            this.themLopHocButton.Location = new System.Drawing.Point(17, 501);
+            this.themLopHocButton.Name = "themLopHocButton";
+            this.themLopHocButton.Size = new System.Drawing.Size(383, 31);
+            this.themLopHocButton.TabIndex = 28;
+            this.themLopHocButton.Text = "Thêm lớp học";
+            this.themLopHocButton.Click += new System.EventHandler(this.themLopHocButton_Click);
+            // 
+            // xoaLopHocButton
+            // 
+            this.xoaLopHocButton.BorderRadius = 10;
+            this.xoaLopHocButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.xoaLopHocButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.xoaLopHocButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.xoaLopHocButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.xoaLopHocButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
+            this.xoaLopHocButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.xoaLopHocButton.ForeColor = System.Drawing.Color.White;
+            this.xoaLopHocButton.Location = new System.Drawing.Point(406, 501);
+            this.xoaLopHocButton.Name = "xoaLopHocButton";
+            this.xoaLopHocButton.Size = new System.Drawing.Size(389, 31);
+            this.xoaLopHocButton.TabIndex = 29;
+            this.xoaLopHocButton.Text = "Xóa lớp học";
+            this.xoaLopHocButton.Click += new System.EventHandler(this.xoaLopHocButton_Click);
+            // 
+            // ngaySinhGV
+            // 
+            this.ngaySinhGV.BackColor = System.Drawing.Color.White;
+            this.ngaySinhGV.Checked = true;
+            this.ngaySinhGV.FillColor = System.Drawing.Color.LightSkyBlue;
+            this.ngaySinhGV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ngaySinhGV.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ngaySinhGV.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.ngaySinhGV.Location = new System.Drawing.Point(409, 128);
+            this.ngaySinhGV.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.ngaySinhGV.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.ngaySinhGV.Name = "ngaySinhGV";
+            this.ngaySinhGV.Size = new System.Drawing.Size(386, 36);
+            this.ngaySinhGV.TabIndex = 30;
+            this.ngaySinhGV.Value = new System.DateTime(2024, 4, 18, 11, 33, 17, 21);
+            // 
+            // deleteGVButton
+            // 
+            this.deleteGVButton.BorderRadius = 10;
+            this.deleteGVButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteGVButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteGVButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteGVButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteGVButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
+            this.deleteGVButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.deleteGVButton.ForeColor = System.Drawing.Color.White;
+            this.deleteGVButton.Location = new System.Drawing.Point(279, 220);
+            this.deleteGVButton.Name = "deleteGVButton";
+            this.deleteGVButton.Size = new System.Drawing.Size(255, 31);
+            this.deleteGVButton.TabIndex = 31;
+            this.deleteGVButton.Text = "Xóa";
+            this.deleteGVButton.Click += new System.EventHandler(this.deleteGVButton_Click);
+            // 
+            // questionDialog
+            // 
+            this.questionDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            this.questionDialog.Caption = "Confirm";
+            this.questionDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            this.questionDialog.Parent = null;
+            this.questionDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.questionDialog.Text = null;
+            // 
+            // errorDialog
+            // 
+            this.errorDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.errorDialog.Caption = "Error";
+            this.errorDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+            this.errorDialog.Parent = null;
+            this.errorDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.errorDialog.Text = null;
+            // 
+            // successDialog
+            // 
+            this.successDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.successDialog.Caption = null;
+            this.successDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.successDialog.Parent = null;
+            this.successDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.successDialog.Text = null;
+            // 
+            // warningMessage
+            // 
+            this.warningMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.warningMessage.Caption = "Warning";
+            this.warningMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.warningMessage.Parent = null;
+            this.warningMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.warningMessage.Text = null;
             // 
             // addressGV
             // 
@@ -246,202 +440,16 @@
             this.maGV.Size = new System.Drawing.Size(382, 36);
             this.maGV.TabIndex = 15;
             // 
-            // saveChangeButton
-            // 
-            this.saveChangeButton.BorderRadius = 10;
-            this.saveChangeButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.saveChangeButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.saveChangeButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.saveChangeButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.saveChangeButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
-            this.saveChangeButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.saveChangeButton.ForeColor = System.Drawing.Color.White;
-            this.saveChangeButton.Location = new System.Drawing.Point(17, 220);
-            this.saveChangeButton.Name = "saveChangeButton";
-            this.saveChangeButton.Size = new System.Drawing.Size(255, 31);
-            this.saveChangeButton.TabIndex = 25;
-            this.saveChangeButton.Text = "Lưu chỉnh sửa";
-            this.saveChangeButton.Click += new System.EventHandler(this.saveChangeButton_Click);
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.BorderRadius = 10;
-            this.cancelButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.cancelButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.cancelButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.cancelButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.cancelButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(161)))), ((int)(((byte)(27)))));
-            this.cancelButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cancelButton.ForeColor = System.Drawing.Color.White;
-            this.cancelButton.Location = new System.Drawing.Point(540, 220);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(255, 31);
-            this.cancelButton.TabIndex = 26;
-            this.cancelButton.Text = "Hủy";
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // guna2DataGridView1
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeight = 4;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(17, 257);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.RowHeadersWidth = 51;
-            this.guna2DataGridView1.RowTemplate.Height = 24;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(778, 238);
-            this.guna2DataGridView1.TabIndex = 27;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 24;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // themLopHocButton
-            // 
-            this.themLopHocButton.BorderRadius = 10;
-            this.themLopHocButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.themLopHocButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.themLopHocButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.themLopHocButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.themLopHocButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
-            this.themLopHocButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.themLopHocButton.ForeColor = System.Drawing.Color.White;
-            this.themLopHocButton.Location = new System.Drawing.Point(17, 501);
-            this.themLopHocButton.Name = "themLopHocButton";
-            this.themLopHocButton.Size = new System.Drawing.Size(383, 31);
-            this.themLopHocButton.TabIndex = 28;
-            this.themLopHocButton.Text = "Thêm lớp học";
-            // 
-            // xoaLopHocButton
-            // 
-            this.xoaLopHocButton.BorderRadius = 10;
-            this.xoaLopHocButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.xoaLopHocButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.xoaLopHocButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.xoaLopHocButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.xoaLopHocButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
-            this.xoaLopHocButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.xoaLopHocButton.ForeColor = System.Drawing.Color.White;
-            this.xoaLopHocButton.Location = new System.Drawing.Point(406, 501);
-            this.xoaLopHocButton.Name = "xoaLopHocButton";
-            this.xoaLopHocButton.Size = new System.Drawing.Size(389, 31);
-            this.xoaLopHocButton.TabIndex = 29;
-            this.xoaLopHocButton.Text = "Xóa lớp học";
-            // 
-            // ngaySinhGV
-            // 
-            this.ngaySinhGV.BackColor = System.Drawing.Color.White;
-            this.ngaySinhGV.Checked = true;
-            this.ngaySinhGV.FillColor = System.Drawing.Color.LightSkyBlue;
-            this.ngaySinhGV.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ngaySinhGV.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ngaySinhGV.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.ngaySinhGV.Location = new System.Drawing.Point(409, 128);
-            this.ngaySinhGV.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.ngaySinhGV.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.ngaySinhGV.Name = "ngaySinhGV";
-            this.ngaySinhGV.Size = new System.Drawing.Size(386, 36);
-            this.ngaySinhGV.TabIndex = 30;
-            this.ngaySinhGV.Value = new System.DateTime(2024, 4, 18, 11, 33, 17, 21);
-            // 
-            // deleteGVButton
-            // 
-            this.deleteGVButton.BorderRadius = 10;
-            this.deleteGVButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.deleteGVButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.deleteGVButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.deleteGVButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.deleteGVButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
-            this.deleteGVButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.deleteGVButton.ForeColor = System.Drawing.Color.White;
-            this.deleteGVButton.Location = new System.Drawing.Point(279, 220);
-            this.deleteGVButton.Name = "deleteGVButton";
-            this.deleteGVButton.Size = new System.Drawing.Size(255, 31);
-            this.deleteGVButton.TabIndex = 31;
-            this.deleteGVButton.Text = "Xóa";
-            this.deleteGVButton.Click += new System.EventHandler(this.deleteGVButton_Click);
-            // 
-            // questionDialog
-            // 
-            this.questionDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
-            this.questionDialog.Caption = "Confirm";
-            this.questionDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
-            this.questionDialog.Parent = null;
-            this.questionDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.questionDialog.Text = null;
-            // 
-            // errorDialog
-            // 
-            this.errorDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.errorDialog.Caption = "Error";
-            this.errorDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.errorDialog.Parent = null;
-            this.errorDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.errorDialog.Text = null;
-            // 
-            // successDialog
-            // 
-            this.successDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.successDialog.Caption = null;
-            this.successDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-            this.successDialog.Parent = null;
-            this.successDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.successDialog.Text = null;
-            // 
-            // warningMessage
-            // 
-            this.warningMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.warningMessage.Caption = "Warning";
-            this.warningMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
-            this.warningMessage.Parent = null;
-            this.warningMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.warningMessage.Text = null;
-            // 
             // ChiTietGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.Controls.Add(this.deleteGVButton);
             this.Controls.Add(this.ngaySinhGV);
             this.Controls.Add(this.xoaLopHocButton);
             this.Controls.Add(this.themLopHocButton);
-            this.Controls.Add(this.guna2DataGridView1);
+            this.Controls.Add(this.danhSachLopDay);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.saveChangeButton);
             this.Controls.Add(this.academicRankGV);
@@ -456,7 +464,7 @@
             this.Name = "ChiTietGiangVien";
             this.Size = new System.Drawing.Size(808, 543);
             this.Load += new System.EventHandler(this.ChiTietGiangVien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachLopDay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,7 +482,7 @@
         private Guna.UI2.WinForms.Guna2TextBox maGV;
         private Guna.UI2.WinForms.Guna2Button saveChangeButton;
         private Guna.UI2.WinForms.Guna2Button cancelButton;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView danhSachLopDay;
         private Guna.UI2.WinForms.Guna2Button themLopHocButton;
         private Guna.UI2.WinForms.Guna2Button xoaLopHocButton;
         private Guna.UI2.WinForms.Guna2DateTimePicker ngaySinhGV;

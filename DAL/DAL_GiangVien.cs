@@ -20,22 +20,33 @@ namespace DAL
         {
             string cmd = "SELECT * FROM GiangVien WHERE MaSoGiangVien = '" + maSoGiangVien + "'";
 
-            DataRow row = Connection.selectQuery(cmd).Rows[0];
+            DataTable result = Connection.selectQuery(cmd);
 
-            DTO_GiangVien giangVien = new DTO_GiangVien(
-                row["MaSoGiangVien"].ToString(),
-                row["Email"].ToString(),
-                row["MatKhau"].ToString(),
-                row["HoVaTen"].ToString(),
-                DateTime.Parse(row["NgaySinh"].ToString()),
-                row["GioiTinh"].ToString(),
-                row["HocHam"].ToString(),
-                row["SoDienThoai"].ToString(),
-                row["CCCD"].ToString(),
-                row["DiaChi"].ToString()
-            );
+            if (result.Rows.Count > 0 )
+            {
+                DataRow row = result.Rows[0];
 
-            return giangVien;
+                DTO_GiangVien giangVien = new DTO_GiangVien(
+                    row["MaSoGiangVien"].ToString(),
+                    row["Email"].ToString(),
+                    row["MatKhau"].ToString(),
+                    row["HoVaTen"].ToString(),
+                    DateTime.Parse(row["NgaySinh"].ToString()),
+                    row["GioiTinh"].ToString(),
+                    row["HocHam"].ToString(),
+                    row["SoDienThoai"].ToString(),
+                    row["CCCD"].ToString(),
+                    row["DiaChi"].ToString()
+                );
+
+                return giangVien;
+
+            }
+            else
+            {
+                return null;
+            }
+
         }
 
         public string LayMaGiangVienGanNhat()
