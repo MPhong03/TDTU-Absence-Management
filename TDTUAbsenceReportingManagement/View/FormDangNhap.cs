@@ -3,7 +3,9 @@ using DAL;
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using TDTUAbsenceReportingManagement.Data;
 using TDTUAbsenceReportingManagement.View.Admin;
+using TDTUAbsenceReportingManagement.View.Lecturers;
 
 namespace TDTUAbsenceReportingManagement
 {
@@ -35,6 +37,7 @@ namespace TDTUAbsenceReportingManagement
                 Debug.Write(success);
                 if (success)
                 {
+                    Session.Login(email, role);
                     switch (role)
                     {
                         case "Quản trị viên":
@@ -46,6 +49,10 @@ namespace TDTUAbsenceReportingManagement
                             break;
                         case "Giảng viên":
                             successDialog.Show();
+                            ActorGiangVienForm gvForm = new ActorGiangVienForm();
+                            gvForm.Show();
+
+                            this.Hide();
                             break;
                         case "Sinh viên":
                             successDialog.Show();

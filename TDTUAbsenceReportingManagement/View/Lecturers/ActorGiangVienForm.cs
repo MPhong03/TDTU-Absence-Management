@@ -7,18 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TDTUAbsenceReportingManagement.Data;
 using TDTUAbsenceReportingManagement.View.Admin.Control;
-using TDTUAbsenceReportingManagement.View.Lecturers;
+using TDTUAbsenceReportingManagement.View.Admin;
+using TDTUAbsenceReportingManagement.View.Lecturers.Control;
+using TDTUAbsenceReportingManagement.Data;
 
-namespace TDTUAbsenceReportingManagement.View.Admin
+namespace TDTUAbsenceReportingManagement.View.Lecturers
 {
-    public partial class QuanTriVienForm : Form
+    public partial class ActorGiangVienForm : Form
     {
-        public QuanTriVienForm()
+        public ActorGiangVienForm()
         {
             InitializeComponent();
-            AdminTrangChuForm uc = new AdminTrangChuForm();
+
+            TrangChuGiangVien uc = new TrangChuGiangVien();
             addUserControl(uc);
 
             currentUser.Text = Session.Username;
@@ -27,39 +29,38 @@ namespace TDTUAbsenceReportingManagement.View.Admin
         internal void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
-            adminContainerControl.Controls.Clear();
-            adminContainerControl.Controls.Add(userControl);
+            lecturerContainerControl.Controls.Clear();
+            lecturerContainerControl.Controls.Add(userControl);
             userControl.BringToFront();
         }
 
         private void homeTabButton_Click(object sender, EventArgs e)
         {
-            AdminTrangChuForm uc = new AdminTrangChuForm();
-            addUserControl(uc);
-            //homeTabButton.HoverState
-        }
-
-        private void accountManageTabButton_Click(object sender, EventArgs e)
-        {
-            QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
+            TrangChuGiangVien uc = new TrangChuGiangVien();
             addUserControl(uc);
         }
 
-        private void baoVangTabButton_Click(object sender, EventArgs e)
+        private void notificationTabButton_Click(object sender, EventArgs e)
         {
-            QuanLyBaoVangForm uc = new QuanLyBaoVangForm();
+            ThongBaoGiangVien uc = new ThongBaoGiangVien();
             addUserControl(uc);
         }
 
-        private void baoBuTabButton_Click(object sender, EventArgs e)
+        private void guiBaoVangTabButton_Click(object sender, EventArgs e)
         {
-            QuanLyBaoBuForm uc = new QuanLyBaoBuForm();
+            GuiBaoVangControl uc = new GuiBaoVangControl();
             addUserControl(uc);
         }
 
-        private void courseTabButton_Click(object sender, EventArgs e)
+        private void guiBaoBuTabButton_Click(object sender, EventArgs e)
         {
-            QuanLyMonHocForm uc = new QuanLyMonHocForm();
+            GuiBaoBuControl uc = new GuiBaoBuControl();
+            addUserControl(uc);
+        }
+
+        private void quanlyLopHocTabButton_Click(object sender, EventArgs e)
+        {
+            QuanLyLopDayPhuTrach uc = new QuanLyLopDayPhuTrach();
             addUserControl(uc);
         }
 

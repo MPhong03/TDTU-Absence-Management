@@ -123,6 +123,16 @@ namespace TDTUAbsenceReportingManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap caret_down {
+            get {
+                object obj = ResourceManager.GetObject("caret-down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clock {
             get {
                 object obj = ResourceManager.GetObject("clock", resourceCulture);
@@ -176,6 +186,16 @@ namespace TDTUAbsenceReportingManagement.Properties {
         internal static System.Drawing.Bitmap exit__1_ {
             get {
                 object obj = ResourceManager.GetObject("exit (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("exit (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +353,29 @@ namespace TDTUAbsenceReportingManagement.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap notify {
+            get {
+                object obj = ResourceManager.GetObject("notify", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap phone {
             get {
                 object obj = ResourceManager.GetObject("phone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profile {
+            get {
+                object obj = ResourceManager.GetObject("profile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

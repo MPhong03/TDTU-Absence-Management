@@ -10,9 +10,6 @@ namespace DAL
 {
     public class DAL_Auth
     {
-        // Attributes
-        private static string emailSession;
-        private static string roleSession;
 
         public bool DangNhapQuanTriVien(string email, string password, string role)
         {
@@ -20,9 +17,6 @@ namespace DAL
 
             if (Connection.selectQuery(cmd).Rows.Count > 0)
             {
-                // Lưu thông tin đăng nhập
-                emailSession = email;
-                roleSession = role;
 
                 return true;
             }
@@ -38,9 +32,6 @@ namespace DAL
 
             if (Connection.selectQuery(cmd).Rows.Count > 0)
             {
-                // Lưu thông tin đăng nhập
-                emailSession = email;
-                roleSession = role;
 
                 return true;
             }
@@ -56,9 +47,6 @@ namespace DAL
 
             if (Connection.selectQuery(cmd).Rows.Count > 0)
             {
-                // Lưu thông tin đăng nhập
-                emailSession = email;
-                roleSession = role;
 
                 return true;
             }
@@ -66,17 +54,6 @@ namespace DAL
             {
                 return false;
             }
-        }
-
-        public void DangXuat()
-        {
-            emailSession = string.Empty; roleSession = string.Empty;
-        }
-
-        public bool KiemTraDangNhap()
-        {
-            if (emailSession == string.Empty || roleSession == string.Empty) return false;
-            return true;
         }
     }
 }

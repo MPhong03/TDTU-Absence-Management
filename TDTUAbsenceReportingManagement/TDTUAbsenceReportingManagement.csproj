@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Session.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,6 +149,42 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Lecturers\ActorGiangVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Lecturers\ActorGiangVienForm.Designer.cs">
+      <DependentUpon>ActorGiangVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\GuiBaoBuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\GuiBaoBuControl.Designer.cs">
+      <DependentUpon>GuiBaoBuControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\GuiBaoVangControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\GuiBaoVangControl.Designer.cs">
+      <DependentUpon>GuiBaoVangControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\QuanLyLopDayPhuTrach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\QuanLyLopDayPhuTrach.Designer.cs">
+      <DependentUpon>QuanLyLopDayPhuTrach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\ThongBaoGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\ThongBaoGiangVien.Designer.cs">
+      <DependentUpon>ThongBaoGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\TrangChuGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\TrangChuGiangVien.Designer.cs">
+      <DependentUpon>TrangChuGiangVien.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\Admin\Control\AdminTrangChuForm.resx">
       <DependentUpon>AdminTrangChuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +231,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Lecturers\ActorGiangVienForm.resx">
+      <DependentUpon>ActorGiangVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Lecturers\Control\GuiBaoBuControl.resx">
+      <DependentUpon>GuiBaoBuControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Lecturers\Control\GuiBaoVangControl.resx">
+      <DependentUpon>GuiBaoVangControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Lecturers\Control\QuanLyLopDayPhuTrach.resx">
+      <DependentUpon>QuanLyLopDayPhuTrach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Lecturers\Control\ThongBaoGiangVien.resx">
+      <DependentUpon>ThongBaoGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Lecturers\Control\TrangChuGiangVien.resx">
+      <DependentUpon>TrangChuGiangVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -306,6 +361,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\caret-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit %281%291.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
