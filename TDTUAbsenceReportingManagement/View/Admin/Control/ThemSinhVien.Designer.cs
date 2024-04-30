@@ -90,7 +90,7 @@
             this.huySVbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.huySVbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.huySVbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.huySVbtn.FillColor = System.Drawing.Color.Gold;
+            this.huySVbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(161)))), ((int)(((byte)(27)))));
             this.huySVbtn.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.huySVbtn.ForeColor = System.Drawing.Color.White;
             this.huySVbtn.Location = new System.Drawing.Point(424, 502);
@@ -107,7 +107,7 @@
             this.themSVbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.themSVbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.themSVbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.themSVbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.themSVbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(164)))), ((int)(((byte)(77)))));
             this.themSVbtn.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.themSVbtn.ForeColor = System.Drawing.Color.White;
             this.themSVbtn.Location = new System.Drawing.Point(205, 502);

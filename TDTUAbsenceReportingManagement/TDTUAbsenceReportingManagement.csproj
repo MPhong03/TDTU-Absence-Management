@@ -185,6 +185,12 @@
     <Compile Include="View\Lecturers\Control\TrangChuGiangVien.Designer.cs">
       <DependentUpon>TrangChuGiangVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Lecturers\Control\YeuCauBaoVang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\YeuCauBaoVang.Designer.cs">
+      <DependentUpon>YeuCauBaoVang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\Admin\Control\AdminTrangChuForm.resx">
       <DependentUpon>AdminTrangChuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Lecturers\Control\TrangChuGiangVien.resx">
       <DependentUpon>TrangChuGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Lecturers\Control\YeuCauBaoVang.resx">
+      <DependentUpon>YeuCauBaoVang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

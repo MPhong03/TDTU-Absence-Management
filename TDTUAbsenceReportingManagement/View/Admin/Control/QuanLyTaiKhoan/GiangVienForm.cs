@@ -30,7 +30,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
         private void themGiangVienButton_Click(object sender, EventArgs e)
         {
             ThemGiangVien uc = new ThemGiangVien();
-            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+            QuanTriVienForm quanTriVienForm = this.FindForm() as QuanTriVienForm;
 
             if (quanTriVienForm != null)
             {
@@ -48,7 +48,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
                 string maSoGiangVien = row.Cells["MaSoGiangVien"].Value.ToString();
 
                 ChiTietGiangVien uc = new ChiTietGiangVien(maSoGiangVien);
-                QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+                QuanTriVienForm quanTriVienForm = this.FindForm() as QuanTriVienForm;
 
                 if (quanTriVienForm != null)
                 {

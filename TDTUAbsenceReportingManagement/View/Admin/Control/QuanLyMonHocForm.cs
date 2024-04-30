@@ -23,10 +23,10 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
             bus_MH = new BUS_MonHoc();
             xoaMonHocButton.Enabled = false;
 
-            questionDialog.Parent = this.ParentForm;
-            errorDialog.Parent = this.ParentForm;
-            successDialog.Parent = this.ParentForm;
-            warningMessage.Parent = this.ParentForm;
+            questionDialog.Parent = this.FindForm();
+            errorDialog.Parent = this.FindForm();
+            successDialog.Parent = this.FindForm();
+            warningMessage.Parent = this.FindForm();
         }
 
         private void QuanLyMonHocForm_Load(object sender, EventArgs e)

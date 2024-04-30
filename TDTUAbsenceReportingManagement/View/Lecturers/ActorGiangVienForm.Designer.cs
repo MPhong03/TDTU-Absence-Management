@@ -289,6 +289,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Name = "ActorGiangVienForm";
             this.Text = "Giảng viên";
+            this.Load += new System.EventHandler(this.ActorGiangVienForm_Load);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();

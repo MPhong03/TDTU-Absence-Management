@@ -23,7 +23,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
         {
             InitializeComponent();
             sv = new BUS_SinhVien();
-            messageDIalogSV.Parent = this.ParentForm;
+            messageDIalogSV.Parent = this.FindForm();
             genderSV.SelectedIndex = 0;
             academicRankSV.SelectedIndex = 0;
         }
@@ -66,6 +66,12 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
             }
             else
             {
+                if (passwordSV.Text.Length < 6)
+                {
+                    messageDIalogSV.Show("Mật khẩu phải có ít nhất 6 ký tự");
+                    return;
+                }
+
                 if (!ValidatePassword(passwordSV.Text))
                 {
                     messageDIalogSV.Show("Mật khẩu không hợp lệ");
@@ -160,12 +166,12 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
                 messageDIalogSV.Show("Mật khẩu không nhận ký tự đặc biệt");
             }
 
-            if (passwordSV != null && passwordSV.TextLength >= 6 && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-                messageDIalogSV.Show("Mật khẩu có tối đa 6 ký tự");
-                return;
-            }
+            //if (passwordSV != null && passwordSV.TextLength >= 6 && !char.IsControl(e.KeyChar))
+            //{
+            //    e.Handled = true;
+            //    messageDIalogSV.Show("Mật khẩu có tối đa 6 ký tự");
+            //    return;
+            //}
 
             if (char.IsUpper(e.KeyChar) || char.IsDigit(e.KeyChar))
             {
@@ -213,7 +219,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
         private void GoBack()
         {
             QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
-            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+            QuanTriVienForm quanTriVienForm = this.FindForm() as QuanTriVienForm;
 
             if (quanTriVienForm != null)
             {

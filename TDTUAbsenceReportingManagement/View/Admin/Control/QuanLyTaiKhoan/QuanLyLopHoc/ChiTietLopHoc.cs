@@ -51,10 +51,10 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
                 this.maLopDay = maLopDayChinhSua;
             }
 
-            questionDialog.Parent = this.ParentForm;
-            errorDialog.Parent = this.ParentForm;
-            successDialog.Parent = this.ParentForm;
-            warningMessage.Parent = this.ParentForm;
+            questionDialog.Parent = this.FindForm();
+            errorDialog.Parent = this.FindForm();
+            successDialog.Parent = this.FindForm();
+            warningMessage.Parent = this.FindForm();
 
             xoaSVKhoiLop.Enabled = false;
         }
@@ -67,7 +67,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
         private void GoBack()
         {
             ChiTietGiangVien uc = new ChiTietGiangVien(maSoGiangVien);
-            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+            QuanTriVienForm quanTriVienForm = this.FindForm() as QuanTriVienForm;
 
             if (quanTriVienForm != null)
             {

@@ -25,6 +25,10 @@ namespace BUS
         {
             return gv.ChiTietGiangVien(maSoGiangVien);
         }
+        public DTO_GiangVien ChiTietGiangVienBangEmail(string email)
+        {
+            return gv.ChiTietGiangVienBangEmail(email);
+        }
         public bool ThemGiangVien(DTO_GiangVien giangVien)
         {
             return gv.ThemGiangVien(giangVien);

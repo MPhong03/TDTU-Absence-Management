@@ -48,7 +48,7 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers
 
         private void guiBaoVangTabButton_Click(object sender, EventArgs e)
         {
-            GuiBaoVangControl uc = new GuiBaoVangControl();
+            YeuCauBaoVang uc = new YeuCauBaoVang();
             addUserControl(uc);
         }
 
@@ -72,6 +72,17 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers
             {
                 Session.Logout();
 
+                FormDangNhap login = new FormDangNhap();
+                login.Show();
+
+                this.Hide();
+            }
+        }
+
+        private void ActorGiangVienForm_Load(object sender, EventArgs e)
+        {
+            if (!Session.IsLoggedIn)
+            {
                 FormDangNhap login = new FormDangNhap();
                 login.Show();
 

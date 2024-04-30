@@ -31,10 +31,10 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.ChiTietTaiKhoan
             bus_GiangVien = new BUS_GiangVien();
             bus_LopDay = new BUS_LopDay();
 
-            questionDialog.Parent = this.ParentForm;
-            errorDialog.Parent = this.ParentForm;
-            successDialog.Parent = this.ParentForm;
-            warningMessage.Parent = this.ParentForm;
+            questionDialog.Parent = this.FindForm();
+            errorDialog.Parent = this.FindForm();
+            successDialog.Parent = this.FindForm();
+            warningMessage.Parent = this.FindForm();
         }
 
         private void ChiTietGiangVien_Load(object sender, EventArgs e)
@@ -163,7 +163,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.ChiTietTaiKhoan
         private void GoBack()
         {
             QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
-            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+            QuanTriVienForm quanTriVienForm = this.FindForm() as QuanTriVienForm;
 
             if (quanTriVienForm != null)
             {
@@ -189,7 +189,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.ChiTietTaiKhoan
         private void themLopHocButton_Click(object sender, EventArgs e)
         {
             ChiTietLopHoc uc = new ChiTietLopHoc(maSoGiangVien, 0, false);
-            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+            QuanTriVienForm quanTriVienForm = this.FindForm() as QuanTriVienForm;
 
             if (quanTriVienForm != null)
             {
@@ -246,7 +246,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.ChiTietTaiKhoan
                 maLopDayDangChon = selectedRow.Cells["MaLopDay"].Value.ToString();
 
                 ChiTietLopHoc uc = new ChiTietLopHoc(maSoGiangVien, int.Parse(maLopDayDangChon), true);
-                QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+                QuanTriVienForm quanTriVienForm = this.FindForm() as QuanTriVienForm;
 
                 if (quanTriVienForm != null)
                 {

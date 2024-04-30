@@ -77,5 +77,16 @@ namespace TDTUAbsenceReportingManagement.View.Admin
                 this.Hide();
             }
         }
+
+        private void QuanTriVienForm_Load(object sender, EventArgs e)
+        {
+            if (!Session.IsLoggedIn)
+            {
+                FormDangNhap login = new FormDangNhap();
+                login.Show();
+
+                this.Hide();
+            }
+        }
     }
 }

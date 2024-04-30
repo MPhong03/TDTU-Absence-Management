@@ -23,8 +23,8 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
             InitializeComponent();
             this.maSoSinhVien = maSoSinhVien;
             sv = new BUS_SinhVien();
-            messageDialogCTSV.Parent = this.ParentForm;
-            messageDialog_Xoa.Parent = this.ParentForm;
+            messageDialogCTSV.Parent = this.FindForm();
+            messageDialog_Xoa.Parent = this.FindForm();
         }
 
         private void ChiTietSinhVien_Load(object sender, EventArgs e)
@@ -172,7 +172,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
         private void GoBack()
         {
             QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
-            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+            QuanTriVienForm quanTriVienForm = this.FindForm() as QuanTriVienForm;
 
             if (quanTriVienForm != null)
             {

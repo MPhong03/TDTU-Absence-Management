@@ -49,13 +49,54 @@ namespace DAL
 
         }
 
+        public DTO_GiangVien ChiTietGiangVienBangEmail(string email)
+        {
+            string cmd = "SELECT * FROM GiangVien WHERE Email = '" + email + "'";
+
+            DataTable result = Connection.selectQuery(cmd);
+
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+
+                DTO_GiangVien giangVien = new DTO_GiangVien(
+                    row["MaSoGiangVien"].ToString(),
+                    row["Email"].ToString(),
+                    row["MatKhau"].ToString(),
+                    row["HoVaTen"].ToString(),
+                    DateTime.Parse(row["NgaySinh"].ToString()),
+                    row["GioiTinh"].ToString(),
+                    row["HocHam"].ToString(),
+                    row["SoDienThoai"].ToString(),
+                    row["CCCD"].ToString(),
+                    row["DiaChi"].ToString()
+                );
+
+                return giangVien;
+
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
         public string LayMaGiangVienGanNhat()
         {
             string cmd = "SELECT TOP 1 MaSoGiangVien FROM GiangVien ORDER BY MaSoGiangVien DESC";
 
-            DataRow row = Connection.selectQuery(cmd).Rows[0];
+            DataTable result = Connection.selectQuery(cmd);
 
-            return row["MaSoGiangVien"].ToString();
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+                return row["MaSoGiangVien"].ToString();
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public string KiemTraEmail(string email)

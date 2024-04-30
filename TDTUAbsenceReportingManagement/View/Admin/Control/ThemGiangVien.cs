@@ -26,8 +26,8 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
 
             bus_GiangVien = new BUS_GiangVien();
 
-            successMessage.Parent = this.ParentForm;
-            warningMessage.Parent = this.ParentForm;
+            successMessage.Parent = this.FindForm();
+            warningMessage.Parent = this.FindForm();
 
             genderGV.SelectedIndex = 0;
             academicRankGV.SelectedIndex = 0;
@@ -147,7 +147,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
         private void GoBack()
         {
             QuanLyTaiKhoanForm uc = new QuanLyTaiKhoanForm();
-            QuanTriVienForm quanTriVienForm = this.ParentForm as QuanTriVienForm;
+            QuanTriVienForm quanTriVienForm = this.FindForm() as QuanTriVienForm;
 
             if (quanTriVienForm != null)
             {

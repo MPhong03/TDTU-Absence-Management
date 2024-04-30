@@ -289,6 +289,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.Name = "QuanTriVienForm";
             this.Text = "QuanTriVienForm";
+            this.Load += new System.EventHandler(this.QuanTriVienForm_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);

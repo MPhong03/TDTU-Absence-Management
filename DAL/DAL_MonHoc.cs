@@ -43,9 +43,17 @@ namespace DAL
         {
             string cmd = "SELECT TOP 1 MaSoMonHoc FROM MonHoc ORDER BY MaSoMonHoc DESC";
 
-            DataRow row = Connection.selectQuery(cmd).Rows[0];
+            DataTable result = Connection.selectQuery(cmd);
 
-            return row["MaSoMonHoc"].ToString();
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+                return row["MaSoMonHoc"].ToString();
+            }
+            else
+            {
+                return null;
+            }
         }
         public bool ThemMonHoc(DTO_MonHoc monHoc)
         {
