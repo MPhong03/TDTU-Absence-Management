@@ -12,9 +12,15 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
 {
     public partial class GuiBaoBuControl : UserControl
     {
-        public GuiBaoBuControl()
+        private string maBaoVang = string.Empty;
+        public GuiBaoBuControl(string id)
         {
             InitializeComponent();
+
+            this.maBaoVang = id;
+
+            label1.Text = "Gửi báo bù cho báo vắng: " + maBaoVang;
         }
+
     }
 }

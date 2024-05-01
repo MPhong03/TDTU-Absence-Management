@@ -52,12 +52,6 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers
             addUserControl(uc);
         }
 
-        private void guiBaoBuTabButton_Click(object sender, EventArgs e)
-        {
-            GuiBaoBuControl uc = new GuiBaoBuControl();
-            addUserControl(uc);
-        }
-
         private void quanlyLopHocTabButton_Click(object sender, EventArgs e)
         {
             QuanLyLopDayPhuTrach uc = new QuanLyLopDayPhuTrach();

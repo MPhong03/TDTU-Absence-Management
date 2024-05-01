@@ -58,6 +58,8 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
             }
 
             xoaYeuCauButton.Enabled = false;
+
+            baoBuButton.Enabled = false;
         }
 
         private void danhSachYeuCauBaoVang_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -69,6 +71,8 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
                 maBaoVangDangChon = selectedRow.Cells["MaBaoVang"].Value.ToString();
 
                 xoaYeuCauButton.Enabled = true;
+
+                baoBuButton.Enabled = true;
             }
         }
 
@@ -96,6 +100,19 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
                 {
                     errorDialog.Show("Xảy ra lỗi trong quá trình xóa yêu cầu này");
                 }
+            }
+        }
+
+        private void baoBuButton_Click(object sender, EventArgs e)
+        {
+            GuiBaoBuControl uc = new GuiBaoBuControl(maBaoVangDangChon);
+            ActorGiangVienForm form = this.FindForm() as ActorGiangVienForm;
+
+            if (form != null)
+            {
+                form.addUserControl(uc);
+
+                this.Hide();
             }
         }
     }

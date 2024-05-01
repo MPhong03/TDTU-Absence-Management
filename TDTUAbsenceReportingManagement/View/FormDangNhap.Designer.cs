@@ -37,6 +37,8 @@
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.unHideButton = new Guna.UI2.WinForms.Guna2Button();
+            this.hideButton = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // emailLogin
@@ -77,7 +79,7 @@
             this.passwordLogin.Location = new System.Drawing.Point(34, 178);
             this.passwordLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.passwordLogin.Name = "passwordLogin";
-            this.passwordLogin.PasswordChar = '\0';
+            this.passwordLogin.PasswordChar = '*';
             this.passwordLogin.PlaceholderText = "Mật khẩu";
             this.passwordLogin.SelectedText = "";
             this.passwordLogin.Size = new System.Drawing.Size(275, 40);
@@ -169,6 +171,38 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Quên mật khẩu?";
             // 
+            // unHideButton
+            // 
+            this.unHideButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.unHideButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.unHideButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.unHideButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.unHideButton.FillColor = System.Drawing.Color.White;
+            this.unHideButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.unHideButton.ForeColor = System.Drawing.Color.Black;
+            this.unHideButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.show;
+            this.unHideButton.Location = new System.Drawing.Point(272, 180);
+            this.unHideButton.Name = "unHideButton";
+            this.unHideButton.Size = new System.Drawing.Size(35, 35);
+            this.unHideButton.TabIndex = 8;
+            this.unHideButton.Click += new System.EventHandler(this.unHideButton_Click);
+            // 
+            // hideButton
+            // 
+            this.hideButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.hideButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.hideButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.hideButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.hideButton.FillColor = System.Drawing.Color.White;
+            this.hideButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.hideButton.ForeColor = System.Drawing.Color.Black;
+            this.hideButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.invisible;
+            this.hideButton.Location = new System.Drawing.Point(272, 180);
+            this.hideButton.Name = "hideButton";
+            this.hideButton.Size = new System.Drawing.Size(35, 35);
+            this.hideButton.TabIndex = 9;
+            this.hideButton.Click += new System.EventHandler(this.hideButton_Click);
+            // 
             // FormDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -176,6 +210,8 @@
             this.BackgroundImage = global::TDTUAbsenceReportingManagement.Properties.Resources._298221300_404727638419305_983374014522547219_n;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1006, 553);
+            this.Controls.Add(this.hideButton);
+            this.Controls.Add(this.unHideButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.loginButton);
@@ -201,6 +237,8 @@
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2Button unHideButton;
+        private Guna.UI2.WinForms.Guna2Button hideButton;
     }
 }
 

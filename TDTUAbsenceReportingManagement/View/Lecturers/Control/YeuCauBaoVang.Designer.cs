@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.xoaYeuCauButton = new Guna.UI2.WinForms.Guna2Button();
             this.themYeuCauBVButton = new Guna.UI2.WinForms.Guna2Button();
             this.danhSachYeuCauBaoVang = new Guna.UI2.WinForms.Guna2DataGridView();
             this.successDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.errorDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.warningDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.baoBuButton = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachYeuCauBaoVang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,9 +51,9 @@
             this.xoaYeuCauButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
             this.xoaYeuCauButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.xoaYeuCauButton.ForeColor = System.Drawing.Color.White;
-            this.xoaYeuCauButton.Location = new System.Drawing.Point(406, 17);
+            this.xoaYeuCauButton.Location = new System.Drawing.Point(539, 17);
             this.xoaYeuCauButton.Name = "xoaYeuCauButton";
-            this.xoaYeuCauButton.Size = new System.Drawing.Size(385, 31);
+            this.xoaYeuCauButton.Size = new System.Drawing.Size(252, 31);
             this.xoaYeuCauButton.TabIndex = 48;
             this.xoaYeuCauButton.Text = "Xóa yêu cầu";
             this.xoaYeuCauButton.Click += new System.EventHandler(this.xoaYeuCauButton_Click);
@@ -69,36 +70,36 @@
             this.themYeuCauBVButton.ForeColor = System.Drawing.Color.White;
             this.themYeuCauBVButton.Location = new System.Drawing.Point(13, 17);
             this.themYeuCauBVButton.Name = "themYeuCauBVButton";
-            this.themYeuCauBVButton.Size = new System.Drawing.Size(387, 31);
+            this.themYeuCauBVButton.Size = new System.Drawing.Size(257, 31);
             this.themYeuCauBVButton.TabIndex = 47;
             this.themYeuCauBVButton.Text = "Báo vắng";
             this.themYeuCauBVButton.Click += new System.EventHandler(this.themYeuCauBVButton_Click);
             // 
             // danhSachYeuCauBaoVang
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.danhSachYeuCauBaoVang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.danhSachYeuCauBaoVang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.danhSachYeuCauBaoVang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.danhSachYeuCauBaoVang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.danhSachYeuCauBaoVang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.danhSachYeuCauBaoVang.ColumnHeadersHeight = 18;
             this.danhSachYeuCauBaoVang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.danhSachYeuCauBaoVang.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.danhSachYeuCauBaoVang.DefaultCellStyle = dataGridViewCellStyle3;
             this.danhSachYeuCauBaoVang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.danhSachYeuCauBaoVang.Location = new System.Drawing.Point(13, 54);
             this.danhSachYeuCauBaoVang.Name = "danhSachYeuCauBaoVang";
@@ -157,10 +158,28 @@
             this.warningDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             this.warningDialog.Text = "Đăng nhập thành công!";
             // 
+            // baoBuButton
+            // 
+            this.baoBuButton.BorderRadius = 10;
+            this.baoBuButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.baoBuButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.baoBuButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.baoBuButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.baoBuButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(180)))), ((int)(((byte)(211)))));
+            this.baoBuButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.baoBuButton.ForeColor = System.Drawing.Color.White;
+            this.baoBuButton.Location = new System.Drawing.Point(276, 17);
+            this.baoBuButton.Name = "baoBuButton";
+            this.baoBuButton.Size = new System.Drawing.Size(257, 31);
+            this.baoBuButton.TabIndex = 50;
+            this.baoBuButton.Text = "Báo vắng";
+            this.baoBuButton.Click += new System.EventHandler(this.baoBuButton_Click);
+            // 
             // YeuCauBaoVang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.baoBuButton);
             this.Controls.Add(this.danhSachYeuCauBaoVang);
             this.Controls.Add(this.xoaYeuCauButton);
             this.Controls.Add(this.themYeuCauBVButton);
@@ -179,5 +198,6 @@
         private Guna.UI2.WinForms.Guna2MessageDialog successDialog;
         private Guna.UI2.WinForms.Guna2MessageDialog errorDialog;
         private Guna.UI2.WinForms.Guna2MessageDialog warningDialog;
+        private Guna.UI2.WinForms.Guna2Button baoBuButton;
     }
 }

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO_BaoBu.cs" />
     <Compile Include="DTO_BaoVang.cs" />
     <Compile Include="DTO_GiangVien.cs" />
     <Compile Include="DTO_LopDay.cs" />

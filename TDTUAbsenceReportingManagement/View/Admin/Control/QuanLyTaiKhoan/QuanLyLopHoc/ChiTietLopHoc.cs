@@ -100,10 +100,10 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
 
                 if (isEditForm)
                 {
-                    Tuple<DTO_LopDay, string[], string[]> tuple = bus_LD.ChiTietLopDayTheoMaLopDay(maLopDay);
+                    Tuple<DTO_LopDay, DTO_LopDay_NgayDay[], string[]> tuple = bus_LD.ChiTietLopDayTheoMaLopDay(maLopDay);
 
                     DTO_LopDay chiTietLopDay = tuple.Item1;
-                    string[] ngayDayDaCo = tuple.Item2;
+                    DTO_LopDay_NgayDay[] ngayDayDaCo = tuple.Item2;
                     string[] cacSinhVienDaCo = tuple.Item3;
 
                     DTO_MonHoc monDangDay = bus_MH.ChiTietMonHoc(chiTietLopDay.MaSoMonHoc);
@@ -113,14 +113,14 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
 
                     nhomHocInput.Text = chiTietLopDay.Nhom;
                     toHocInput.Text = chiTietLopDay.ToTH;
-                    phongHocInput.Text = chiTietLopDay.Phong;
+                    //phongHocInput.Text = chiTietLopDay.Phong;
                     soBuoiDayInput.Text = chiTietLopDay.SoBuoiDay.ToString();
-                    caDayInput.SelectedIndex = caDayInput.Items.IndexOf("Ca " + chiTietLopDay.CaDay);
+                    //caDayInput.SelectedIndex = caDayInput.Items.IndexOf("Ca " + chiTietLopDay.CaDay);
                     monHocInput.SelectedIndex = monHocInput.Items.IndexOf(text);
 
-                    foreach (string date in ngayDayDaCo)
+                    foreach (DTO_LopDay_NgayDay date in ngayDayDaCo)
                     {
-                        danhSachNgayDay.Rows.Add(DateTime.Parse(date));
+                        danhSachNgayDay.Rows.Add(date.NgayDay, date.CaDay, date.Phong, date.TrangThai);
                     }
 
                     List<string> missingMaSoSinhVien = new List<string>();
@@ -184,7 +184,10 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
         {
             DateTime date = ngayDay.Value;
 
-            danhSachNgayDay.Rows.Add(date);
+            string selectedCaDay = caDayInput.SelectedItem.ToString();
+            int caDay = int.Parse(selectedCaDay.Substring(3));
+
+            danhSachNgayDay.Rows.Add(date, caDay, phongHocInput.Text);
         }
 
         private void danhSachNgayDay_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -352,22 +355,20 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
         {
             string nhom = nhomHocInput.Text.Trim();
             string to = toHocInput.Text.Trim();
-            string phong = phongHocInput.Text.Trim();
             int soBuoiDay = int.Parse(soBuoiDayInput.Text);
-            int ca = int.Parse(caDayInput.Text.Substring(3));
             string monHoc = LayMaMonHoc(monHocInput.SelectedItem.ToString());
 
             // Kiểm tra xem đã nhập đủ thông tin chưa
-            if (string.IsNullOrEmpty(nhom) || string.IsNullOrEmpty(phong)
-                || !int.TryParse(soBuoiDayInput.Text, out soBuoiDay) || !int.TryParse(caDayInput.Text.Substring(3), out ca)
+            if (string.IsNullOrEmpty(nhom)
+                || !int.TryParse(soBuoiDayInput.Text, out soBuoiDay)
                 || string.IsNullOrEmpty(monHoc))
             {
-                Debug.WriteLine(nhom + " - " + to + " - " + phong + " - " + soBuoiDay + " - " + ca + " - " + monHoc);
+                Debug.WriteLine(nhom + " - " + to + " - " + soBuoiDay + " - " + monHoc);
                 warningMessage.Show("Vui lòng nhập đầy đủ thông tin");
                 return;
             }
 
-            string[] ngayDayList = LayDangSachNgayDay();
+            DTO_LopDay_NgayDay[] ngayDayList = LayDangSachNgayDay();
             string[] mssvList = LayDanhSachMSSV();
 
             if (ngayDayList.Length == 0 || mssvList.Length == 0)
@@ -378,11 +379,9 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
 
             DTO_LopDay lopDay = new DTO_LopDay(
                     maLopDay,
-                    ca,
                     soBuoiDay,
                     nhom,
                     to,
-                    phong,
                     maSoGiangVien,
                     monHoc
                 );
@@ -414,16 +413,23 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
             }
         }
 
-        private string[] LayDangSachNgayDay()
+        private DTO_LopDay_NgayDay[] LayDangSachNgayDay()
         {
-            List<string> ngayDayList = new List<string>();
+            List<DTO_LopDay_NgayDay> ngayDayList = new List<DTO_LopDay_NgayDay>();
 
             foreach (DataGridViewRow row in danhSachNgayDay.Rows)
             {
                 if (row.Cells["NgayDayColumn"].Value != null)
                 {
-                    string ngayDay = row.Cells["NgayDayColumn"].Value.ToString();
-                    ngayDayList.Add(ngayDay);
+                    DTO_LopDay_NgayDay dto = new DTO_LopDay_NgayDay(
+                            maLopDay,
+                            DateTime.Parse(row.Cells["NgayDayColumn"].Value.ToString()),
+                            int.Parse(row.Cells["CaDay"].Value.ToString()),
+                            row.Cells["Phong"].Value.ToString(),
+                            row.Cells["TrangThai"].Value.ToString()
+                        );
+
+                    ngayDayList.Add(dto);
                 }
             }
 
@@ -450,22 +456,20 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
         {
             string nhom = nhomHocInput.Text.Trim();
             string to = toHocInput.Text.Trim();
-            string phong = phongHocInput.Text.Trim();
             int soBuoiDay = int.Parse(soBuoiDayInput.Text);
-            int ca = int.Parse(caDayInput.Text.Substring(3));
             string monHoc = LayMaMonHoc(monHocInput.SelectedItem.ToString());
 
             // Kiểm tra xem đã nhập đủ thông tin chưa
-            if (string.IsNullOrEmpty(nhom) || string.IsNullOrEmpty(phong)
-                || !int.TryParse(soBuoiDayInput.Text, out soBuoiDay) || !int.TryParse(caDayInput.Text.Substring(3), out ca)
+            if (string.IsNullOrEmpty(nhom)
+                || !int.TryParse(soBuoiDayInput.Text, out soBuoiDay)
                 || string.IsNullOrEmpty(monHoc))
             {
-                Debug.WriteLine(nhom + " - " + to + " - " + phong + " - " + soBuoiDay + " - " + ca + " - " + monHoc);
+                Debug.WriteLine(nhom + " - " + to + " - " + soBuoiDay + " - " + monHoc);
                 warningMessage.Show("Vui lòng nhập đầy đủ thông tin");
                 return;
             }
 
-            string[] ngayDayList = LayDangSachNgayDay();
+            DTO_LopDay_NgayDay[] ngayDayList = LayDangSachNgayDay();
             string[] mssvList = LayDanhSachMSSV();
 
             if (ngayDayList.Length == 0 || mssvList.Length == 0)
@@ -476,11 +480,9 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
 
             DTO_LopDay lopDay = new DTO_LopDay(
                     maLopDay,
-                    ca,
                     soBuoiDay,
                     nhom,
                     to,
-                    phong,
                     maSoGiangVien,
                     monHoc
                 );

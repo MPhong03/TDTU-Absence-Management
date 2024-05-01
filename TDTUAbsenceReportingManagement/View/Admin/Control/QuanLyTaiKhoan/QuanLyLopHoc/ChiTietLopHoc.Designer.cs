@@ -38,7 +38,6 @@
             this.monHocInput = new Guna.UI2.WinForms.Guna2ComboBox();
             this.ngayDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.danhSachNgayDay = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.NgayDayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.themNgayDay = new Guna.UI2.WinForms.Guna2Button();
             this.xoaNgayDay = new Guna.UI2.WinForms.Guna2Button();
             this.themSVVaoLop = new Guna.UI2.WinForms.Guna2Button();
@@ -62,6 +61,9 @@
             this.questionDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.successDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.warningMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.NgayDayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CaDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachNgayDay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachSinhVien)).BeginInit();
             this.SuspendLayout();
@@ -82,9 +84,9 @@
             "Ca 3",
             "Ca 4",
             "Ca 5"});
-            this.caDayInput.Location = new System.Drawing.Point(15, 146);
+            this.caDayInput.Location = new System.Drawing.Point(212, 161);
             this.caDayInput.Name = "caDayInput";
-            this.caDayInput.Size = new System.Drawing.Size(382, 36);
+            this.caDayInput.Size = new System.Drawing.Size(185, 36);
             this.caDayInput.TabIndex = 22;
             // 
             // monHocInput
@@ -97,7 +99,7 @@
             this.monHocInput.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.monHocInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.monHocInput.ItemHeight = 30;
-            this.monHocInput.Location = new System.Drawing.Point(410, 149);
+            this.monHocInput.Location = new System.Drawing.Point(15, 107);
             this.monHocInput.Name = "monHocInput";
             this.monHocInput.Size = new System.Drawing.Size(382, 36);
             this.monHocInput.TabIndex = 23;
@@ -130,7 +132,9 @@
             this.danhSachNgayDay.ColumnHeadersHeight = 18;
             this.danhSachNgayDay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.danhSachNgayDay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NgayDayColumn});
+            this.NgayDayColumn,
+            this.CaDay,
+            this.Phong});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -140,12 +144,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.danhSachNgayDay.DefaultCellStyle = dataGridViewCellStyle3;
             this.danhSachNgayDay.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.danhSachNgayDay.Location = new System.Drawing.Point(410, 209);
+            this.danhSachNgayDay.Location = new System.Drawing.Point(410, 161);
             this.danhSachNgayDay.Name = "danhSachNgayDay";
             this.danhSachNgayDay.RowHeadersVisible = false;
             this.danhSachNgayDay.RowHeadersWidth = 51;
             this.danhSachNgayDay.RowTemplate.Height = 24;
-            this.danhSachNgayDay.Size = new System.Drawing.Size(382, 70);
+            this.danhSachNgayDay.Size = new System.Drawing.Size(382, 118);
             this.danhSachNgayDay.TabIndex = 25;
             this.danhSachNgayDay.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.danhSachNgayDay.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -169,12 +173,6 @@
             this.danhSachNgayDay.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.danhSachNgayDay.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.danhSachNgayDay.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachNgayDay_CellClick);
-            // 
-            // NgayDayColumn
-            // 
-            this.NgayDayColumn.HeaderText = "Ngày dạy";
-            this.NgayDayColumn.MinimumWidth = 6;
-            this.NgayDayColumn.Name = "NgayDayColumn";
             // 
             // themNgayDay
             // 
@@ -455,13 +453,13 @@
             this.phongHocInput.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.phongHocInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phongHocInput.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.image__3_;
-            this.phongHocInput.Location = new System.Drawing.Point(15, 107);
+            this.phongHocInput.Location = new System.Drawing.Point(15, 161);
             this.phongHocInput.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.phongHocInput.Name = "phongHocInput";
             this.phongHocInput.PasswordChar = '\0';
             this.phongHocInput.PlaceholderText = "Phòng";
             this.phongHocInput.SelectedText = "";
-            this.phongHocInput.Size = new System.Drawing.Size(382, 36);
+            this.phongHocInput.Size = new System.Drawing.Size(185, 39);
             this.phongHocInput.TabIndex = 20;
             // 
             // toHocInput
@@ -584,6 +582,24 @@
             this.warningMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.warningMessage.Text = null;
             // 
+            // NgayDayColumn
+            // 
+            this.NgayDayColumn.HeaderText = "Ngày dạy";
+            this.NgayDayColumn.MinimumWidth = 6;
+            this.NgayDayColumn.Name = "NgayDayColumn";
+            // 
+            // CaDay
+            // 
+            this.CaDay.HeaderText = "Ca Dạy";
+            this.CaDay.MinimumWidth = 6;
+            this.CaDay.Name = "CaDay";
+            // 
+            // Phong
+            // 
+            this.Phong.HeaderText = "Phòng";
+            this.Phong.MinimumWidth = 6;
+            this.Phong.Name = "Phong";
+            // 
             // ChiTietLopHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -642,12 +658,14 @@
         private Guna.UI2.WinForms.Guna2Button cancelButton;
         private Guna.UI2.WinForms.Guna2Button luuChinhSuaButton;
         private Guna.UI2.WinForms.Guna2TextBox giangVienPhuTrachInput;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayDayColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSoSinhVien;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoVaTen;
         private Guna.UI2.WinForms.Guna2MessageDialog errorDialog;
         private Guna.UI2.WinForms.Guna2MessageDialog questionDialog;
         private Guna.UI2.WinForms.Guna2MessageDialog successDialog;
         private Guna.UI2.WinForms.Guna2MessageDialog warningMessage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayDayColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CaDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phong;
     }
 }

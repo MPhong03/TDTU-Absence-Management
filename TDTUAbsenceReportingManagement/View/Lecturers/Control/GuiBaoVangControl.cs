@@ -115,15 +115,15 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
 
                 string maLopDay = selectedRow.Cells["MaLopDay"].Value.ToString();
 
-                Tuple<DTO_LopDay, string[], string[]> tuple = bus_LD.ChiTietLopDayTheoMaLopDay(int.Parse(maLopDay));
+                Tuple<DTO_LopDay, DTO_LopDay_NgayDay[], string[]> tuple = bus_LD.ChiTietLopDayTheoMaLopDay(int.Parse(maLopDay));
 
-                string[] ngayDayDaCo = tuple.Item2;
+                DTO_LopDay_NgayDay[] ngayDayDaCo = tuple.Item2;
 
                 ngayDayInput.Items.Clear();
 
-                foreach (var item in ngayDayDaCo)
+                foreach (DTO_LopDay_NgayDay item in ngayDayDaCo)
                 {
-                    ngayDayInput.Items.Add(item);
+                    ngayDayInput.Items.Add(item.NgayDay);
                 }
 
                 ngayDayInput.SelectedIndex = 0;

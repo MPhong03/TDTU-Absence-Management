@@ -75,5 +75,25 @@ namespace TDTUAbsenceReportingManagement
         {
             roleLogin.SelectedIndex = 0;
         }
+
+        private void unHideButton_Click(object sender, EventArgs e)
+        {
+            if (passwordLogin.PasswordChar == '\0')
+            {
+                hideButton.BringToFront();
+
+                passwordLogin.PasswordChar = '*';
+            }
+        }
+
+        private void hideButton_Click(object sender, EventArgs e)
+        {
+            if (passwordLogin.PasswordChar == '*')
+            {
+                unHideButton.BringToFront();
+
+                passwordLogin.PasswordChar = '\0';
+            }
+        }
     }
 }

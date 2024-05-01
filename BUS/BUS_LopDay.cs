@@ -24,11 +24,11 @@ namespace BUS
         {
             return dal_LopDay.DanhSachLopDayTheoEmailGiangVien(email);
         }
-        public bool ThemLopDay(DTO_LopDay lopDay, string[] ngayDayList, string[] mssvList)
+        public bool ThemLopDay(DTO_LopDay lopDay, DTO_LopDay_NgayDay[] ngayDayList, string[] mssvList)
         {
             return dal_LopDay.ThemLopDay(lopDay, ngayDayList, mssvList);
         }
-        public Tuple<DTO_LopDay, string[], string[]> ChiTietLopDayTheoMaLopDay(int maLopDay)
+        public Tuple<DTO_LopDay, DTO_LopDay_NgayDay[], string[]> ChiTietLopDayTheoMaLopDay(int maLopDay)
         {
             return dal_LopDay.ChiTietLopDayTheoMaLopDay(maLopDay);
         }
@@ -36,7 +36,7 @@ namespace BUS
         {
             return dal_LopDay.XoaLopDay(id);
         }
-        public bool ChinhSuaLopHoc(DTO_LopDay lopDay, string[] ngayDayList, string[] mssvList)
+        public bool ChinhSuaLopHoc(DTO_LopDay lopDay, DTO_LopDay_NgayDay[] ngayDayList, string[] mssvList)
         {
             try
             {

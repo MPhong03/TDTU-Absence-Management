@@ -12,8 +12,8 @@ namespace DAL
     {
         public DataTable DanhSachLopDayTheoMaSoGiangVien(string id)
         {
-            string cmd = "SELECT LopDay.MaLopDay, LopDay.CaDay, LopDay.SoBuoiDay, " +
-                 "LopDay.Nhom, LopDay.ToTH, LopDay.Phong, LopDay.MaSoGiangVien, " +
+            string cmd = "SELECT LopDay.MaLopDay, LopDay.SoBuoiDay, " +
+                 "LopDay.Nhom, LopDay.ToTH, LopDay.MaSoGiangVien, " +
                  "GiangVien.HoVaTen AS TenGiangVien, LopDay.MaSoMonHoc, MonHoc.TenMonHoc " +
                  "FROM LopDay " +
                  "INNER JOIN GiangVien ON LopDay.MaSoGiangVien = GiangVien.MaSoGiangVien " +
@@ -33,8 +33,8 @@ namespace DAL
         }
         public DataTable DanhSachLopDayTheoEmailGiangVien(string email)
         {
-            string cmd = "SELECT LopDay.MaLopDay, LopDay.CaDay, LopDay.SoBuoiDay, " +
-                 "LopDay.Nhom, LopDay.ToTH, LopDay.Phong, LopDay.MaSoGiangVien, " +
+            string cmd = "SELECT LopDay.MaLopDay, LopDay.SoBuoiDay, " +
+                 "LopDay.Nhom, LopDay.ToTH, LopDay.MaSoGiangVien, " +
                  "GiangVien.HoVaTen AS TenGiangVien, LopDay.MaSoMonHoc, MonHoc.TenMonHoc " +
                  "FROM LopDay " +
                  "INNER JOIN GiangVien ON LopDay.MaSoGiangVien = GiangVien.MaSoGiangVien " +
@@ -68,27 +68,25 @@ namespace DAL
                 return string.Empty;
             }
         }
-        public bool ThemLopDay(DTO_LopDay lopDay, string[] ngayDayList, string[] mssvList)
+        public bool ThemLopDay(DTO_LopDay lopDay, DTO_LopDay_NgayDay[] ngayDayList, string[] mssvList)
         {
             // Truy vấn để thêm thông tin lớp học vào bảng LopDay
             string cmd1 = "INSERT INTO LopDay " +
-                          "(MaLopDay, CaDay, SoBuoiDay, Nhom, ToTH, Phong, MaSoGiangVien, MaSoMonHoc) " +
+                          "(MaLopDay, SoBuoiDay, Nhom, ToTH, MaSoGiangVien, MaSoMonHoc) " +
                           "VALUES (" +
                           "'" + lopDay.MaLopDay + "', " +
-                          "'" + lopDay.CaDay + "', " +
                           "'" + lopDay.SoBuoiDay + "', " +
                           "'" + lopDay.Nhom + "', " +
                           "'" + lopDay.ToTH + "', " +
-                          "'" + lopDay.Phong + "', " +
                           "'" + lopDay.MaSoGiangVien + "', " +
                           "'" + lopDay.MaSoMonHoc + "')";
 
             // Truy vấn để thêm danh sách các ngày dạy của lớp vào bảng LopDay_NgayDay
             string cmd2 = "";
-            foreach (string ngayDay in ngayDayList)
+            foreach (DTO_LopDay_NgayDay ngayDay in ngayDayList)
             {
-                cmd2 += "INSERT INTO LopDay_NgayDay (NgayDay, MaLopDay) " +
-                        "VALUES ('" + DateTime.Parse(ngayDay).ToString("yyyy-MM-dd") + "', '" + lopDay.MaLopDay + "'); ";
+                cmd2 += "INSERT INTO LopDay_NgayDay (NgayDay, MaLopDay, CaDay, Phong, TrangThai) " +
+                        "VALUES ('" + ngayDay.NgayDay.ToString("yyyy-MM-dd") + "', '" + lopDay.MaLopDay + "', '" + ngayDay.CaDay + "', '" + ngayDay.Phong + "', '" + ngayDay.TrangThai + "'); ";
             }
 
             // Truy vấn để thêm danh sách các sinh viên vào lớp vào bảng SinhVien_LopDay
@@ -127,10 +125,10 @@ namespace DAL
                 return false;
             }
         }
-        public Tuple<DTO_LopDay, string[], string[]> ChiTietLopDayTheoMaLopDay(int maLopDay)
+        public Tuple<DTO_LopDay, DTO_LopDay_NgayDay[], string[]> ChiTietLopDayTheoMaLopDay(int maLopDay)
         {
             DTO_LopDay lopDay = null;
-            string[] ngayDayList = null;
+            DTO_LopDay_NgayDay[] ngayDayList = null;
             string[] mssvList = null;
 
             // Lấy thông tin từ bảng LopDay
@@ -139,10 +137,23 @@ namespace DAL
 
             if (dtLopDay.Rows.Count > 0)
             {
-                // Lấy thông tin từ bảng LopDay_NgayDay
-                string cmdLopDay_NgayDay = "SELECT NgayDay FROM LopDay_NgayDay WHERE MaLopDay = '" + maLopDay + "'";
+                string cmdLopDay_NgayDay = "SELECT * FROM LopDay_NgayDay WHERE MaLopDay = '" + maLopDay + "'";
                 DataTable dtLopDay_NgayDay = Connection.selectQuery(cmdLopDay_NgayDay);
-                ngayDayList = dtLopDay_NgayDay.AsEnumerable().Select(row => (row.Field<DateTime>("NgayDay")).ToString()).ToArray();
+
+                // Khởi tạo mảng DTO_LopDay_NgayDay
+                ngayDayList = new DTO_LopDay_NgayDay[dtLopDay_NgayDay.Rows.Count];
+
+                for (int i = 0; i < dtLopDay_NgayDay.Rows.Count; i++)
+                {
+                    DataRow rowLopDay_NgayDay = dtLopDay_NgayDay.Rows[i];
+                    ngayDayList[i] = new DTO_LopDay_NgayDay(
+                        int.Parse(rowLopDay_NgayDay["MaLopDay"].ToString()),
+                        DateTime.Parse(rowLopDay_NgayDay["NgayDay"].ToString()),
+                        int.Parse(rowLopDay_NgayDay["CaDay"].ToString()),
+                        rowLopDay_NgayDay["Phong"].ToString(),
+                        rowLopDay_NgayDay["TrangThai"].ToString()
+                    );
+                }
 
                 // Lấy thông tin từ bảng SinhVien_LopDay
                 string cmdSinhVien_LopDay = "SELECT MaSoSinhVien FROM SinhVien_LopDay WHERE MaLopDay = '" + maLopDay + "'";
@@ -152,11 +163,9 @@ namespace DAL
                 DataRow rowLopDay = dtLopDay.Rows[0];
                 lopDay = new DTO_LopDay(
                     int.Parse(rowLopDay["MaLopDay"].ToString()),
-                    int.Parse(rowLopDay["CaDay"].ToString()),
                     int.Parse(rowLopDay["SoBuoiDay"].ToString()),
                     rowLopDay["Nhom"].ToString(),
                     rowLopDay["ToTH"].ToString(),
-                    rowLopDay["Phong"].ToString(),
                     rowLopDay["MaSoGiangVien"].ToString(),
                     rowLopDay["MaSoMonHoc"].ToString()
                 );
