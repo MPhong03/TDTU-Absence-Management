@@ -1,0 +1,5 @@
+ALTER TABLE YeuCauBaoVang
+ADD MaLopDay int;
+
+ALTER TABLE YeuCauBaoVang
+ADD CONSTRAINT FK_YeuCauBaoVang_LopDay FOREIGN KEY (MaLopDay) REFERENCES LopDay(MaLopDay);
