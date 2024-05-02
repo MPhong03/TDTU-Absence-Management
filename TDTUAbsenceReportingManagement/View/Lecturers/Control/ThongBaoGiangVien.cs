@@ -35,5 +35,50 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
                 danhSachThongBao.DataSource = new DataTable();
             }
         }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            tieuDeFilter.Clear();
+            noiDungFilter.Clear();
+            danhSachThongBao.DataSource = bus_TB.DanhSachThongBaoCuaGiangVien(Session.Username);
+        }
+
+        private void tieuDeFilter_TextChanged(object sender, EventArgs e)
+        {
+            string filterExpression = GetFilter();
+            ((DataTable)danhSachThongBao.DataSource).DefaultView.RowFilter = filterExpression;
+        }
+
+        private void noiDungFilter_TextChanged(object sender, EventArgs e)
+        {
+            string filterExpression = GetFilter();
+            ((DataTable)danhSachThongBao.DataSource).DefaultView.RowFilter = filterExpression;
+
+        }
+
+        private string GetFilter()
+        {
+            string tieuDeFilterText = tieuDeFilter.Text.ToLower();
+            string noiDungFilterText = noiDungFilter.Text.ToLower();
+
+            // Xây dựng biểu thức lọc
+            string filterExpression = "";
+
+            if (!string.IsNullOrEmpty(tieuDeFilterText))
+            {
+                filterExpression += $"TieuDe LIKE '%{tieuDeFilterText}%'";
+            }
+
+            if (!string.IsNullOrEmpty(noiDungFilterText))
+            {
+                if (!string.IsNullOrEmpty(filterExpression))
+                {
+                    filterExpression += " AND ";
+                }
+                filterExpression += $"NoiDung LIKE '%{noiDungFilterText}%'";
+            }
+
+            return filterExpression;
+        }
     }
 }
