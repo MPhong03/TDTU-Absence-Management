@@ -172,7 +172,7 @@
             this.baoBuButton.Name = "baoBuButton";
             this.baoBuButton.Size = new System.Drawing.Size(257, 31);
             this.baoBuButton.TabIndex = 50;
-            this.baoBuButton.Text = "Báo vắng";
+            this.baoBuButton.Text = "Báo bù";
             this.baoBuButton.Click += new System.EventHandler(this.baoBuButton_Click);
             // 
             // YeuCauBaoVang

@@ -10,6 +10,14 @@ namespace DAL
 {
     public class DAL_BaoVang
     {
+        public DataTable DanhSachBaoVang()
+        {
+            string cmd = "SELECT YeuCauBaoVang.MaBaoVang, YeuCauBaoVang.NgayBaoVang, YeuCauBaoVang.LyDoBaoVang, YeuCauBaoVang.TrangThai, YeuCauBaoVang.MaLopDay, GiangVien.MaSoGiangVien, GiangVien.HoVaTen " +
+             "FROM YeuCauBaoVang " +
+             "INNER JOIN GiangVien ON YeuCauBaoVang.MaSoGiangVien = GiangVien.MaSoGiangVien";
+
+            return Connection.selectQuery(cmd);
+        }
         public bool ThemYeuCauBaoVang(DTO_BaoVang bv)
         {
             string cmd = "INSERT INTO YeuCauBaoVang" +
@@ -53,6 +61,35 @@ namespace DAL
         {
             string deleteQuery = "DELETE FROM YeuCauBaoVang WHERE MaBaoVang = '" + id + "'";
             return Connection.actionQuery(deleteQuery);
+        }
+        public DTO_BaoVang ChiTietBaoVang(int id)
+        {
+            string cmd = "SELECT * FROM YeuCauBaoVang WHERE MaBaoVang = '" + id + "'";
+
+            DataTable result = Connection.selectQuery(cmd);
+
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+
+                return new DTO_BaoVang(
+                        int.Parse(row["MaBaoVang"].ToString()),
+                        DateTime.Parse(row["NgayBaoVang"].ToString()),
+                        row["LyDoBaoVang"].ToString(),
+                        row["TrangThai"].ToString(),
+                        int.Parse(row["MaLopDay"].ToString()),
+                        row["MaSoGiangVien"].ToString()
+                    );
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public bool CapNhatTrangThaiYeuCauBaoVang(int id, string trangThai)
+        {
+            string cmd = "UPDATE YeuCauBaoVang SET TrangThai = N'" + trangThai + "' WHERE MaBaoVang = '" + id + "'";
+            return Connection.actionQuery(cmd);
         }
     }
 }

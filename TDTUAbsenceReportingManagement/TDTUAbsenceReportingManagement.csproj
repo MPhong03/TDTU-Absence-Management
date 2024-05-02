@@ -111,6 +111,12 @@
     <Compile Include="View\Admin\Control\QuanLyTaiKhoan\GiangVienForm.Designer.cs">
       <DependentUpon>GiangVienForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\QuanLyBaoVang\ChiTietBaoVang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\QuanLyBaoVang\ChiTietBaoVang.Designer.cs">
+      <DependentUpon>ChiTietBaoVang.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Control\QuanLyTaiKhoan\QuanLyLopHoc\ChiTietLopHoc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\GiangVienForm.resx">
       <DependentUpon>GiangVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\QuanLyBaoVang\ChiTietBaoVang.resx">
+      <DependentUpon>ChiTietBaoVang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\QuanLyLopHoc\ChiTietLopHoc.resx">
       <DependentUpon>ChiTietLopHoc.cs</DependentUpon>
@@ -388,6 +397,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\invisible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

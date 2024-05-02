@@ -48,6 +48,7 @@
     <Compile Include="DAL_LopDay.cs" />
     <Compile Include="DAL_MonHoc.cs" />
     <Compile Include="DAL_SinhVien.cs" />
+    <Compile Include="DAL_ThongBao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

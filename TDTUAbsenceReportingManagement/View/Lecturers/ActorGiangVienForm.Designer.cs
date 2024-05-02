@@ -102,7 +102,7 @@
             this.dangXuatTabButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dangXuatTabButton.ForeColor = System.Drawing.Color.Black;
             this.dangXuatTabButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
-            this.dangXuatTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.learning__1_;
+            this.dangXuatTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.exit__2_;
             this.dangXuatTabButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.exit__1_1;
             this.dangXuatTabButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.dangXuatTabButton.Location = new System.Drawing.Point(12, 210);

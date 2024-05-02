@@ -48,6 +48,7 @@
     <Compile Include="BUS_LopDay.cs" />
     <Compile Include="BUS_MonHoc.cs" />
     <Compile Include="BUS_SinhVien.cs" />
+    <Compile Include="BUS_ThongBao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

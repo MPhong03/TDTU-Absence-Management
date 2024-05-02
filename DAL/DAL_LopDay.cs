@@ -173,5 +173,47 @@ namespace DAL
 
             return Tuple.Create(lopDay, ngayDayList, mssvList);
         }
+
+        public DataRow ChiTietLopDayTheoNgay(int maLopDay, DateTime ngayDay)
+        {
+            string cmd = "SELECT ld.MaLopDay, ld.SoBuoiDay, ld.Nhom, ld.ToTH, ld.MaSoGiangVien, ld.MaSoMonHoc, ldn.NgayDay, ldn.CaDay, ldn.Phong, ldn.TrangThai " +
+                "FROM LopDay ld INNER JOIN LopDay_NgayDay ldn ON ld.MaLopDay = ldn.MaLopDay " +
+                "WHERE ld.MaLopDay = '" + maLopDay + "' AND ldn.NgayDay = '" + ngayDay.ToString("yyyy-MM-dd") + "'";
+
+            DataTable result = Connection.selectQuery(cmd);
+
+            if (result.Rows.Count > 0)
+            {
+                return result.Rows[0];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public string[] DanhSachSVTrongLopDay(int id)
+        {
+            string cmd = "SELECT MaSoSinhVien FROM SinhVien_LopDay WHERE MaLopDay = '" + id + "'";
+
+            DataTable result = Connection.selectQuery(cmd);
+
+            if (result.Rows.Count > 0)
+            {
+                List<string> maSoSinhVienList = new List<string>();
+
+                foreach (DataRow row in result.Rows)
+                {
+                    string maSoSinhVien = row["MaSoSinhVien"].ToString();
+                    maSoSinhVienList.Add(maSoSinhVien);
+                }
+
+                return maSoSinhVienList.ToArray();
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

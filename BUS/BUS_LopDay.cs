@@ -53,6 +53,14 @@ namespace BUS
                 return false;
             }
         }
+        public DataRow ChiTietLopDayTheoNgay(int id, DateTime ngay)
+        {
+            return dal_LopDay.ChiTietLopDayTheoNgay(id, ngay);
+        }
+        public string[] DanhSachSVTrongLopDay(int id)
+        {
+            return dal_LopDay.DanhSachSVTrongLopDay(id);
+        }
         public int TaoMaTuDong()
         {
             string currentID = dal_LopDay.LayMaLopDayGanNhat();
