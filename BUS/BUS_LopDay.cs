@@ -61,6 +61,14 @@ namespace BUS
         {
             return dal_LopDay.DanhSachSVTrongLopDay(id);
         }
+        public bool CapNhatTrangThaiNgayDay(int id, DateTime date, string status)
+        {
+            return dal_LopDay.CapNhatTrangThaiNgayDay(id, date, status);
+        }
+        public bool KiemTraDaCoCaDayTrongNgayDayTaiPhong(DateTime ngayDay, int caDay, string phongDay)
+        {
+            return dal_LopDay.KiemTraDaCoCaDayTrongNgayDayTaiPhong(ngayDay, caDay, phongDay);
+        }
         public int TaoMaTuDong()
         {
             string currentID = dal_LopDay.LayMaLopDayGanNhat();

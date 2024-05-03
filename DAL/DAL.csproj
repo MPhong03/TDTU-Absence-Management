@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="DAL_Auth.cs" />
+    <Compile Include="DAL_BaoBu.cs" />
     <Compile Include="DAL_BaoVang.cs" />
     <Compile Include="DAL_GiangVien.cs" />
     <Compile Include="DAL_LopDay.cs" />

@@ -51,13 +51,14 @@
             this.tieuDeChoSVInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.noiDungChoSVInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.applyTemplateButton = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(172, 9);
+            this.label1.Location = new System.Drawing.Point(293, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 29);
             this.label1.TabIndex = 0;
@@ -162,7 +163,7 @@
             this.lyDoText.PasswordChar = '\0';
             this.lyDoText.PlaceholderText = "Hello my friend...";
             this.lyDoText.SelectedText = "";
-            this.lyDoText.Size = new System.Drawing.Size(513, 121);
+            this.lyDoText.Size = new System.Drawing.Size(768, 121);
             this.lyDoText.TabIndex = 9;
             // 
             // label10
@@ -185,9 +186,9 @@
             this.acceptButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(164)))), ((int)(((byte)(77)))));
             this.acceptButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.acceptButton.ForeColor = System.Drawing.Color.White;
-            this.acceptButton.Location = new System.Drawing.Point(270, 560);
+            this.acceptButton.Location = new System.Drawing.Point(266, 560);
             this.acceptButton.Name = "acceptButton";
-            this.acceptButton.Size = new System.Drawing.Size(260, 31);
+            this.acceptButton.Size = new System.Drawing.Size(270, 31);
             this.acceptButton.TabIndex = 27;
             this.acceptButton.Text = "Đồng ý";
             this.acceptButton.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
@@ -205,7 +206,7 @@
             this.declineButton.ForeColor = System.Drawing.Color.White;
             this.declineButton.Location = new System.Drawing.Point(17, 560);
             this.declineButton.Name = "declineButton";
-            this.declineButton.Size = new System.Drawing.Size(247, 31);
+            this.declineButton.Size = new System.Drawing.Size(243, 31);
             this.declineButton.TabIndex = 28;
             this.declineButton.Text = "Từ chối";
             this.declineButton.Click += new System.EventHandler(this.declineButton_Click);
@@ -263,11 +264,12 @@
             this.tieuDeChoGVInput.PasswordChar = '\0';
             this.tieuDeChoGVInput.PlaceholderText = "Tiêu đề";
             this.tieuDeChoGVInput.SelectedText = "";
-            this.tieuDeChoGVInput.Size = new System.Drawing.Size(247, 35);
+            this.tieuDeChoGVInput.Size = new System.Drawing.Size(379, 35);
             this.tieuDeChoGVInput.TabIndex = 30;
             // 
             // noiDungChoGVInput
             // 
+            this.noiDungChoGVInput.AutoScroll = true;
             this.noiDungChoGVInput.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.noiDungChoGVInput.DefaultText = "";
             this.noiDungChoGVInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -283,15 +285,16 @@
             this.noiDungChoGVInput.Name = "noiDungChoGVInput";
             this.noiDungChoGVInput.PasswordChar = '\0';
             this.noiDungChoGVInput.PlaceholderText = "Nội dung";
+            this.noiDungChoGVInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.noiDungChoGVInput.SelectedText = "";
-            this.noiDungChoGVInput.Size = new System.Drawing.Size(247, 90);
+            this.noiDungChoGVInput.Size = new System.Drawing.Size(379, 90);
             this.noiDungChoGVInput.TabIndex = 31;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(42, 391);
+            this.label2.Location = new System.Drawing.Point(13, 391);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(201, 25);
             this.label2.TabIndex = 32;
@@ -308,17 +311,18 @@
             this.tieuDeChoSVInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tieuDeChoSVInput.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tieuDeChoSVInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tieuDeChoSVInput.Location = new System.Drawing.Point(270, 420);
+            this.tieuDeChoSVInput.Location = new System.Drawing.Point(402, 420);
             this.tieuDeChoSVInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tieuDeChoSVInput.Name = "tieuDeChoSVInput";
             this.tieuDeChoSVInput.PasswordChar = '\0';
             this.tieuDeChoSVInput.PlaceholderText = "Tiêu đề";
             this.tieuDeChoSVInput.SelectedText = "";
-            this.tieuDeChoSVInput.Size = new System.Drawing.Size(247, 35);
+            this.tieuDeChoSVInput.Size = new System.Drawing.Size(383, 35);
             this.tieuDeChoSVInput.TabIndex = 33;
             // 
             // noiDungChoSVInput
             // 
+            this.noiDungChoSVInput.AutoScroll = true;
             this.noiDungChoSVInput.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.noiDungChoSVInput.DefaultText = "";
             this.noiDungChoSVInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -328,31 +332,51 @@
             this.noiDungChoSVInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.noiDungChoSVInput.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.noiDungChoSVInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.noiDungChoSVInput.Location = new System.Drawing.Point(270, 463);
+            this.noiDungChoSVInput.Location = new System.Drawing.Point(402, 463);
             this.noiDungChoSVInput.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.noiDungChoSVInput.Multiline = true;
             this.noiDungChoSVInput.Name = "noiDungChoSVInput";
             this.noiDungChoSVInput.PasswordChar = '\0';
             this.noiDungChoSVInput.PlaceholderText = "Nội dung";
+            this.noiDungChoSVInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.noiDungChoSVInput.SelectedText = "";
-            this.noiDungChoSVInput.Size = new System.Drawing.Size(247, 90);
+            this.noiDungChoSVInput.Size = new System.Drawing.Size(383, 90);
             this.noiDungChoSVInput.TabIndex = 34;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(301, 391);
+            this.label3.Location = new System.Drawing.Point(397, 391);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(189, 25);
             this.label3.TabIndex = 35;
             this.label3.Text = "Thông báo sinh viên";
             // 
+            // applyTemplateButton
+            // 
+            this.applyTemplateButton.BorderRadius = 10;
+            this.applyTemplateButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.applyTemplateButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.applyTemplateButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.applyTemplateButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.applyTemplateButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(166)))), ((int)(((byte)(178)))));
+            this.applyTemplateButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.applyTemplateButton.ForeColor = System.Drawing.Color.White;
+            this.applyTemplateButton.Location = new System.Drawing.Point(542, 560);
+            this.applyTemplateButton.Name = "applyTemplateButton";
+            this.applyTemplateButton.Size = new System.Drawing.Size(243, 31);
+            this.applyTemplateButton.TabIndex = 36;
+            this.applyTemplateButton.Text = "Mẫu thông báo";
+            this.applyTemplateButton.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SingleBitPerPixelGridFit;
+            this.applyTemplateButton.Click += new System.EventHandler(this.applyTemplateButton_Click);
+            // 
             // ChiTietBaoVang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 603);
+            this.ClientSize = new System.Drawing.Size(797, 603);
+            this.Controls.Add(this.applyTemplateButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.noiDungChoSVInput);
             this.Controls.Add(this.tieuDeChoSVInput);
@@ -405,5 +429,6 @@
         private Guna.UI2.WinForms.Guna2TextBox tieuDeChoSVInput;
         private Guna.UI2.WinForms.Guna2TextBox noiDungChoSVInput;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2Button applyTemplateButton;
     }
 }

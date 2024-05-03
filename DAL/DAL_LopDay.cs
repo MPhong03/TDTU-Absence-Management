@@ -215,5 +215,28 @@ namespace DAL
                 return null;
             }
         }
+
+        public bool CapNhatTrangThaiNgayDay(int id, DateTime date, string status) 
+        {
+            string cmdUpdate = $"UPDATE LopDay_NgayDay SET TrangThai = N'{status}' WHERE MaLopDay = {id} AND NgayDay = '{date.ToString("yyyy-MM-dd")}'";
+
+            return Connection.actionQuery(cmdUpdate);
+        }
+
+        public bool KiemTraDaCoCaDayTrongNgayDayTaiPhong(DateTime ngayDay, int caDay, string phongDay)
+        {
+            string cmd = "SELECT * FROM LopDay_NgayDay WHERE (NgayDay = '" + ngayDay.ToString("yyyy-MM-dd") + "' AND CaDay = " + caDay + " AND Phong = '" + phongDay + "') OR (NgayDay = '" + ngayDay.ToString("yyyy-MM-dd") + "' AND CaDay = " + caDay + " AND Phong = '" + phongDay + "' AND TrangThai = N'VẮNG')";
+
+            DataTable result = Connection.selectQuery(cmd);
+
+            if (result.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

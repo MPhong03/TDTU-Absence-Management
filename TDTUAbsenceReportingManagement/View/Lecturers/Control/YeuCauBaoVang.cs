@@ -18,12 +18,15 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
     public partial class YeuCauBaoVang : UserControl
     {
         BUS_BaoVang bus_BV;
+        BUS_BaoBu bus_BB;
+
         private string maBaoVangDangChon = string.Empty;
         public YeuCauBaoVang()
         {
             InitializeComponent();
 
             bus_BV = new BUS_BaoVang();
+            bus_BB = new BUS_BaoBu();
 
             errorDialog.Parent = this.FindForm();
             successDialog.Parent = this.FindForm();
@@ -50,11 +53,18 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
 
         private void LoadData()
         {
-            DataTable data = bus_BV.DanhSachYeuCauBaoVangCuaGiangVienBangEmail(Session.Username);
+            DataTable dataBV = bus_BV.DanhSachYeuCauBaoVangCuaGiangVienBangEmail(Session.Username);
 
-            if (data != null)
+            if (dataBV != null)
             {
-                danhSachYeuCauBaoVang.DataSource = data;
+                danhSachYeuCauBaoVang.DataSource = dataBV;
+            }
+
+            DataTable dataBB = bus_BB.DanhSachYeuCauBaoBuCuaGiangVienBangEmail(Session.Username);
+
+            if (dataBB != null)
+            {
+                danhSachYeuCauBaoBu.DataSource = dataBB;
             }
 
             xoaYeuCauButton.Enabled = false;
@@ -105,6 +115,26 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
 
         private void baoBuButton_Click(object sender, EventArgs e)
         {
+            DTO_BaoVang bv = bus_BV.ChiTietBaoVang(int.Parse(maBaoVangDangChon));
+
+            if (bv == null)
+            {
+                errorDialog.Show("Có gì đó không đúng!");
+                return;
+            }
+
+            if ((bv.TrangThai).ToUpper().Equals("CHƯA XỬ LÝ"))
+            {
+                errorDialog.Show("Yêu cầu chưa được xét duyệt!");
+                return;
+            }
+
+            if ((bv.TrangThai).ToUpper().Equals("TỪ CHỐI"))
+            {
+                errorDialog.Show("Yêu cầu bị từ chối!");
+                return;
+            }
+
             GuiBaoBuControl uc = new GuiBaoBuControl(maBaoVangDangChon);
             ActorGiangVienForm form = this.FindForm() as ActorGiangVienForm;
 

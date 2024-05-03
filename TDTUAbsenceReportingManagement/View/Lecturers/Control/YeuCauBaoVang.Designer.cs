@@ -31,6 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.xoaYeuCauButton = new Guna.UI2.WinForms.Guna2Button();
             this.themYeuCauBVButton = new Guna.UI2.WinForms.Guna2Button();
             this.danhSachYeuCauBaoVang = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -38,7 +41,9 @@
             this.errorDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.warningDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.baoBuButton = new Guna.UI2.WinForms.Guna2Button();
+            this.danhSachYeuCauBaoBu = new Guna.UI2.WinForms.Guna2DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachYeuCauBaoVang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachYeuCauBaoBu)).BeginInit();
             this.SuspendLayout();
             // 
             // xoaYeuCauButton
@@ -106,7 +111,7 @@
             this.danhSachYeuCauBaoVang.RowHeadersVisible = false;
             this.danhSachYeuCauBaoVang.RowHeadersWidth = 51;
             this.danhSachYeuCauBaoVang.RowTemplate.Height = 24;
-            this.danhSachYeuCauBaoVang.Size = new System.Drawing.Size(778, 430);
+            this.danhSachYeuCauBaoVang.Size = new System.Drawing.Size(778, 209);
             this.danhSachYeuCauBaoVang.TabIndex = 49;
             this.danhSachYeuCauBaoVang.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.danhSachYeuCauBaoVang.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -175,10 +180,66 @@
             this.baoBuButton.Text = "Báo bù";
             this.baoBuButton.Click += new System.EventHandler(this.baoBuButton_Click);
             // 
+            // danhSachYeuCauBaoBu
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.danhSachYeuCauBaoBu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.danhSachYeuCauBaoBu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.danhSachYeuCauBaoBu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.danhSachYeuCauBaoBu.ColumnHeadersHeight = 18;
+            this.danhSachYeuCauBaoBu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.danhSachYeuCauBaoBu.DefaultCellStyle = dataGridViewCellStyle6;
+            this.danhSachYeuCauBaoBu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.danhSachYeuCauBaoBu.Location = new System.Drawing.Point(13, 269);
+            this.danhSachYeuCauBaoBu.Name = "danhSachYeuCauBaoBu";
+            this.danhSachYeuCauBaoBu.RowHeadersVisible = false;
+            this.danhSachYeuCauBaoBu.RowHeadersWidth = 51;
+            this.danhSachYeuCauBaoBu.RowTemplate.Height = 24;
+            this.danhSachYeuCauBaoBu.Size = new System.Drawing.Size(778, 209);
+            this.danhSachYeuCauBaoBu.TabIndex = 51;
+            this.danhSachYeuCauBaoBu.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.danhSachYeuCauBaoBu.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.danhSachYeuCauBaoBu.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.danhSachYeuCauBaoBu.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.danhSachYeuCauBaoBu.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.danhSachYeuCauBaoBu.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.danhSachYeuCauBaoBu.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.danhSachYeuCauBaoBu.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.danhSachYeuCauBaoBu.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.danhSachYeuCauBaoBu.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.danhSachYeuCauBaoBu.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.danhSachYeuCauBaoBu.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.danhSachYeuCauBaoBu.ThemeStyle.HeaderStyle.Height = 18;
+            this.danhSachYeuCauBaoBu.ThemeStyle.ReadOnly = false;
+            this.danhSachYeuCauBaoBu.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.danhSachYeuCauBaoBu.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.danhSachYeuCauBaoBu.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.danhSachYeuCauBaoBu.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.danhSachYeuCauBaoBu.ThemeStyle.RowsStyle.Height = 24;
+            this.danhSachYeuCauBaoBu.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.danhSachYeuCauBaoBu.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
             // YeuCauBaoVang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.danhSachYeuCauBaoBu);
             this.Controls.Add(this.baoBuButton);
             this.Controls.Add(this.danhSachYeuCauBaoVang);
             this.Controls.Add(this.xoaYeuCauButton);
@@ -187,6 +248,7 @@
             this.Size = new System.Drawing.Size(808, 501);
             this.Load += new System.EventHandler(this.YeuCauBaoVang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.danhSachYeuCauBaoVang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danhSachYeuCauBaoBu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,5 +261,6 @@
         private Guna.UI2.WinForms.Guna2MessageDialog errorDialog;
         private Guna.UI2.WinForms.Guna2MessageDialog warningDialog;
         private Guna.UI2.WinForms.Guna2Button baoBuButton;
+        private Guna.UI2.WinForms.Guna2DataGridView danhSachYeuCauBaoBu;
     }
 }

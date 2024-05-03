@@ -64,6 +64,7 @@
             this.NgayDayColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CaDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachNgayDay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachSinhVien)).BeginInit();
             this.SuspendLayout();
@@ -134,7 +135,8 @@
             this.danhSachNgayDay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NgayDayColumn,
             this.CaDay,
-            this.Phong});
+            this.Phong,
+            this.TrangThai});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -600,6 +602,12 @@
             this.Phong.MinimumWidth = 6;
             this.Phong.Name = "Phong";
             // 
+            // TrangThai
+            // 
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.MinimumWidth = 6;
+            this.TrangThai.Name = "TrangThai";
+            // 
             // ChiTietLopHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -667,5 +675,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDayColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CaDay;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
     }
 }

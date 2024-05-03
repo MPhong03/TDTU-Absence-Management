@@ -20,10 +20,19 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
         BUS_LopDay bus_LD;
         BUS_MonHoc bus_MH;
         BUS_ThongBao bus_TB;
+
         private string maBaoVang = string.Empty;
         private string maLopDay = string.Empty;
         private string maSoGiangVien = string.Empty;
+        private string tenGiangVien = string.Empty;
+        private DateTime date = DateTime.MinValue;
+        private string reasonGV = string.Empty;
+        private string caVang = string.Empty;
+        private string monHocVang = string.Empty;
+        private string nhomVang = string.Empty;
+        private string toVang = string.Empty;
         private string[] dssv = null;
+
         public ChiTietBaoVang(string maBaoVang)
         {
             InitializeComponent();
@@ -58,10 +67,17 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
 
                 if (lopDay != null)
                 {
+                    DTO_MonHoc monHoc = bus_MH.ChiTietMonHoc(lopDay["MaSoMonHoc"].ToString());
+
                     this.maLopDay = lopDay["MaLopDay"].ToString();
                     this.maSoGiangVien = giangVien.MaSoGiangVien;
-
-                    DTO_MonHoc monHoc = bus_MH.ChiTietMonHoc(lopDay["MaSoMonHoc"].ToString());
+                    this.date = baoVang.NgayBaoVang;
+                    this.reasonGV = baoVang.LyDoBaoVang;
+                    this.caVang = lopDay["CaDay"].ToString();
+                    this.monHocVang = "(" + monHoc.MaSoMonHoc + ") " + monHoc.TenMonHoc;
+                    this.tenGiangVien = giangVien.HoVaTen;
+                    this.nhomVang = lopDay["Nhom"].ToString();
+                    this.toVang = lopDay["ToTH"].ToString();
 
                     maBaoVangView.Text = "Mã phiếu:     " + maBaoVang;
                     maSoGiangVienView.Text = "Mã số giảng viên:     " + giangVien.MaSoGiangVien;
@@ -155,10 +171,18 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
 
                     bool notifyGV = GuiThongBaoChoGiangVien();
 
+                    bool updateStatus = bus_LD.CapNhatTrangThaiNgayDay(int.Parse(maLopDay), this.date, "VẮNG");
+
                     if (!notifyGV)
                     {
                         errorDialog.Show("Xảy ra lỗi trong quá trình gửi thông báo cho giảng viên");
                     }
+
+                    if (!updateStatus)
+                    {
+                        errorDialog.Show("Xảy ra lỗi trong quá trình cập nhật ngày dạy vắng");
+                    }
+
 
                     this.Close();
                 }
@@ -213,6 +237,30 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
             }
 
             return bus_TB.GuiThongBaoChoSinhVien(tb, svList.ToArray());
+        }
+
+        private void applyTemplateButton_Click(object sender, EventArgs e)
+        {
+            string tilteTemplateGV = "DUYỆT YÊU CẦU BÁO VẮNG";
+            string contentTemplateGV = "YÊU CẦU BÁO VẮNG ĐƯỢC CHẤP THUẬN" + Environment.NewLine +
+                "Môn: " + this.monHocVang + Environment.NewLine +
+                "Ngày: " + this.date + Environment.NewLine +
+                "Ca: " + this.caVang + Environment.NewLine +
+                "Nhóm: " + this.nhomVang + ", Tổ: " + this.toVang;
+
+            tieuDeChoGVInput.Text = tilteTemplateGV;
+            noiDungChoGVInput.Text = contentTemplateGV;
+
+            string tilteTemplateSV = "THÔNG BÁO VẮNG BUỔI HỌC";
+            string contentTemplateSV = "Giảng viên: " + this.tenGiangVien + Environment.NewLine +
+                "Môn: " + this.monHocVang + Environment.NewLine +
+                "Ngày: " + this.date + Environment.NewLine +
+                "Ca: " + this.caVang + Environment.NewLine +
+                "Nhóm: " + this.nhomVang + ", Tổ: " + this.toVang + Environment.NewLine +
+                "Lý do: " + this.reasonGV;
+
+            tieuDeChoSVInput.Text = tilteTemplateSV;
+            noiDungChoSVInput.Text = contentTemplateSV;
         }
     }
 }
