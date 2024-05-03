@@ -29,12 +29,17 @@ namespace DAL
         }
         public DataTable DanhSachYeuCauBaoBuCuaGiangVienBangEmail(string email)
         {
-            string cmd = "SELECT YeuCauBaoBu.* , GiangVien.HoVaTen " +
+            string cmd = "SELECT YeuCauBaoBu.MaBaoBu, YeuCauBaoBu.NgayBaoBu, YeuCauBaoBu.TrangThai, YeuCauBaoBu.CaBu, YeuCauBaoBu.PhongBu, YeuCauBaoBu.LoiNhan, YeuCauBaoBu.MaBaoVang, YeuCauBaoBu.MaLopDay, YeuCauBaoBu.MaSoGiangVien, GiangVien.HoVaTen " +
              "FROM YeuCauBaoBu " +
              "INNER JOIN GiangVien ON YeuCauBaoBu.MaSoGiangVien = GiangVien.MaSoGiangVien " +
              "WHERE GiangVien.Email = '" + email + "'";
 
             return Connection.selectQuery(cmd);
+        }
+        public bool XoaYeuCauBaoBu(int id)
+        {
+            string deleteQuery = "DELETE FROM YeuCauBaoBu WHERE MaBaoBu = '" + id + "'";
+            return Connection.actionQuery(deleteQuery);
         }
         public string LayMaBaoBuGanNhat()
         {

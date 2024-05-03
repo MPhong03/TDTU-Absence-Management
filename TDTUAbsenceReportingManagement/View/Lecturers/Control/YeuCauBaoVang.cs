@@ -21,6 +21,9 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
         BUS_BaoBu bus_BB;
 
         private string maBaoVangDangChon = string.Empty;
+        private string maBaoBuDangChon = string.Empty;
+
+        private bool flag = true;
         public YeuCauBaoVang()
         {
             InitializeComponent();
@@ -80,35 +83,49 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
 
                 maBaoVangDangChon = selectedRow.Cells["MaBaoVang"].Value.ToString();
 
+                flag = true;
                 xoaYeuCauButton.Enabled = true;
-
                 baoBuButton.Enabled = true;
+                xoaYeuCauButton.Text = "Xóa yêu cầu báo vắng";
             }
         }
 
         private void xoaYeuCauButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(maBaoVangDangChon))
-            {
-                warningDialog.Show("Vui lòng chọn một yêu cầu đã gửi");
-                return;
-            }
-
             DialogResult result = warningDialog.Show("Bạn có chắc muốn xóa yêu cầu đã gửi");
 
             if (result == DialogResult.Yes) 
             {
-                bool del = bus_BV.XoaYeuCauBaoVang(int.Parse(maBaoVangDangChon));
-
-                if (del)
+                if (flag)
                 {
-                    successDialog.Show("Đã xóa yêu cầu báo vắng");
+                    bool del = bus_BV.XoaYeuCauBaoVang(int.Parse(maBaoVangDangChon));
 
-                    LoadData();
+                    if (del)
+                    {
+                        successDialog.Show("Đã xóa yêu cầu báo vắng");
+
+                        LoadData();
+                    }
+                    else
+                    {
+                        errorDialog.Show("Xảy ra lỗi trong quá trình xóa yêu cầu này");
+                    }
+
                 }
                 else
                 {
-                    errorDialog.Show("Xảy ra lỗi trong quá trình xóa yêu cầu này");
+                    bool del = bus_BB.XoaYeuCauBaoBu(int.Parse(maBaoBuDangChon));
+
+                    if (del)
+                    {
+                        successDialog.Show("Đã xóa yêu cầu báo bù");
+
+                        LoadData();
+                    }
+                    else
+                    {
+                        errorDialog.Show("Xảy ra lỗi trong quá trình xóa yêu cầu này");
+                    }
                 }
             }
         }
@@ -143,6 +160,21 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
                 form.addUserControl(uc);
 
                 this.Hide();
+            }
+        }
+
+        private void danhSachYeuCauBaoBu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < danhSachYeuCauBaoBu.Rows.Count - 1)
+            {
+                DataGridViewRow selectedRow = danhSachYeuCauBaoBu.Rows[e.RowIndex];
+
+                maBaoBuDangChon = selectedRow.Cells["MaBaoBu"].Value.ToString();
+
+                flag = false;
+                xoaYeuCauButton.Enabled = true;
+                baoBuButton.Enabled = false;
+                xoaYeuCauButton.Text = "Xóa yêu cầu báo bù";
             }
         }
     }

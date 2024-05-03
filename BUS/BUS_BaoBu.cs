@@ -24,6 +24,10 @@ namespace BUS
         {
             return dal_BB.DanhSachYeuCauBaoBuCuaGiangVienBangEmail(email);
         }
+        public bool XoaYeuCauBaoBu(int id)
+        {
+            return dal_BB.XoaYeuCauBaoBu(id);
+        }
         public int TaoMaTuDong()
         {
             string currentID = dal_BB.LayMaBaoBuGanNhat();
