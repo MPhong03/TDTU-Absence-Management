@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -86,7 +87,7 @@ namespace DAL
             foreach (DTO_LopDay_NgayDay ngayDay in ngayDayList)
             {
                 cmd2 += "INSERT INTO LopDay_NgayDay (NgayDay, MaLopDay, CaDay, Phong, TrangThai) " +
-                        "VALUES ('" + ngayDay.NgayDay.ToString("yyyy-MM-dd") + "', '" + lopDay.MaLopDay + "', '" + ngayDay.CaDay + "', '" + ngayDay.Phong + "', '" + ngayDay.TrangThai + "'); ";
+                        "VALUES ('" + ngayDay.NgayDay.ToString("yyyy-MM-dd") + "', '" + lopDay.MaLopDay + "', '" + ngayDay.CaDay + "', '" + ngayDay.Phong + "', N'" + ngayDay.TrangThai + "'); ";
             }
 
             // Truy vấn để thêm danh sách các sinh viên vào lớp vào bảng SinhVien_LopDay
@@ -225,7 +226,7 @@ namespace DAL
 
         public bool KiemTraDaCoCaDayTrongNgayDayTaiPhong(DateTime ngayDay, int caDay, string phongDay)
         {
-            string cmd = "SELECT * FROM LopDay_NgayDay WHERE (NgayDay = '" + ngayDay.ToString("yyyy-MM-dd") + "' AND CaDay = " + caDay + " AND Phong = '" + phongDay + "') OR (NgayDay = '" + ngayDay.ToString("yyyy-MM-dd") + "' AND CaDay = " + caDay + " AND Phong = '" + phongDay + "' AND TrangThai = N'VẮNG')";
+            string cmd = "SELECT * FROM LopDay_NgayDay WHERE (NgayDay = '" + ngayDay.ToString("yyyy-MM-dd") + "' AND CaDay = " + caDay + " AND Phong = '" + phongDay + "' AND TrangThai <> N'VẮNG')";
 
             DataTable result = Connection.selectQuery(cmd);
 
@@ -237,6 +238,19 @@ namespace DAL
             {
                 return false;
             }
+        }
+
+        public bool ThemNgayDay(DTO_LopDay_NgayDay data)
+        {
+            string cmd = "INSERT INTO LopDay_NgayDay (NgayDay, MaLopDay, CaDay, Phong, TrangThai) " +
+                        "VALUES ('" + 
+                        data.NgayDay.ToString("yyyy-MM-dd") + "', '" + 
+                        data.MaLopDay + "', '" + 
+                        data.CaDay + "', '" + 
+                        data.Phong + "', N'" + 
+                        data.TrangThai + "'); ";
+
+            return Connection.actionQuery(cmd);
         }
     }
 }

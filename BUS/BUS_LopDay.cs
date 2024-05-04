@@ -69,6 +69,10 @@ namespace BUS
         {
             return dal_LopDay.KiemTraDaCoCaDayTrongNgayDayTaiPhong(ngayDay, caDay, phongDay);
         }
+        public bool ThemNgayDay(DTO_LopDay_NgayDay data)
+        {
+            return dal_LopDay.ThemNgayDay(data);
+        }
         public int TaoMaTuDong()
         {
             string currentID = dal_LopDay.LayMaLopDayGanNhat();

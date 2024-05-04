@@ -216,7 +216,7 @@
             this.questionDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
             this.questionDialog.Caption = "Confirm";
             this.questionDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
-            this.questionDialog.Parent = null;
+            this.questionDialog.Parent = this;
             this.questionDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.questionDialog.Text = null;
             // 
@@ -225,7 +225,7 @@
             this.errorDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
             this.errorDialog.Caption = "Error";
             this.errorDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
-            this.errorDialog.Parent = null;
+            this.errorDialog.Parent = this;
             this.errorDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.errorDialog.Text = null;
             // 
@@ -234,7 +234,7 @@
             this.successDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
             this.successDialog.Caption = null;
             this.successDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-            this.successDialog.Parent = null;
+            this.successDialog.Parent = this;
             this.successDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.successDialog.Text = null;
             // 
@@ -243,7 +243,7 @@
             this.warningMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
             this.warningMessage.Caption = "Warning";
             this.warningMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
-            this.warningMessage.Parent = null;
+            this.warningMessage.Parent = this;
             this.warningMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.warningMessage.Text = null;
             // 

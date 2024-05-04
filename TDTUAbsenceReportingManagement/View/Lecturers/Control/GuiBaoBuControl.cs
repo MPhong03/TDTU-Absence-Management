@@ -22,6 +22,8 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
         private string maBaoVang = string.Empty;
         private int maLopDay = 0;
         private string maSoGiangVien = string.Empty;
+        private DateTime ngayBaoVang;
+
         public GuiBaoBuControl(string id)
         {
             InitializeComponent();
@@ -69,6 +71,7 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
             {
                 maBaoVangInput.Text = maBaoVang;
                 maLopDayInput.Text = baoVang.MaLopDay.ToString();
+                this.ngayBaoVang = baoVang.NgayBaoVang;
 
                 DataRow lopDay = bus_LD.ChiTietLopDayTheoNgay(baoVang.MaLopDay, baoVang.NgayBaoVang);
 
@@ -150,6 +153,12 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
             if (bus_LD.KiemTraDaCoCaDayTrongNgayDayTaiPhong(ngayBu, caBu, phongBu))
             {
                 warningDialog.Show("Đã có lớp khác sử dụng phòng " + phongBu + " vào ca " + caBu + " vào ngày " + ngayBu);
+                return;
+            }
+
+            if (ngayBu.Equals(this.ngayBaoVang.ToString()))
+            {
+                warningDialog.Show("Không thể chọn ngày vắng làm ngày bù");
                 return;
             }
 

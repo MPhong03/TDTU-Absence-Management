@@ -53,7 +53,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
             trangThaiFilter.SelectedIndex = 0;
         }
 
-        // BUTTON LỌC DANH SÁCH
+        // BUTTON RESET DANH SÁCH
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             giangVienFilter.SelectedIndex = 0;

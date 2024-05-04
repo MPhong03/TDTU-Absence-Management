@@ -43,11 +43,6 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
             bus_TB = new BUS_ThongBao();
 
             this.maBaoVang = maBaoVang;
-
-            questionDialog.Parent = this.FindForm();
-            errorDialog.Parent = this.FindForm();
-            successDialog.Parent = this.FindForm();
-            warningMessage.Parent = this.FindForm();
         }
 
         private void ChiTietBaoVang_Load(object sender, EventArgs e)
@@ -129,6 +124,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
 
                     bool notifyGV = GuiThongBaoChoGiangVien();
                     bool notifySV = GuiThongBaoChoSinhVien();
+                    bool updateStatus = bus_LD.CapNhatTrangThaiNgayDay(int.Parse(maLopDay), this.date, "VẮNG");
 
                     if (!notifyGV)
                     {
@@ -138,6 +134,11 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
                     if (!notifySV)
                     {
                         errorDialog.Show("Xảy ra lỗi trong quá trình gửi thông báo cho sinh viên");
+                    }
+
+                    if (!updateStatus)
+                    {
+                        errorDialog.Show("Xảy ra lỗi trong quá trình cập nhật ngày dạy vắng");
                     }
 
                     this.Close();
@@ -171,18 +172,10 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
 
                     bool notifyGV = GuiThongBaoChoGiangVien();
 
-                    bool updateStatus = bus_LD.CapNhatTrangThaiNgayDay(int.Parse(maLopDay), this.date, "VẮNG");
-
                     if (!notifyGV)
                     {
                         errorDialog.Show("Xảy ra lỗi trong quá trình gửi thông báo cho giảng viên");
                     }
-
-                    if (!updateStatus)
-                    {
-                        errorDialog.Show("Xảy ra lỗi trong quá trình cập nhật ngày dạy vắng");
-                    }
-
 
                     this.Close();
                 }
