@@ -1,6 +1,6 @@
-﻿namespace TDTUAbsenceReportingManagement.View.Lecturers
+﻿namespace TDTUAbsenceReportingManagement.View.Student
 {
-    partial class ActorGiangVienForm
+    partial class ActorSinhVienForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,21 +31,19 @@
             this.components = new System.ComponentModel.Container();
             this.successDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.errorDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.lecturerContainerControl = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.dangXuatTabButton = new Guna.UI2.WinForms.Guna2Button();
-            this.quanlyLopHocTabButton = new Guna.UI2.WinForms.Guna2Button();
-            this.guiBaoVangTabButton = new Guna.UI2.WinForms.Guna2Button();
             this.notificationTabButton = new Guna.UI2.WinForms.Guna2Button();
             this.homeTabButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.warningDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.currentUser = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.warningDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.lecturerContainerControl = new Guna.UI2.WinForms.Guna2ContainerControl();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -71,23 +69,10 @@
             this.errorDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
             this.errorDialog.Text = "Đăng nhập thất bại";
             // 
-            // lecturerContainerControl
-            // 
-            this.lecturerContainerControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lecturerContainerControl.Location = new System.Drawing.Point(204, 52);
-            this.lecturerContainerControl.Name = "lecturerContainerControl";
-            this.lecturerContainerControl.Size = new System.Drawing.Size(802, 501);
-            this.lecturerContainerControl.TabIndex = 5;
-            this.lecturerContainerControl.Text = "guna2ContainerControl1";
-            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
             this.guna2Panel2.Controls.Add(this.dangXuatTabButton);
-            this.guna2Panel2.Controls.Add(this.quanlyLopHocTabButton);
-            this.guna2Panel2.Controls.Add(this.guiBaoVangTabButton);
             this.guna2Panel2.Controls.Add(this.notificationTabButton);
             this.guna2Panel2.Controls.Add(this.homeTabButton);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -95,7 +80,7 @@
             this.guna2Panel2.MinimumSize = new System.Drawing.Size(57, 0);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(204, 501);
-            this.guna2Panel2.TabIndex = 4;
+            this.guna2Panel2.TabIndex = 7;
             // 
             // dangXuatTabButton
             // 
@@ -110,55 +95,13 @@
             this.dangXuatTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.exit__2_;
             this.dangXuatTabButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.exit__1_1;
             this.dangXuatTabButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dangXuatTabButton.Location = new System.Drawing.Point(12, 210);
+            this.dangXuatTabButton.Location = new System.Drawing.Point(9, 108);
             this.dangXuatTabButton.Name = "dangXuatTabButton";
             this.dangXuatTabButton.Size = new System.Drawing.Size(186, 45);
             this.dangXuatTabButton.TabIndex = 6;
             this.dangXuatTabButton.Text = "Đăng xuất";
             this.dangXuatTabButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.dangXuatTabButton.Click += new System.EventHandler(this.dangXuatTabButton_Click);
-            // 
-            // quanlyLopHocTabButton
-            // 
-            this.quanlyLopHocTabButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.quanlyLopHocTabButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.quanlyLopHocTabButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.quanlyLopHocTabButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.quanlyLopHocTabButton.FillColor = System.Drawing.Color.Transparent;
-            this.quanlyLopHocTabButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.quanlyLopHocTabButton.ForeColor = System.Drawing.Color.Black;
-            this.quanlyLopHocTabButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
-            this.quanlyLopHocTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.learning__1_;
-            this.quanlyLopHocTabButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.image__3_;
-            this.quanlyLopHocTabButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.quanlyLopHocTabButton.Location = new System.Drawing.Point(9, 159);
-            this.quanlyLopHocTabButton.Name = "quanlyLopHocTabButton";
-            this.quanlyLopHocTabButton.Size = new System.Drawing.Size(186, 45);
-            this.quanlyLopHocTabButton.TabIndex = 4;
-            this.quanlyLopHocTabButton.Text = "Quản lý lớp học";
-            this.quanlyLopHocTabButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.quanlyLopHocTabButton.Click += new System.EventHandler(this.quanlyLopHocTabButton_Click);
-            // 
-            // guiBaoVangTabButton
-            // 
-            this.guiBaoVangTabButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guiBaoVangTabButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guiBaoVangTabButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guiBaoVangTabButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guiBaoVangTabButton.FillColor = System.Drawing.Color.Transparent;
-            this.guiBaoVangTabButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guiBaoVangTabButton.ForeColor = System.Drawing.Color.Black;
-            this.guiBaoVangTabButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
-            this.guiBaoVangTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.exit__1_;
-            this.guiBaoVangTabButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.exit;
-            this.guiBaoVangTabButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guiBaoVangTabButton.Location = new System.Drawing.Point(9, 108);
-            this.guiBaoVangTabButton.Name = "guiBaoVangTabButton";
-            this.guiBaoVangTabButton.Size = new System.Drawing.Size(186, 45);
-            this.guiBaoVangTabButton.TabIndex = 2;
-            this.guiBaoVangTabButton.Text = "Gửi báo vắng";
-            this.guiBaoVangTabButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guiBaoVangTabButton.Click += new System.EventHandler(this.guiBaoVangTabButton_Click);
             // 
             // notificationTabButton
             // 
@@ -216,17 +159,8 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1006, 52);
-            this.guna2Panel1.TabIndex = 3;
+            this.guna2Panel1.TabIndex = 6;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
-            // 
-            // warningDialog
-            // 
-            this.warningDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
-            this.warningDialog.Caption = null;
-            this.warningDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
-            this.warningDialog.Parent = this;
-            this.warningDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.warningDialog.Text = "Đăng nhập thành công!";
             // 
             // guna2ControlBox3
             // 
@@ -234,10 +168,10 @@
             this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(829, 6);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(832, 6);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(53, 35);
-            this.guna2ControlBox3.TabIndex = 14;
+            this.guna2ControlBox3.TabIndex = 8;
             // 
             // guna2ControlBox2
             // 
@@ -245,30 +179,30 @@
             this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(888, 6);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(891, 6);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(53, 35);
-            this.guna2ControlBox2.TabIndex = 13;
+            this.guna2ControlBox2.TabIndex = 7;
             // 
             // guna2ControlBox1
             // 
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(947, 6);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(950, 6);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(53, 35);
-            this.guna2ControlBox1.TabIndex = 12;
+            this.guna2ControlBox1.TabIndex = 6;
             // 
             // currentUser
             // 
             this.currentUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.currentUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.currentUser.ForeColor = System.Drawing.Color.Transparent;
-            this.currentUser.Location = new System.Drawing.Point(201, 6);
+            this.currentUser.Location = new System.Drawing.Point(204, 6);
             this.currentUser.Name = "currentUser";
             this.currentUser.Size = new System.Drawing.Size(576, 40);
-            this.currentUser.TabIndex = 11;
+            this.currentUser.TabIndex = 5;
             this.currentUser.Text = "who?";
             this.currentUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.currentUser.MouseDown += new System.Windows.Forms.MouseEventHandler(this.currentUser_MouseDown);
@@ -281,23 +215,43 @@
             this.guna2CirclePictureBox1.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.profile;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.InitialImage = null;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(783, 6);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(786, 6);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.guna2CirclePictureBox1.TabIndex = 10;
+            this.guna2CirclePictureBox1.TabIndex = 4;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.logo_dai_hoc_ton_duc_thang_dongphucvina_vn_;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(6, 3);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(9, 3);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(54, 46);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 9;
+            this.guna2PictureBox1.TabIndex = 1;
             this.guna2PictureBox1.TabStop = false;
+            // 
+            // warningDialog
+            // 
+            this.warningDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            this.warningDialog.Caption = null;
+            this.warningDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            this.warningDialog.Parent = null;
+            this.warningDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.warningDialog.Text = "Đăng nhập thành công!";
+            // 
+            // lecturerContainerControl
+            // 
+            this.lecturerContainerControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lecturerContainerControl.Location = new System.Drawing.Point(204, 52);
+            this.lecturerContainerControl.Name = "lecturerContainerControl";
+            this.lecturerContainerControl.Size = new System.Drawing.Size(802, 501);
+            this.lecturerContainerControl.TabIndex = 8;
+            this.lecturerContainerControl.Text = "guna2ContainerControl1";
             // 
             // guna2BorderlessForm1
             // 
@@ -306,7 +260,7 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // ActorGiangVienForm
+            // ActorSinhVienForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -315,10 +269,10 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ActorGiangVienForm";
+            this.Name = "ActorSinhVienForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Giảng viên";
-            this.Load += new System.EventHandler(this.ActorGiangVienForm_Load);
+            this.Text = "ActorSinhVienForm";
+            this.Load += new System.EventHandler(this.ActorSinhVienForm_Load);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
@@ -331,21 +285,19 @@
 
         private Guna.UI2.WinForms.Guna2MessageDialog successDialog;
         private Guna.UI2.WinForms.Guna2MessageDialog errorDialog;
-        private Guna.UI2.WinForms.Guna2ContainerControl lecturerContainerControl;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Button quanlyLopHocTabButton;
-        private Guna.UI2.WinForms.Guna2Button guiBaoVangTabButton;
+        private Guna.UI2.WinForms.Guna2Button dangXuatTabButton;
         private Guna.UI2.WinForms.Guna2Button notificationTabButton;
         private Guna.UI2.WinForms.Guna2Button homeTabButton;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button dangXuatTabButton;
-        private Guna.UI2.WinForms.Guna2MessageDialog warningDialog;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Label currentUser;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2MessageDialog warningDialog;
+        private Guna.UI2.WinForms.Guna2ContainerControl lecturerContainerControl;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
     }
 }

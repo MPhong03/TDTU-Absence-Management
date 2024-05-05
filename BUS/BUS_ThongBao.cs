@@ -20,6 +20,10 @@ namespace BUS
         {
             return dal_ThongBao.DanhSachThongBaoCuaGiangVien(email);
         }
+        public DataTable DanhSachThongBaoCuaSinhVien(string email)
+        {
+            return dal_ThongBao.DanhSachThongBaoCuaSinhVien(email);
+        }
         public bool GuiThongBaoChoGiangVien(DTO_ThongBao thongBao, string[] idGiangVien)
         {
             return dal_ThongBao.GuiThongBaoChoGiangVien(thongBao, idGiangVien);

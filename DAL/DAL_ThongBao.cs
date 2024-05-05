@@ -20,6 +20,16 @@ namespace DAL
 
             return Connection.selectQuery(query);
         }
+        public DataTable DanhSachThongBaoCuaSinhVien(string email)
+        {
+            string query = @"SELECT tb.MaThongBao, tb.TenDangNhap, tb.TieuDe, tb.NoiDung, tb.ThoiGianGui
+                    FROM ThongBao tb
+                    INNER JOIN ThongBao_SinhVien tbsv ON tb.MaThongBao = tbsv.MaThongBao
+                    INNER JOIN SinhVien sv ON tbsv.MaSoSinhVien = sv.MaSoSinhVien
+                    WHERE sv.Email = '" + email + "'";
+
+            return Connection.selectQuery(query);
+        }
         public bool GuiThongBaoChoGiangVien(DTO_ThongBao thongBao, string[] idGiangVien)
         {
             string cmdThongBao = "INSERT INTO ThongBao (MaThongBao, TieuDe, NoiDung, ThoiGianGui, TenDangNhap) " +

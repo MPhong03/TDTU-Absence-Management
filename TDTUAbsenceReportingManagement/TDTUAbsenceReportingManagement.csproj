@@ -203,6 +203,24 @@
     <Compile Include="View\Lecturers\Control\YeuCauBaoVang.Designer.cs">
       <DependentUpon>YeuCauBaoVang.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Student\ActorSinhVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Student\ActorSinhVienForm.Designer.cs">
+      <DependentUpon>ActorSinhVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Student\Control\ThongBaoSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Student\Control\ThongBaoSinhVien.Designer.cs">
+      <DependentUpon>ThongBaoSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Student\Control\TrangChuSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Student\Control\TrangChuSinhVien.Designer.cs">
+      <DependentUpon>TrangChuSinhVien.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\Admin\Control\AdminTrangChuForm.resx">
       <DependentUpon>AdminTrangChuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +294,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Lecturers\Control\YeuCauBaoVang.resx">
       <DependentUpon>YeuCauBaoVang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Student\ActorSinhVienForm.resx">
+      <DependentUpon>ActorSinhVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Student\Control\ThongBaoSinhVien.resx">
+      <DependentUpon>ThongBaoSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Student\Control\TrangChuSinhVien.resx">
+      <DependentUpon>TrangChuSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

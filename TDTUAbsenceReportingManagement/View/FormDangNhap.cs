@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using TDTUAbsenceReportingManagement.Data;
 using TDTUAbsenceReportingManagement.View.Admin;
 using TDTUAbsenceReportingManagement.View.Lecturers;
+using TDTUAbsenceReportingManagement.View.Student;
 
 namespace TDTUAbsenceReportingManagement
 {
@@ -56,6 +57,10 @@ namespace TDTUAbsenceReportingManagement
                             break;
                         case "Sinh viên":
                             successDialog.Show();
+                            ActorSinhVienForm svForm = new ActorSinhVienForm();
+                            svForm.Show();
+
+                            this.Hide();
                             break;
                     }
                 }

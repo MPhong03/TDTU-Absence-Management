@@ -16,6 +16,9 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers
 {
     public partial class ActorGiangVienForm : Form
     {
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
         public ActorGiangVienForm()
         {
             InitializeComponent();
@@ -83,5 +86,31 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers
                 this.Hide();
             }
         }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+        public void OnMove()
+        {
+            ReleaseCapture();
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+        }
+        private void guna2Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                OnMove();
+            }
+        }
+
+        private void currentUser_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                OnMove();
+            }
+        }
+
     }
 }
