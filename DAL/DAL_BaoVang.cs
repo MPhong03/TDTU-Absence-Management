@@ -59,7 +59,9 @@ namespace DAL
         }
         public bool XoaYeuCauBaoVang(int id)
         {
-            string deleteQuery = "DELETE FROM YeuCauBaoVang WHERE MaBaoVang = '" + id + "'";
+            string deleteBaoBu = "DELETE FROM YeuCauBaoBu WHERE MaBaoVang = '" + id + "'";
+            string deleteBaoVang = "DELETE FROM YeuCauBaoVang WHERE MaBaoVang = '" + id + "'";
+            string deleteQuery = deleteBaoBu + "; " + deleteBaoVang;
             return Connection.actionQuery(deleteQuery);
         }
         public DTO_BaoVang ChiTietBaoVang(int id)
