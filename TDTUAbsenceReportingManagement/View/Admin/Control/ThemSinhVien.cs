@@ -30,7 +30,8 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
 
         private void ThemSinhVien_Load(object sender, EventArgs e)
         {
-            maSV.Text = sv.LayMaSV();
+            //maSV.Text = sv.LayMaSV();
+            maSV.Text = sv.TaoMaTuDong();
             maSV.Enabled = false;
             courseSV_TextChanged(this, new EventArgs());
         }
@@ -40,19 +41,22 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
             // Kiểm tra courseSV.Text nhập vào không rỗng và có độ dài là 4
             if (!string.IsNullOrEmpty(courseSV.Text) && courseSV.Text.Length == 4)
             {
-                // Lấy giá trị mới của courseSV.Text
-                string newCourse = courseSV.Text.Substring(2, 2);
+                //// Lấy giá trị mới của courseSV.Text
+                //string newCourse = courseSV.Text.Substring(2, 2);
 
-                // Lấy giá trị hiện tại của maSV.Text
-                string currentMaSV = maSV.Text;
+                //// Lấy giá trị hiện tại của maSV.Text
+                //string currentMaSV = maSV.Text;
 
-                // Kiểm tra nếu maSV.Text không rỗng và có độ dài phù hợp
-                if (!string.IsNullOrEmpty(currentMaSV) && currentMaSV.Length == 8)
-                {
-                    // Cập nhật lại maSV.Text với courseSV.Text
-                    string newMaSV = currentMaSV.Substring(0, 1) + newCourse + currentMaSV.Substring(3);
-                    maSV.Text = newMaSV;
-                }
+                //// Kiểm tra nếu maSV.Text không rỗng và có độ dài phù hợp
+                //if (!string.IsNullOrEmpty(currentMaSV) && currentMaSV.Length == 8)
+                //{
+                //    // Cập nhật lại maSV.Text với courseSV.Text
+                //    string newMaSV = currentMaSV.Substring(0, 1) + newCourse + currentMaSV.Substring(3);
+                //    maSV.Text = newMaSV;
+                //}
+
+                sv.dSV.KhoaTuyenSinh = courseSV.Text;
+                maSV.Text = sv.TaoMaTuDong();
             }
         }
 

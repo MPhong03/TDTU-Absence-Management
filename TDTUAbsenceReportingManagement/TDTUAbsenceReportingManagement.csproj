@@ -105,6 +105,18 @@
     <Compile Include="View\Admin\Control\QuanLyTaiKhoan\ChiTietSinhVien.Designer.cs">
       <DependentUpon>ChiTietSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSGV.Designer.cs">
+      <DependentUpon>XacNhanImportDSGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSSV.Designer.cs">
+      <DependentUpon>XacNhanImportDSSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Control\QuanLyTaiKhoan\GiangVienForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,6 +253,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\ChiTietSinhVien.resx">
       <DependentUpon>ChiTietSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSGV.resx">
+      <DependentUpon>XacNhanImportDSGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSSV.resx">
+      <DependentUpon>XacNhanImportDSSV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\GiangVienForm.resx">
       <DependentUpon>GiangVienForm.cs</DependentUpon>

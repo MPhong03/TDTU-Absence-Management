@@ -85,8 +85,57 @@ namespace DAL
 
         public void XoaSinhVien(string maSV)
         {
-            String cmd = "DELETE FROM SinhVien WHERE MaSoSinhVien = '" +maSV+ "'";
+            // Kiểm tra xem có dữ liệu liên quan trong bảng SinhVien_LopDay không
+            DataTable dtSinhVienLopDay = Connection.selectQuery("SELECT * FROM SinhVien_LopDay WHERE MaSoSinhVien = '" + maSV + "'");
+            if (dtSinhVienLopDay.Rows.Count > 0)
+            {
+                Connection.actionQuery("DELETE FROM SinhVien_LopDay WHERE MaSoSinhVien = '" + maSV + "'");
+            }
+
+            // Kiểm tra xem có dữ liệu liên quan trong bảng ThongBao_SinhVien không
+            DataTable dtThongBaoSinhVien = Connection.selectQuery("SELECT * FROM ThongBao_SinhVien WHERE MaSoSinhVien = '" + maSV + "'");
+            if (dtThongBaoSinhVien.Rows.Count > 0)
+            {
+                Connection.actionQuery("DELETE FROM ThongBao_SinhVien WHERE MaSoSinhVien = '" + maSV + "'");
+            }
+
+            // Sau khi xóa dữ liệu liên quan, tiến hành xóa sinh viên
+            string cmd = "DELETE FROM SinhVien WHERE MaSoSinhVien = '" + maSV + "'";
             Connection.actionQuery(cmd);
+        }
+
+        // TEST
+        public string GenerateNewStudentID(string khoaTuyenSinh)
+        {
+            string lastStudentID = GetLastStudentID(khoaTuyenSinh);
+            int lastSequenceNumber = GetLastSequenceNumber(lastStudentID);
+
+            // Tạo mã số sinh viên mới
+            string newStudentID = $"5{khoaTuyenSinh.Substring(khoaTuyenSinh.Length - 2)}0{lastSequenceNumber + 1:D4}";
+
+            return newStudentID;
+        }
+
+        public string GetLastStudentID(string khoaTuyenSinh)
+        {
+            // Truy vấn để lấy mã số sinh viên cuối cùng của khóa tuyển sinh
+            string cmd = $"SELECT TOP 1 MaSoSinhVien FROM SinhVien WHERE KhoaTuyenSinh = '{khoaTuyenSinh}' ORDER BY MaSoSinhVien DESC";
+            DataTable result = Connection.selectQuery(cmd);
+            if (result.Rows.Count > 0)
+            {
+                return result.Rows[0]["MaSoSinhVien"].ToString();
+            }
+            else
+            {
+                // Nếu không có sinh viên nào trong khóa tuyển sinh, trả về mã mặc định
+                return $"5{khoaTuyenSinh.Substring(khoaTuyenSinh.Length - 2)}0000";
+            }
+        }
+
+        public int GetLastSequenceNumber(string studentID)
+        {
+            // Trích xuất số thứ tự từ mã số sinh viên
+            return int.Parse(studentID.Substring(5));
         }
     }
 }

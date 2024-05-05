@@ -13,11 +13,11 @@ namespace BUS
     public class BUS_SinhVien
     {
         DAL_SinhVien sv;
-        DTO_SinhVien dSV;
+        public DTO_SinhVien dSV { get; set; }
         public BUS_SinhVien()
         {
             sv = new DAL_SinhVien();
-            dSV = new DTO_SinhVien("","","","",DateTime.Now,"","","","","");
+            dSV = new DTO_SinhVien("","","","",DateTime.Now,"","","","",DateTime.Now.Year.ToString());
         }
         public DataTable HienDanhSachSV()
         {
@@ -81,6 +81,12 @@ namespace BUS
         public void XoaTaiKhoanSV(string maSV)
         {
             sv.XoaSinhVien(maSV);
+        }
+
+        // TEST
+        public string TaoMaTuDong()
+        {
+            return sv.GenerateNewStudentID(dSV.KhoaTuyenSinh);
         }
     }
 }

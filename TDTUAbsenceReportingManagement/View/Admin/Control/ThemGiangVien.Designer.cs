@@ -63,7 +63,7 @@
             this.themGVbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.themGVbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.themGVbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.themGVbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.themGVbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(164)))), ((int)(((byte)(77)))));
             this.themGVbtn.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.themGVbtn.ForeColor = System.Drawing.Color.White;
             this.themGVbtn.Location = new System.Drawing.Point(184, 499);
@@ -80,7 +80,7 @@
             this.huyGVbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.huyGVbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.huyGVbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.huyGVbtn.FillColor = System.Drawing.Color.Gold;
+            this.huyGVbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(161)))), ((int)(((byte)(27)))));
             this.huyGVbtn.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.huyGVbtn.ForeColor = System.Drawing.Color.White;
             this.huyGVbtn.Location = new System.Drawing.Point(403, 499);

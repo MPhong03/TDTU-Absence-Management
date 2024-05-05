@@ -34,6 +34,8 @@
             this.danhSachGiangVienDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
             this.themGiangVienButton = new Guna.UI2.WinForms.Guna2Button();
             this.nhapDanhSachGiangVienButton = new Guna.UI2.WinForms.Guna2Button();
+            this.successMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.warningMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachGiangVienDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +125,25 @@
             this.nhapDanhSachGiangVienButton.Size = new System.Drawing.Size(400, 31);
             this.nhapDanhSachGiangVienButton.TabIndex = 2;
             this.nhapDanhSachGiangVienButton.Text = "Import CSV";
+            this.nhapDanhSachGiangVienButton.Click += new System.EventHandler(this.nhapDanhSachGiangVienButton_Click);
+            // 
+            // successMessage
+            // 
+            this.successMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.successMessage.Caption = "Success";
+            this.successMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.successMessage.Parent = null;
+            this.successMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.successMessage.Text = null;
+            // 
+            // warningMessage
+            // 
+            this.warningMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.warningMessage.Caption = "Warning";
+            this.warningMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.warningMessage.Parent = null;
+            this.warningMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.warningMessage.Text = null;
             // 
             // GiangVienForm
             // 
@@ -144,5 +165,7 @@
         private Guna.UI2.WinForms.Guna2DataGridView danhSachGiangVienDataGrid;
         private Guna.UI2.WinForms.Guna2Button themGiangVienButton;
         private Guna.UI2.WinForms.Guna2Button nhapDanhSachGiangVienButton;
+        private Guna.UI2.WinForms.Guna2MessageDialog successMessage;
+        private Guna.UI2.WinForms.Guna2MessageDialog warningMessage;
     }
 }
