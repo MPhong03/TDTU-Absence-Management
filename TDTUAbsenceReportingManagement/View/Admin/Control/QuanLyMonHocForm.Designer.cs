@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.danhSachMonHoc = new Guna.UI2.WinForms.Guna2DataGridView();
             this.MaSoMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,38 +47,39 @@
             this.soTinChiInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.tenMonHocInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.maMonHocInput = new Guna.UI2.WinForms.Guna2TextBox();
+            this.importDSMH = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachMonHoc)).BeginInit();
             this.SuspendLayout();
             // 
             // danhSachMonHoc
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.danhSachMonHoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.danhSachMonHoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.danhSachMonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.danhSachMonHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.danhSachMonHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.danhSachMonHoc.ColumnHeadersHeight = 18;
             this.danhSachMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.danhSachMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSoMonHoc,
             this.TenMonHoc,
             this.SoTinChi});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.danhSachMonHoc.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.danhSachMonHoc.DefaultCellStyle = dataGridViewCellStyle6;
             this.danhSachMonHoc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.danhSachMonHoc.Location = new System.Drawing.Point(28, 90);
             this.danhSachMonHoc.Name = "danhSachMonHoc";
@@ -138,9 +139,9 @@
             this.chinhSuaMonHocButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(180)))), ((int)(((byte)(211)))));
             this.chinhSuaMonHocButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.chinhSuaMonHocButton.ForeColor = System.Drawing.Color.White;
-            this.chinhSuaMonHocButton.Location = new System.Drawing.Point(410, 53);
+            this.chinhSuaMonHocButton.Location = new System.Drawing.Point(330, 53);
             this.chinhSuaMonHocButton.Name = "chinhSuaMonHocButton";
-            this.chinhSuaMonHocButton.Size = new System.Drawing.Size(185, 31);
+            this.chinhSuaMonHocButton.Size = new System.Drawing.Size(145, 31);
             this.chinhSuaMonHocButton.TabIndex = 44;
             this.chinhSuaMonHocButton.Text = "Lưu chỉnh sửa";
             this.chinhSuaMonHocButton.Click += new System.EventHandler(this.chinhSuaMonHocButton_Click);
@@ -155,9 +156,9 @@
             this.xoaMonHocButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
             this.xoaMonHocButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.xoaMonHocButton.ForeColor = System.Drawing.Color.White;
-            this.xoaMonHocButton.Location = new System.Drawing.Point(219, 53);
+            this.xoaMonHocButton.Location = new System.Drawing.Point(179, 53);
             this.xoaMonHocButton.Name = "xoaMonHocButton";
-            this.xoaMonHocButton.Size = new System.Drawing.Size(185, 31);
+            this.xoaMonHocButton.Size = new System.Drawing.Size(145, 31);
             this.xoaMonHocButton.TabIndex = 43;
             this.xoaMonHocButton.Text = "Xóa môn học";
             this.xoaMonHocButton.Click += new System.EventHandler(this.xoaMonHocButton_Click);
@@ -174,7 +175,7 @@
             this.theMonHocButton.ForeColor = System.Drawing.Color.White;
             this.theMonHocButton.Location = new System.Drawing.Point(28, 53);
             this.theMonHocButton.Name = "theMonHocButton";
-            this.theMonHocButton.Size = new System.Drawing.Size(185, 31);
+            this.theMonHocButton.Size = new System.Drawing.Size(145, 31);
             this.theMonHocButton.TabIndex = 42;
             this.theMonHocButton.Text = "Thêm môn học";
             this.theMonHocButton.Click += new System.EventHandler(this.theMonHocButton_Click);
@@ -225,9 +226,9 @@
             this.resetButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(166)))), ((int)(((byte)(178)))));
             this.resetButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.resetButton.ForeColor = System.Drawing.Color.White;
-            this.resetButton.Location = new System.Drawing.Point(601, 53);
+            this.resetButton.Location = new System.Drawing.Point(481, 53);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(179, 31);
+            this.resetButton.Size = new System.Drawing.Size(145, 31);
             this.resetButton.TabIndex = 46;
             this.resetButton.Text = "Đặt lại";
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
@@ -319,11 +320,29 @@
             this.maMonHocInput.Size = new System.Drawing.Size(185, 36);
             this.maMonHocInput.TabIndex = 39;
             // 
+            // importDSMH
+            // 
+            this.importDSMH.BorderRadius = 10;
+            this.importDSMH.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.importDSMH.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.importDSMH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.importDSMH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.importDSMH.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(164)))), ((int)(((byte)(77)))));
+            this.importDSMH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.importDSMH.ForeColor = System.Drawing.Color.White;
+            this.importDSMH.Location = new System.Drawing.Point(632, 53);
+            this.importDSMH.Name = "importDSMH";
+            this.importDSMH.Size = new System.Drawing.Size(145, 31);
+            this.importDSMH.TabIndex = 48;
+            this.importDSMH.Text = "Import";
+            this.importDSMH.Click += new System.EventHandler(this.importDSMH_Click);
+            // 
             // QuanLyMonHocForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.Controls.Add(this.importDSMH);
             this.Controls.Add(this.doKhoInput);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.danhSachMonHoc);
@@ -359,5 +378,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenMonHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoTinChi;
         private Guna.UI2.WinForms.Guna2ComboBox doKhoInput;
+        private Guna.UI2.WinForms.Guna2Button importDSMH;
     }
 }

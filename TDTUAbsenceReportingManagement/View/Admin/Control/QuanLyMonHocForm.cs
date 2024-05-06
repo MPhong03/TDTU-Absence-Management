@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.FormXacNhan;
 
 namespace TDTUAbsenceReportingManagement.View.Admin.Control
 {
@@ -211,6 +213,87 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
             string currentMaMonHoc = maMonHocInput.Text;
             string newMaMonHoc = currentMaMonHoc.Substring(0, 2) + difficultyLevel.ToString() + currentMaMonHoc.Substring(3);
             maMonHocInput.Text = newMaMonHoc;
+        }
+
+        private void importDSMH_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
+            openFileDialog.RestoreDirectory = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+
+                List<DTO_MonHoc> danhSachMonHoc = DocDuLieuTuFileCSV(filePath);
+
+                if (danhSachMonHoc != null)
+                {
+
+                    using (XacNhanImportDSMH formImport = new XacNhanImportDSMH(danhSachMonHoc))
+                    {
+                        formImport.FormClosed += (s, args) =>
+                        {
+                            LoadData();
+                        };
+
+                        formImport.ShowDialog();
+                    }
+                }
+                else
+                {
+                    warningMessage.Show("Xảy ra lỗi trong quá trình đọc dữ liệu.");
+                }
+
+            }
+        }
+
+        private List<DTO_MonHoc> DocDuLieuTuFileCSV(string filePath)
+        {
+            List<DTO_MonHoc> danhSachMonHoc = new List<DTO_MonHoc>();
+
+            using (var reader = new StreamReader(filePath))
+            {
+                // Bỏ qua dòng tiêu đề
+                reader.ReadLine();
+
+                string tuTao = bus_MH.TaoMaTuDong();
+                Console.WriteLine("MÃ: " + tuTao);
+
+                while (!reader.EndOfStream)
+                {
+                    var line = reader.ReadLine();
+                    var values = line.Split(',');
+                    string tempId = tuTao.Substring(0, 2) + values[2] + tuTao.Substring(3);
+
+                    Console.WriteLine("MÃ: " + tuTao);
+                    DTO_MonHoc monHoc = new DTO_MonHoc(
+                        tempId,
+                        values[0],
+                        int.Parse(values[1])
+                    );
+
+                    danhSachMonHoc.Add(monHoc);
+
+                    tuTao = TangMaMH(tuTao);
+                }
+            }
+
+            return danhSachMonHoc;
+        }
+
+        private string TangMaMH(string tuTao)
+        {
+            string chuoiSo = tuTao.Substring(3);
+            int soThuTu = int.Parse(chuoiSo);
+
+            soThuTu++;
+
+            string soThuTuMoi = soThuTu.ToString("000");
+
+            string maMoi = tuTao.Substring(0, 3) + soThuTuMoi;
+
+            return maMoi;
         }
     }
 }

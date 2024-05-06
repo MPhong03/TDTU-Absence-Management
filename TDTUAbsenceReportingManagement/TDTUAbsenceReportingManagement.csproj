@@ -115,6 +115,12 @@
     <Compile Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSGV.Designer.cs">
       <DependentUpon>XacNhanImportDSGV.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSMH.Designer.cs">
+      <DependentUpon>XacNhanImportDSMH.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSSV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSGV.resx">
       <DependentUpon>XacNhanImportDSGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSMH.resx">
+      <DependentUpon>XacNhanImportDSMH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Admin\Control\QuanLyTaiKhoan\FormXacNhan\XacNhanImportDSSV.resx">
       <DependentUpon>XacNhanImportDSSV.cs</DependentUpon>
