@@ -187,7 +187,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
             string selectedCaDay = caDayInput.SelectedItem.ToString();
             int caDay = int.Parse(selectedCaDay.Substring(3));
 
-            danhSachNgayDay.Rows.Add(date, caDay, phongHocInput.Text);
+            danhSachNgayDay.Rows.Add(date, caDay, phongHocInput.Text, "ĐANG HIỆU LỰC");
         }
 
         private void danhSachNgayDay_CellClick(object sender, DataGridViewCellEventArgs e)

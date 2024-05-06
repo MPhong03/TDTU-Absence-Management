@@ -53,6 +53,53 @@ namespace DAL
                 return new DataTable();
             }
         }
+        public DataTable DanhSachLopDayTheoMaSoGiangVienHomNay(string id, DateTime date)
+        {
+            string cmd = "SELECT LopDay.MaLopDay, LopDay_NgayDay.NgayDay, LopDay_NgayDay.TrangThai, LopDay_NgayDay.CaDay, " +
+                 "LopDay.Nhom, LopDay.ToTH, LopDay.MaSoGiangVien, " +
+                 "LopDay.MaSoMonHoc, MonHoc.TenMonHoc, MonHoc.MaSoMonHoc " +
+                 "FROM LopDay " +
+                 "INNER JOIN GiangVien ON LopDay.MaSoGiangVien = GiangVien.MaSoGiangVien " +
+                 "INNER JOIN MonHoc ON LopDay.MaSoMonHoc = MonHoc.MaSoMonHoc " +
+                 "INNER JOIN LopDay_NgayDay ON LopDay_NgayDay.MaLopDay = LopDay.MaLopDay " +
+                 "WHERE LopDay.MaSoGiangVien = '" + id + "' AND LopDay_NgayDay.NgayDay = '" + date.ToString("yyyy-MM-dd") + "' " +
+                 "ORDER BY CaDay ASC";
+
+            DataTable result = Connection.selectQuery(cmd);
+
+            if (result.Rows.Count > 0)
+            {
+                return result;
+            }
+            else
+            {
+                return new DataTable();
+            }
+        }
+        public DataTable DanhSachLopDayTheoMaSoSinhVienHomNay(string id, DateTime date)
+        {
+            string cmd = "SELECT LopDay.MaLopDay, LopDay_NgayDay.NgayDay, LopDay_NgayDay.TrangThai, LopDay_NgayDay.CaDay, " +
+                 "LopDay.Nhom, LopDay.ToTH, LopDay.MaSoGiangVien, " +
+                 "LopDay.MaSoMonHoc, MonHoc.TenMonHoc, MonHoc.MaSoMonHoc " +
+                 "FROM LopDay " +
+                 "INNER JOIN GiangVien ON LopDay.MaSoGiangVien = GiangVien.MaSoGiangVien " +
+                 "INNER JOIN MonHoc ON LopDay.MaSoMonHoc = MonHoc.MaSoMonHoc " +
+                 "INNER JOIN LopDay_NgayDay ON LopDay_NgayDay.MaLopDay = LopDay.MaLopDay " +
+                 "INNER JOIN SinhVien_LopDay ON SinhVien_LopDay.MaLopDay = LopDay.MaLopDay " +
+                 "WHERE SinhVien_LopDay.MaSoSinhVien = '" + id + "' AND LopDay_NgayDay.NgayDay = '" + date.ToString("yyyy-MM-dd") + "' " +
+                 "ORDER BY CaDay ASC";
+
+            DataTable result = Connection.selectQuery(cmd);
+
+            if (result.Rows.Count > 0)
+            {
+                return result;
+            }
+            else
+            {
+                return new DataTable();
+            }
+        }
         public DataTable DanhSachLopDayTheoMaSoSinhVien(string id)
         {
             string cmd = "SELECT LopDay.MaLopDay, LopDay.SoBuoiDay, " +
@@ -213,6 +260,37 @@ namespace DAL
             {
                 return null;
             }
+        }
+
+        public bool CapNhatLopDay(DTO_LopDay lopDay, DTO_LopDay_NgayDay[] ngayDayList, string[] mssvList)
+        {
+            // Cập nhật thông tin lớp học
+            string cmdUpdateLopDay = "UPDATE LopDay SET SoBuoiDay = '" + lopDay.SoBuoiDay + "', Nhom = '" + lopDay.Nhom + "', ToTH = '" + lopDay.ToTH + "', MaSoGiangVien = '" + lopDay.MaSoGiangVien + "', MaSoMonHoc = '" + lopDay.MaSoMonHoc + "' WHERE MaLopDay = '" + lopDay.MaLopDay + "'";
+
+            // Xóa các ngày dạy của lớp cũ
+            string cmdDeleteLopDay_NgayDay = "DELETE FROM LopDay_NgayDay WHERE MaLopDay = '" + lopDay.MaLopDay + "'";
+
+            // Thêm lại các ngày dạy mới
+            string cmdInsertLopDay_NgayDay = "";
+            foreach (DTO_LopDay_NgayDay ngayDay in ngayDayList)
+            {
+                cmdInsertLopDay_NgayDay += "INSERT INTO LopDay_NgayDay (NgayDay, MaLopDay, CaDay, Phong, TrangThai) " +
+                                        "VALUES ('" + ngayDay.NgayDay.ToString("yyyy-MM-dd") + "', '" + lopDay.MaLopDay + "', '" + ngayDay.CaDay + "', '" + ngayDay.Phong + "', N'" + ngayDay.TrangThai + "'); ";
+            }
+
+            // Xóa các sinh viên khỏi lớp cũ
+            string cmdDeleteSinhVien_LopDay = "DELETE FROM SinhVien_LopDay WHERE MaLopDay = '" + lopDay.MaLopDay + "'";
+
+            // Thêm lại các sinh viên vào lớp mới
+            string cmdInsertSinhVien_LopDay = "";
+            foreach (string mssv in mssvList)
+            {
+                cmdInsertSinhVien_LopDay += "INSERT INTO SinhVien_LopDay (MaSoSinhVien, MaLopDay) " +
+                                        "VALUES ('" + mssv + "', '" + lopDay.MaLopDay + "'); ";
+            }
+
+            // Thực hiện các truy vấn cập nhật
+            return Connection.actionQuery(cmdUpdateLopDay + cmdDeleteLopDay_NgayDay + cmdInsertLopDay_NgayDay + cmdDeleteSinhVien_LopDay + cmdInsertSinhVien_LopDay);
         }
 
         public string[] DanhSachSVTrongLopDay(int id)

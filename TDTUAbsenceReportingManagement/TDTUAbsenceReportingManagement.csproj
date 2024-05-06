@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.Charts.WinForms, Version=1.0.9.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.Charts.WinForms.1.0.9\lib\net472\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -46,6 +49,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -179,6 +183,12 @@
     <Compile Include="View\Lecturers\ActorGiangVienForm.Designer.cs">
       <DependentUpon>ActorGiangVienForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Lecturers\Control\Components\LopDayItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\Components\LopDayItem.Designer.cs">
+      <DependentUpon>LopDayItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Lecturers\Control\DoiMatKhauGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,12 +206,6 @@
     </Compile>
     <Compile Include="View\Lecturers\Control\GuiBaoVangControl.Designer.cs">
       <DependentUpon>GuiBaoVangControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Lecturers\Control\QuanLyLopDayPhuTrach.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\Lecturers\Control\QuanLyLopDayPhuTrach.Designer.cs">
-      <DependentUpon>QuanLyLopDayPhuTrach.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Lecturers\Control\ThongBaoGiangVien.cs">
       <SubType>UserControl</SubType>
@@ -307,6 +311,9 @@
     <EmbeddedResource Include="View\Lecturers\ActorGiangVienForm.resx">
       <DependentUpon>ActorGiangVienForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Lecturers\Control\Components\LopDayItem.resx">
+      <DependentUpon>LopDayItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Lecturers\Control\DoiMatKhauGiangVien.resx">
       <DependentUpon>DoiMatKhauGiangVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,9 +322,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Lecturers\Control\GuiBaoVangControl.resx">
       <DependentUpon>GuiBaoVangControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Lecturers\Control\QuanLyLopDayPhuTrach.resx">
-      <DependentUpon>QuanLyLopDayPhuTrach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Lecturers\Control\ThongBaoGiangVien.resx">
       <DependentUpon>ThongBaoGiangVien.cs</DependentUpon>
@@ -478,6 +482,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\exit %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\50711.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2420.9-student-sitting-in-class-icon-iconbunny-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\absent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\html-file-line-circle-background-icon-vector-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,12 @@ namespace DAL
             string cmd = "SELECT YeuCauBaoVang.MaBaoVang, YeuCauBaoVang.NgayBaoVang, YeuCauBaoVang.LyDoBaoVang, YeuCauBaoVang.TrangThai, YeuCauBaoVang.MaLopDay, GiangVien.MaSoGiangVien, GiangVien.HoVaTen " +
              "FROM YeuCauBaoVang " +
              "INNER JOIN GiangVien ON YeuCauBaoVang.MaSoGiangVien = GiangVien.MaSoGiangVien";
+
+            return Connection.selectQuery(cmd);
+        }
+        public DataTable DanhSachBaoVangDaDuyetTheoMaSoGiangVien(string id, string status)
+        {
+            string cmd = "SELECT * FROM YeuCauBaoVang WHERE MaSoGiangVien = '" + id + "' AND TrangThai = N'" + status + "'";
 
             return Connection.selectQuery(cmd);
         }

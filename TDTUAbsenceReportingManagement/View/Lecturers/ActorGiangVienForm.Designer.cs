@@ -38,11 +38,10 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.currentUser = new System.Windows.Forms.Label();
+            this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.warningDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.dangXuatTabButton = new Guna.UI2.WinForms.Guna2Button();
-            this.quanlyLopHocTabButton = new Guna.UI2.WinForms.Guna2Button();
             this.guiBaoVangTabButton = new Guna.UI2.WinForms.Guna2Button();
             this.notificationTabButton = new Guna.UI2.WinForms.Guna2Button();
             this.homeTabButton = new Guna.UI2.WinForms.Guna2Button();
@@ -90,7 +89,6 @@
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(231)))), ((int)(((byte)(255)))));
             this.guna2Panel2.Controls.Add(this.dangXuatTabButton);
-            this.guna2Panel2.Controls.Add(this.quanlyLopHocTabButton);
             this.guna2Panel2.Controls.Add(this.guiBaoVangTabButton);
             this.guna2Panel2.Controls.Add(this.notificationTabButton);
             this.guna2Panel2.Controls.Add(this.homeTabButton);
@@ -162,22 +160,6 @@
             this.currentUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.currentUser.MouseDown += new System.Windows.Forms.MouseEventHandler(this.currentUser_MouseDown);
             // 
-            // warningDialog
-            // 
-            this.warningDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
-            this.warningDialog.Caption = null;
-            this.warningDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
-            this.warningDialog.Parent = this;
-            this.warningDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
-            this.warningDialog.Text = "Đăng nhập thành công!";
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.AnimateWindow = true;
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
             // guna2ContextMenuStrip1
             // 
             this.guna2ContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -196,6 +178,22 @@
             this.guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.guna2ContextMenuStrip1.Size = new System.Drawing.Size(172, 100);
             // 
+            // warningDialog
+            // 
+            this.warningDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            this.warningDialog.Caption = null;
+            this.warningDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            this.warningDialog.Parent = this;
+            this.warningDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Light;
+            this.warningDialog.Text = "Đăng nhập thành công!";
+            // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.AnimateWindow = true;
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // dangXuatTabButton
             // 
             this.dangXuatTabButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -209,34 +207,13 @@
             this.dangXuatTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.exit__2_;
             this.dangXuatTabButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.exit__1_1;
             this.dangXuatTabButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dangXuatTabButton.Location = new System.Drawing.Point(12, 210);
+            this.dangXuatTabButton.Location = new System.Drawing.Point(9, 159);
             this.dangXuatTabButton.Name = "dangXuatTabButton";
             this.dangXuatTabButton.Size = new System.Drawing.Size(186, 45);
             this.dangXuatTabButton.TabIndex = 6;
             this.dangXuatTabButton.Text = "Đăng xuất";
             this.dangXuatTabButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.dangXuatTabButton.Click += new System.EventHandler(this.dangXuatTabButton_Click);
-            // 
-            // quanlyLopHocTabButton
-            // 
-            this.quanlyLopHocTabButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.quanlyLopHocTabButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.quanlyLopHocTabButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.quanlyLopHocTabButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.quanlyLopHocTabButton.FillColor = System.Drawing.Color.Transparent;
-            this.quanlyLopHocTabButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.quanlyLopHocTabButton.ForeColor = System.Drawing.Color.Black;
-            this.quanlyLopHocTabButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
-            this.quanlyLopHocTabButton.HoverState.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.learning__1_;
-            this.quanlyLopHocTabButton.Image = global::TDTUAbsenceReportingManagement.Properties.Resources.image__3_;
-            this.quanlyLopHocTabButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.quanlyLopHocTabButton.Location = new System.Drawing.Point(9, 159);
-            this.quanlyLopHocTabButton.Name = "quanlyLopHocTabButton";
-            this.quanlyLopHocTabButton.Size = new System.Drawing.Size(186, 45);
-            this.quanlyLopHocTabButton.TabIndex = 4;
-            this.quanlyLopHocTabButton.Text = "Quản lý lớp học";
-            this.quanlyLopHocTabButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.quanlyLopHocTabButton.Click += new System.EventHandler(this.quanlyLopHocTabButton_Click);
             // 
             // guiBaoVangTabButton
             // 
@@ -376,7 +353,6 @@
         private Guna.UI2.WinForms.Guna2MessageDialog errorDialog;
         private Guna.UI2.WinForms.Guna2ContainerControl lecturerContainerControl;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private Guna.UI2.WinForms.Guna2Button quanlyLopHocTabButton;
         private Guna.UI2.WinForms.Guna2Button guiBaoVangTabButton;
         private Guna.UI2.WinForms.Guna2Button notificationTabButton;
         private Guna.UI2.WinForms.Guna2Button homeTabButton;

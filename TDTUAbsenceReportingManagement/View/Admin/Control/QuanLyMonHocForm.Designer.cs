@@ -28,54 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.danhSachMonHoc = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaSoMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chinhSuaMonHocButton = new Guna.UI2.WinForms.Guna2Button();
             this.xoaMonHocButton = new Guna.UI2.WinForms.Guna2Button();
             this.theMonHocButton = new Guna.UI2.WinForms.Guna2Button();
-            this.soTinChiInput = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tenMonHocInput = new Guna.UI2.WinForms.Guna2TextBox();
-            this.maMonHocInput = new Guna.UI2.WinForms.Guna2TextBox();
             this.questionDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.errorDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.successDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.warningMessage = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.resetButton = new Guna.UI2.WinForms.Guna2Button();
-            this.MaSoMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMonHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doKhoInput = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.soTinChiInput = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tenMonHocInput = new Guna.UI2.WinForms.Guna2TextBox();
+            this.maMonHocInput = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.danhSachMonHoc)).BeginInit();
             this.SuspendLayout();
             // 
             // danhSachMonHoc
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.danhSachMonHoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.danhSachMonHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.danhSachMonHoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.danhSachMonHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.danhSachMonHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.danhSachMonHoc.ColumnHeadersHeight = 18;
             this.danhSachMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.danhSachMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSoMonHoc,
             this.TenMonHoc,
             this.SoTinChi});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.danhSachMonHoc.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.danhSachMonHoc.DefaultCellStyle = dataGridViewCellStyle3;
             this.danhSachMonHoc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.danhSachMonHoc.Location = new System.Drawing.Point(28, 90);
             this.danhSachMonHoc.Name = "danhSachMonHoc";
@@ -106,6 +109,24 @@
             this.danhSachMonHoc.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.danhSachMonHoc.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.danhSachMonHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhSachMonHoc_CellClick);
+            // 
+            // MaSoMonHoc
+            // 
+            this.MaSoMonHoc.HeaderText = "MaSoMonHoc";
+            this.MaSoMonHoc.MinimumWidth = 6;
+            this.MaSoMonHoc.Name = "MaSoMonHoc";
+            // 
+            // TenMonHoc
+            // 
+            this.TenMonHoc.HeaderText = "TenMonHoc";
+            this.TenMonHoc.MinimumWidth = 6;
+            this.TenMonHoc.Name = "TenMonHoc";
+            // 
+            // SoTinChi
+            // 
+            this.SoTinChi.HeaderText = "SoTinChi";
+            this.SoTinChi.MinimumWidth = 6;
+            this.SoTinChi.Name = "SoTinChi";
             // 
             // chinhSuaMonHocButton
             // 
@@ -157,6 +178,82 @@
             this.theMonHocButton.TabIndex = 42;
             this.theMonHocButton.Text = "Thêm môn học";
             this.theMonHocButton.Click += new System.EventHandler(this.theMonHocButton_Click);
+            // 
+            // questionDialog
+            // 
+            this.questionDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
+            this.questionDialog.Caption = "Confirm";
+            this.questionDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            this.questionDialog.Parent = null;
+            this.questionDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.questionDialog.Text = null;
+            // 
+            // errorDialog
+            // 
+            this.errorDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.errorDialog.Caption = "Error";
+            this.errorDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
+            this.errorDialog.Parent = null;
+            this.errorDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.errorDialog.Text = null;
+            // 
+            // successDialog
+            // 
+            this.successDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.successDialog.Caption = null;
+            this.successDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.successDialog.Parent = null;
+            this.successDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.successDialog.Text = null;
+            // 
+            // warningMessage
+            // 
+            this.warningMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.warningMessage.Caption = "Warning";
+            this.warningMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
+            this.warningMessage.Parent = null;
+            this.warningMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.warningMessage.Text = null;
+            // 
+            // resetButton
+            // 
+            this.resetButton.BorderRadius = 10;
+            this.resetButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.resetButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.resetButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.resetButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.resetButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(166)))), ((int)(((byte)(178)))));
+            this.resetButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.resetButton.ForeColor = System.Drawing.Color.White;
+            this.resetButton.Location = new System.Drawing.Point(601, 53);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(179, 31);
+            this.resetButton.TabIndex = 46;
+            this.resetButton.Text = "Đặt lại";
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
+            // doKhoInput
+            // 
+            this.doKhoInput.BackColor = System.Drawing.Color.Transparent;
+            this.doKhoInput.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.doKhoInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.doKhoInput.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.doKhoInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.doKhoInput.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.doKhoInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.doKhoInput.ItemHeight = 30;
+            this.doKhoInput.Items.AddRange(new object[] {
+            "Độ khó 0",
+            "Độ khó 1",
+            "Độ khó 2",
+            "Độ khó 3",
+            "Độ khó 4",
+            "Độ khó 5"});
+            this.doKhoInput.Location = new System.Drawing.Point(601, 5);
+            this.doKhoInput.Name = "doKhoInput";
+            this.doKhoInput.Size = new System.Drawing.Size(179, 36);
+            this.doKhoInput.TabIndex = 47;
+            this.doKhoInput.SelectedIndexChanged += new System.EventHandler(this.doKhoInput_SelectedIndexChanged);
             // 
             // soTinChiInput
             // 
@@ -221,100 +318,6 @@
             this.maMonHocInput.SelectedText = "";
             this.maMonHocInput.Size = new System.Drawing.Size(185, 36);
             this.maMonHocInput.TabIndex = 39;
-            // 
-            // questionDialog
-            // 
-            this.questionDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.YesNo;
-            this.questionDialog.Caption = "Confirm";
-            this.questionDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
-            this.questionDialog.Parent = null;
-            this.questionDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.questionDialog.Text = null;
-            // 
-            // errorDialog
-            // 
-            this.errorDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.errorDialog.Caption = "Error";
-            this.errorDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Error;
-            this.errorDialog.Parent = null;
-            this.errorDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.errorDialog.Text = null;
-            // 
-            // successDialog
-            // 
-            this.successDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.successDialog.Caption = null;
-            this.successDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
-            this.successDialog.Parent = null;
-            this.successDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.successDialog.Text = null;
-            // 
-            // warningMessage
-            // 
-            this.warningMessage.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.warningMessage.Caption = "Warning";
-            this.warningMessage.Icon = Guna.UI2.WinForms.MessageDialogIcon.Warning;
-            this.warningMessage.Parent = null;
-            this.warningMessage.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.warningMessage.Text = null;
-            // 
-            // resetButton
-            // 
-            this.resetButton.BorderRadius = 10;
-            this.resetButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.resetButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.resetButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.resetButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.resetButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(166)))), ((int)(((byte)(178)))));
-            this.resetButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.resetButton.ForeColor = System.Drawing.Color.White;
-            this.resetButton.Location = new System.Drawing.Point(601, 53);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(179, 31);
-            this.resetButton.TabIndex = 46;
-            this.resetButton.Text = "Đặt lại";
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
-            // 
-            // MaSoMonHoc
-            // 
-            this.MaSoMonHoc.HeaderText = "MaSoMonHoc";
-            this.MaSoMonHoc.MinimumWidth = 6;
-            this.MaSoMonHoc.Name = "MaSoMonHoc";
-            // 
-            // TenMonHoc
-            // 
-            this.TenMonHoc.HeaderText = "TenMonHoc";
-            this.TenMonHoc.MinimumWidth = 6;
-            this.TenMonHoc.Name = "TenMonHoc";
-            // 
-            // SoTinChi
-            // 
-            this.SoTinChi.HeaderText = "SoTinChi";
-            this.SoTinChi.MinimumWidth = 6;
-            this.SoTinChi.Name = "SoTinChi";
-            // 
-            // doKhoInput
-            // 
-            this.doKhoInput.BackColor = System.Drawing.Color.Transparent;
-            this.doKhoInput.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.doKhoInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.doKhoInput.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.doKhoInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.doKhoInput.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.doKhoInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.doKhoInput.ItemHeight = 30;
-            this.doKhoInput.Items.AddRange(new object[] {
-            "Độ khó 0",
-            "Độ khó 1",
-            "Độ khó 2",
-            "Độ khó 3",
-            "Độ khó 4",
-            "Độ khó 5"});
-            this.doKhoInput.Location = new System.Drawing.Point(601, 5);
-            this.doKhoInput.Name = "doKhoInput";
-            this.doKhoInput.Size = new System.Drawing.Size(179, 36);
-            this.doKhoInput.TabIndex = 47;
-            this.doKhoInput.SelectedIndexChanged += new System.EventHandler(this.doKhoInput_SelectedIndexChanged);
             // 
             // QuanLyMonHocForm
             // 

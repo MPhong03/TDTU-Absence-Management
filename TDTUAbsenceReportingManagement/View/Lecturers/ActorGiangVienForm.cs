@@ -55,12 +55,6 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers
             addUserControl(uc);
         }
 
-        private void quanlyLopHocTabButton_Click(object sender, EventArgs e)
-        {
-            QuanLyLopDayPhuTrach uc = new QuanLyLopDayPhuTrach();
-            addUserControl(uc);
-        }
-
         private void dangXuatTabButton_Click(object sender, EventArgs e)
         {
             DialogResult result = warningDialog.Show("Xác nhận đăng xuất?");

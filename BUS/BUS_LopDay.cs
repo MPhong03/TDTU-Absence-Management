@@ -28,6 +28,14 @@ namespace BUS
         {
             return dal_LopDay.DanhSachLopDayTheoMaSoSinhVien(id);
         }
+        public DataTable DanhSachLopDayTheoMaSoGiangVienHomNay(string id, DateTime date)
+        {
+            return dal_LopDay.DanhSachLopDayTheoMaSoGiangVienHomNay(id, date);
+        }
+        public DataTable DanhSachLopDayTheoMaSoSinhVienHomNay(string id, DateTime date)
+        {
+            return dal_LopDay.DanhSachLopDayTheoMaSoSinhVienHomNay(id, date);
+        }
         public bool ThemLopDay(DTO_LopDay lopDay, DTO_LopDay_NgayDay[] ngayDayList, string[] mssvList)
         {
             return dal_LopDay.ThemLopDay(lopDay, ngayDayList, mssvList);
@@ -42,20 +50,22 @@ namespace BUS
         }
         public bool ChinhSuaLopHoc(DTO_LopDay lopDay, DTO_LopDay_NgayDay[] ngayDayList, string[] mssvList)
         {
-            try
-            {
-                if (!dal_LopDay.XoaLopDay(lopDay.MaLopDay))
-                {
-                    return false;
-                }
+            //try
+            //{
+            //    if (!dal_LopDay.XoaLopDay(lopDay.MaLopDay))
+            //    {
+            //        return false;
+            //    }
 
-                return dal_LopDay.ThemLopDay(lopDay, ngayDayList, mssvList);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi chỉnh sửa lớp học: " + ex.Message);
-                return false;
-            }
+            //    return dal_LopDay.ThemLopDay(lopDay, ngayDayList, mssvList);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine("Lỗi chỉnh sửa lớp học: " + ex.Message);
+            //    return false;
+            //}
+
+            return dal_LopDay.CapNhatLopDay(lopDay, ngayDayList, mssvList);
         }
         public DataRow ChiTietLopDayTheoNgay(int id, DateTime ngay)
         {
