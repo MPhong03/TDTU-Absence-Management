@@ -57,6 +57,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
 
             maMonHocInput.Text = bus_MH.TaoMaTuDong();
             maMonHocInput.Enabled = false;
+            doKhoInput.SelectedIndex = 0;
         }
 
         private void danhSachMonHoc_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -105,17 +106,18 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
         {
             string maMH = maMonHocInput.Text.Trim();
             string tenMH = tenMonHocInput.Text.Trim();
-            int tinChi = int.Parse(soTinChiInput.Text.Trim());
+            string soTinChi = soTinChiInput.Text.Trim();
 
-            if ( tinChi < 0 )
+            if (string.IsNullOrEmpty(maMH) || string.IsNullOrEmpty(tenMH) || string.IsNullOrEmpty(soTinChi))
             {
-                warningMessage.Show("Số tín chỉ phải lớn hơn 0");
+                warningMessage.Show("Nhập đầy đủ thông tin");
                 return;
             }
 
-            if ( string.IsNullOrEmpty(maMH) || string.IsNullOrEmpty(tenMH) )
+            int tinChi;
+            if (!int.TryParse(soTinChi, out tinChi) || tinChi <= 0)
             {
-                warningMessage.Show("Nhập đầy đủ thông tin");
+                warningMessage.Show("Số tín chỉ phải là một số nguyên dương");
                 return;
             }
 

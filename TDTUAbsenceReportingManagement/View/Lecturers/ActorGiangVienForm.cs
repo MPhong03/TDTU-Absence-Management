@@ -112,5 +112,31 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers
             }
         }
 
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+            guna2ContextMenuStrip1.Show(dropdownMenuButton, new Point(8, dropdownMenuButton.Height));
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = warningDialog.Show("Xác nhận đăng xuất?");
+
+            if (result == DialogResult.Yes)
+            {
+                Session.Logout();
+
+                FormDangNhap login = new FormDangNhap();
+                login.Show();
+
+                this.Hide();
+            }
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoiMatKhauGiangVien form = new DoiMatKhauGiangVien();
+
+            form.ShowDialog();
+        }
     }
 }

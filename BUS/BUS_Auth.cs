@@ -14,25 +14,26 @@ namespace BUS
         {
             auth = new DAL_Auth();
         }
-        public bool DangNhap(string email, string password, string role)
+        public bool DangNhap(string email, string password, string role, out string id)
         {
             if (role.Equals("Quản trị viên"))
             {
+                id = null;
                 return auth.DangNhapQuanTriVien(email, password, role);
             }
             else if (role.Equals("Giảng viên"))
             {
-                return auth.DangNhapGiangVien(email, password, role);
+                return auth.DangNhapGiangVien(email, password, out id);
 
             }
             else if (role.Equals("Sinh viên"))
             {
-                return auth.DangNhapSinhVien(email, password, role);
+                return auth.DangNhapSinhVien(email, password, out id);
 
             }
             else
             {
-
+                id = null;
                 return false;
             }
         }

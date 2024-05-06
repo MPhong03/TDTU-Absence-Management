@@ -53,6 +53,28 @@ namespace DAL
                 return new DataTable();
             }
         }
+        public DataTable DanhSachLopDayTheoMaSoSinhVien(string id)
+        {
+            string cmd = "SELECT LopDay.MaLopDay, LopDay.SoBuoiDay, " +
+                 "LopDay.Nhom, LopDay.ToTH, LopDay.MaSoGiangVien, " +
+                 "GiangVien.HoVaTen AS TenGiangVien, LopDay.MaSoMonHoc, MonHoc.TenMonHoc " +
+                 "FROM LopDay " +
+                 "INNER JOIN GiangVien ON LopDay.MaSoGiangVien = GiangVien.MaSoGiangVien " +
+                 "INNER JOIN MonHoc ON LopDay.MaSoMonHoc = MonHoc.MaSoMonHoc " +
+                 "INNER JOIN SinhVien_LopDay ON LopDay.MaLopDay = SinhVien_LopDay.MaLopDay " +
+                 "WHERE SinhVien_LopDay.MaSoSinhVien = '" + id + "'";
+
+            DataTable result = Connection.selectQuery(cmd);
+
+            if (result.Rows.Count > 0)
+            {
+                return result;
+            }
+            else
+            {
+                return new DataTable();
+            }
+        }
         public string LayMaLopDayGanNhat()
         {
             string cmd = "SELECT TOP 1 MaLopDay FROM LopDay ORDER BY MaLopDay DESC";

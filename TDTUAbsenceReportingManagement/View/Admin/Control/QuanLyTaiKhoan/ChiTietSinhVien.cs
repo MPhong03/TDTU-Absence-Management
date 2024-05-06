@@ -18,11 +18,13 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
         private string maSoSinhVien = string.Empty;
         BUS_SinhVien sv;
         DTO_SinhVien dSV;
+        BUS_LopDay bus_LD;
         public ChiTietSinhVien(string maSoSinhVien)
         {
             InitializeComponent();
             this.maSoSinhVien = maSoSinhVien;
             sv = new BUS_SinhVien();
+            bus_LD = new BUS_LopDay();
             messageDialogCTSV.Parent = this.FindForm();
             messageDialog_Xoa.Parent = this.FindForm();
         }
@@ -46,6 +48,13 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
                 academicRankSV_sua.SelectedItem = dSV.ChuyenNganh;
                 courseSV_sua.Text = dSV.KhoaTuyenSinh;
                 passwordSV_sua.Text = dSV.MatKhau;
+
+                DataTable dsLop = bus_LD.DanhSachLopDayTheoMaSoSinhVien(this.maSoSinhVien);
+
+                if (dsLop != null)
+                {
+                    danhsachLopHocDataGrid.DataSource = dsLop;
+                }
             }
         }
 

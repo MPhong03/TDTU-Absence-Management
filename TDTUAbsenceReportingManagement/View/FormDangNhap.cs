@@ -34,11 +34,13 @@ namespace TDTUAbsenceReportingManagement
             try
             {
                 // Gọi phương thức DangNhap trong DAL
-                bool success = auth.DangNhap(email, password, role);
+                string id = null;
+                bool success = auth.DangNhap(email, password, role, out id);
                 Debug.Write(success);
                 if (success)
                 {
-                    Session.Login(email, role);
+                    Session.Login(id, email, role);
+                    Debug.WriteLine(Session.UserID + " - " + Session.Username);
                     switch (role)
                     {
                         case "Quản trị viên":

@@ -24,6 +24,11 @@ namespace BUS
             return sv.DanhSachSinhVien();
         }
 
+        public bool DoiMatKhau(string id, string email, string password, string newPassword)
+        {
+            return sv.DoiMatKhau(id, email, password, newPassword);
+        }
+
         public DTO_SinhVien ChiTietSinhVien(string maSV)
         {
             return sv.HienThongTinSV(maSV);

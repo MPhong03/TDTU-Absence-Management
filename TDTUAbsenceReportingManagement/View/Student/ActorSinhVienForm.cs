@@ -98,5 +98,32 @@ namespace TDTUAbsenceReportingManagement.View.Student
             ThongBaoSinhVien uc = new ThongBaoSinhVien();
             addUserControl(uc);
         }
+
+        private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
+        {
+            guna2ContextMenuStrip1.Show(guna2CirclePictureBox1, new Point(8, guna2CirclePictureBox1.Height));
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DoiMatKhauSinhVien form = new DoiMatKhauSinhVien();
+
+            form.ShowDialog();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = warningDialog.Show("Xác nhận đăng xuất?");
+
+            if (result == DialogResult.Yes)
+            {
+                Session.Logout();
+
+                FormDangNhap login = new FormDangNhap();
+                login.Show();
+
+                this.Hide();
+            }
+        }
     }
 }

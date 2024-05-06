@@ -24,6 +24,10 @@ namespace BUS
         {
             return dal_LopDay.DanhSachLopDayTheoEmailGiangVien(email);
         }
+        public DataTable DanhSachLopDayTheoMaSoSinhVien(string id)
+        {
+            return dal_LopDay.DanhSachLopDayTheoMaSoSinhVien(id);
+        }
         public bool ThemLopDay(DTO_LopDay lopDay, DTO_LopDay_NgayDay[] ngayDayList, string[] mssvList)
         {
             return dal_LopDay.ThemLopDay(lopDay, ngayDayList, mssvList);

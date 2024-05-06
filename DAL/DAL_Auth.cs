@@ -15,9 +15,10 @@ namespace DAL
         {
             string cmd = "SELECT * FROM QuanTriVien WHERE TenDangNhap = '" + email + "' AND MatKhau = '" + password + "'";
 
-            if (Connection.selectQuery(cmd).Rows.Count > 0)
-            {
+            DataTable data = Connection.selectQuery(cmd);
 
+            if (data.Rows.Count > 0)
+            {
                 return true;
             }
             else
@@ -26,32 +27,40 @@ namespace DAL
             }
         }
 
-        public bool DangNhapGiangVien(string email, string password, string role)
+        public bool DangNhapGiangVien(string email, string password, out string id)
         {
             string cmd = "SELECT * FROM GiangVien WHERE Email = '" + email + "' AND MatKhau = '" + password + "'";
 
-            if (Connection.selectQuery(cmd).Rows.Count > 0)
+            DataTable data = Connection.selectQuery(cmd);
+
+            if (data.Rows.Count > 0)
             {
+                id = (data.Rows[0])["MaSoGiangVien"].ToString();
 
                 return true;
             }
             else
             {
+                id = null;
                 return false;
             }
         }
 
-        public bool DangNhapSinhVien(string email, string password, string role)
+        public bool DangNhapSinhVien(string email, string password, out string id)
         {
             string cmd = "SELECT * FROM SinhVien WHERE Email = '" + email + "' AND MatKhau = '" + password + "'";
 
-            if (Connection.selectQuery(cmd).Rows.Count > 0)
+            DataTable data = Connection.selectQuery(cmd);
+
+            if (data.Rows.Count > 0)
             {
+                id = (data.Rows[0])["MaSoSinhVien"].ToString();
 
                 return true;
             }
             else
             {
+                id = null;
                 return false;
             }
         }

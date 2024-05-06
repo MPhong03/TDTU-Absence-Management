@@ -37,7 +37,6 @@
             this.errorDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.unHideButton = new Guna.UI2.WinForms.Guna2Button();
             this.hideButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
@@ -165,17 +164,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "ĐĂNG NHẬP";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(105, 339);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Quên mật khẩu?";
-            // 
             // unHideButton
             // 
             this.unHideButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -261,7 +249,6 @@
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.hideButton);
             this.Controls.Add(this.unHideButton);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.roleLogin);
@@ -285,7 +272,6 @@
         private Guna.UI2.WinForms.Guna2MessageDialog successDialog;
         private Guna.UI2.WinForms.Guna2MessageDialog errorDialog;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button unHideButton;
         private Guna.UI2.WinForms.Guna2Button hideButton;

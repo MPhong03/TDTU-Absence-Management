@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.genderSV_sua = new Guna.UI2.WinForms.Guna2ComboBox();
             this.courseSV_sua = new Guna.UI2.WinForms.Guna2TextBox();
             this.passwordSV_sua = new Guna.UI2.WinForms.Guna2TextBox();
@@ -63,10 +63,10 @@
             this.genderSV_sua.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.genderSV_sua.Location = new System.Drawing.Point(55, 173);
+            this.genderSV_sua.Location = new System.Drawing.Point(15, 173);
             this.genderSV_sua.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.genderSV_sua.Name = "genderSV_sua";
-            this.genderSV_sua.Size = new System.Drawing.Size(320, 36);
+            this.genderSV_sua.Size = new System.Drawing.Size(377, 36);
             this.genderSV_sua.TabIndex = 35;
             // 
             // courseSV_sua
@@ -81,13 +81,13 @@
             this.courseSV_sua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.courseSV_sua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.courseSV_sua.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.learning__2_;
-            this.courseSV_sua.Location = new System.Drawing.Point(413, 91);
+            this.courseSV_sua.Location = new System.Drawing.Point(403, 91);
             this.courseSV_sua.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.courseSV_sua.Name = "courseSV_sua";
             this.courseSV_sua.PasswordChar = '\0';
             this.courseSV_sua.PlaceholderText = "Năm tuyển sinh";
             this.courseSV_sua.SelectedText = "";
-            this.courseSV_sua.Size = new System.Drawing.Size(320, 36);
+            this.courseSV_sua.Size = new System.Drawing.Size(384, 36);
             this.courseSV_sua.TabIndex = 33;
             // 
             // passwordSV_sua
@@ -102,13 +102,13 @@
             this.passwordSV_sua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.passwordSV_sua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passwordSV_sua.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources._lock;
-            this.passwordSV_sua.Location = new System.Drawing.Point(413, 50);
+            this.passwordSV_sua.Location = new System.Drawing.Point(403, 50);
             this.passwordSV_sua.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.passwordSV_sua.Name = "passwordSV_sua";
             this.passwordSV_sua.PasswordChar = '\0';
             this.passwordSV_sua.PlaceholderText = "Mật khẩu";
             this.passwordSV_sua.SelectedText = "";
-            this.passwordSV_sua.Size = new System.Drawing.Size(320, 36);
+            this.passwordSV_sua.Size = new System.Drawing.Size(384, 36);
             this.passwordSV_sua.TabIndex = 32;
             this.passwordSV_sua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.passwordSV_sua_KeyPress);
             // 
@@ -124,13 +124,13 @@
             this.phoneSV_sua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.phoneSV_sua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phoneSV_sua.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.phone;
-            this.phoneSV_sua.Location = new System.Drawing.Point(55, 132);
+            this.phoneSV_sua.Location = new System.Drawing.Point(15, 132);
             this.phoneSV_sua.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.phoneSV_sua.Name = "phoneSV_sua";
             this.phoneSV_sua.PasswordChar = '\0';
             this.phoneSV_sua.PlaceholderText = "Số điện thoại";
             this.phoneSV_sua.SelectedText = "";
-            this.phoneSV_sua.Size = new System.Drawing.Size(320, 36);
+            this.phoneSV_sua.Size = new System.Drawing.Size(377, 36);
             this.phoneSV_sua.TabIndex = 31;
             this.phoneSV_sua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phoneSV_sua_KeyPress);
             // 
@@ -146,13 +146,13 @@
             this.fullNameSV_sua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.fullNameSV_sua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.fullNameSV_sua.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.user;
-            this.fullNameSV_sua.Location = new System.Drawing.Point(413, 9);
+            this.fullNameSV_sua.Location = new System.Drawing.Point(403, 9);
             this.fullNameSV_sua.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.fullNameSV_sua.Name = "fullNameSV_sua";
             this.fullNameSV_sua.PasswordChar = '\0';
             this.fullNameSV_sua.PlaceholderText = "Họ và tên";
             this.fullNameSV_sua.SelectedText = "";
-            this.fullNameSV_sua.Size = new System.Drawing.Size(320, 36);
+            this.fullNameSV_sua.Size = new System.Drawing.Size(384, 36);
             this.fullNameSV_sua.TabIndex = 30;
             // 
             // cccdSV_sua
@@ -167,13 +167,13 @@
             this.cccdSV_sua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cccdSV_sua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cccdSV_sua.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.idcard;
-            this.cccdSV_sua.Location = new System.Drawing.Point(55, 91);
+            this.cccdSV_sua.Location = new System.Drawing.Point(15, 91);
             this.cccdSV_sua.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.cccdSV_sua.Name = "cccdSV_sua";
             this.cccdSV_sua.PasswordChar = '\0';
             this.cccdSV_sua.PlaceholderText = "CCCD/CMND";
             this.cccdSV_sua.SelectedText = "";
-            this.cccdSV_sua.Size = new System.Drawing.Size(320, 36);
+            this.cccdSV_sua.Size = new System.Drawing.Size(377, 36);
             this.cccdSV_sua.TabIndex = 29;
             this.cccdSV_sua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cccdSV_sua_KeyPress);
             // 
@@ -189,13 +189,13 @@
             this.emailSV_sua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.emailSV_sua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailSV_sua.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.email;
-            this.emailSV_sua.Location = new System.Drawing.Point(55, 50);
+            this.emailSV_sua.Location = new System.Drawing.Point(15, 50);
             this.emailSV_sua.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.emailSV_sua.Name = "emailSV_sua";
             this.emailSV_sua.PasswordChar = '\0';
             this.emailSV_sua.PlaceholderText = "Email";
             this.emailSV_sua.SelectedText = "";
-            this.emailSV_sua.Size = new System.Drawing.Size(320, 36);
+            this.emailSV_sua.Size = new System.Drawing.Size(377, 36);
             this.emailSV_sua.TabIndex = 28;
             // 
             // maSV_sua
@@ -210,13 +210,13 @@
             this.maSV_sua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.maSV_sua.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.maSV_sua.IconLeft = global::TDTUAbsenceReportingManagement.Properties.Resources.id;
-            this.maSV_sua.Location = new System.Drawing.Point(55, 9);
+            this.maSV_sua.Location = new System.Drawing.Point(15, 9);
             this.maSV_sua.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.maSV_sua.Name = "maSV_sua";
             this.maSV_sua.PasswordChar = '\0';
             this.maSV_sua.PlaceholderText = "Mã sinh viên";
             this.maSV_sua.SelectedText = "";
-            this.maSV_sua.Size = new System.Drawing.Size(320, 36);
+            this.maSV_sua.Size = new System.Drawing.Size(377, 36);
             this.maSV_sua.TabIndex = 27;
             // 
             // academicRankSV_sua
@@ -233,10 +233,10 @@
             "Khoa học máy tính",
             "Kỹ thuật phần mềm",
             "Mạng máy tính và truyền thông dữ liệu"});
-            this.academicRankSV_sua.Location = new System.Drawing.Point(413, 173);
+            this.academicRankSV_sua.Location = new System.Drawing.Point(403, 173);
             this.academicRankSV_sua.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.academicRankSV_sua.Name = "academicRankSV_sua";
-            this.academicRankSV_sua.Size = new System.Drawing.Size(320, 36);
+            this.academicRankSV_sua.Size = new System.Drawing.Size(384, 36);
             this.academicRankSV_sua.TabIndex = 36;
             // 
             // huy_sua_SVbtn
@@ -249,9 +249,9 @@
             this.huy_sua_SVbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(161)))), ((int)(((byte)(27)))));
             this.huy_sua_SVbtn.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.huy_sua_SVbtn.ForeColor = System.Drawing.Color.White;
-            this.huy_sua_SVbtn.Location = new System.Drawing.Point(533, 233);
+            this.huy_sua_SVbtn.Location = new System.Drawing.Point(533, 221);
             this.huy_sua_SVbtn.Name = "huy_sua_SVbtn";
-            this.huy_sua_SVbtn.Size = new System.Drawing.Size(200, 40);
+            this.huy_sua_SVbtn.Size = new System.Drawing.Size(254, 31);
             this.huy_sua_SVbtn.TabIndex = 38;
             this.huy_sua_SVbtn.Text = "Hủy";
             this.huy_sua_SVbtn.Click += new System.EventHandler(this.huy_sua_SVbtn_Click);
@@ -263,45 +263,48 @@
             this.luu_sua_SVbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.luu_sua_SVbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.luu_sua_SVbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.luu_sua_SVbtn.FillColor = System.Drawing.Color.DodgerBlue;
+            this.luu_sua_SVbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(115)))), ((int)(((byte)(232)))));
             this.luu_sua_SVbtn.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.luu_sua_SVbtn.ForeColor = System.Drawing.Color.White;
-            this.luu_sua_SVbtn.Location = new System.Drawing.Point(55, 233);
+            this.luu_sua_SVbtn.Location = new System.Drawing.Point(15, 221);
             this.luu_sua_SVbtn.Name = "luu_sua_SVbtn";
-            this.luu_sua_SVbtn.Size = new System.Drawing.Size(200, 40);
+            this.luu_sua_SVbtn.Size = new System.Drawing.Size(246, 31);
             this.luu_sua_SVbtn.TabIndex = 37;
             this.luu_sua_SVbtn.Text = "Lưu chỉnh sửa";
             this.luu_sua_SVbtn.Click += new System.EventHandler(this.luu_sua_SVbtn_Click);
             // 
             // danhsachLopHocDataGrid
             // 
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            this.danhsachLopHocDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.danhsachLopHocDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
-            this.danhsachLopHocDataGrid.ColumnHeadersHeight = 4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.danhsachLopHocDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.danhsachLopHocDataGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.danhsachLopHocDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.danhsachLopHocDataGrid.ColumnHeadersHeight = 18;
             this.danhsachLopHocDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.danhsachLopHocDataGrid.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.danhsachLopHocDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             this.danhsachLopHocDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.danhsachLopHocDataGrid.Location = new System.Drawing.Point(55, 295);
+            this.danhsachLopHocDataGrid.Location = new System.Drawing.Point(15, 267);
             this.danhsachLopHocDataGrid.Name = "danhsachLopHocDataGrid";
             this.danhsachLopHocDataGrid.RowHeadersVisible = false;
             this.danhsachLopHocDataGrid.RowHeadersWidth = 51;
             this.danhsachLopHocDataGrid.RowTemplate.Height = 24;
-            this.danhsachLopHocDataGrid.Size = new System.Drawing.Size(678, 180);
+            this.danhsachLopHocDataGrid.Size = new System.Drawing.Size(772, 254);
             this.danhsachLopHocDataGrid.TabIndex = 39;
             this.danhsachLopHocDataGrid.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.danhsachLopHocDataGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -315,7 +318,7 @@
             this.danhsachLopHocDataGrid.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.danhsachLopHocDataGrid.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.danhsachLopHocDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.danhsachLopHocDataGrid.ThemeStyle.HeaderStyle.Height = 4;
+            this.danhsachLopHocDataGrid.ThemeStyle.HeaderStyle.Height = 18;
             this.danhsachLopHocDataGrid.ThemeStyle.ReadOnly = false;
             this.danhsachLopHocDataGrid.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.danhsachLopHocDataGrid.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -331,11 +334,11 @@
             this.birthDateSV_sua.FillColor = System.Drawing.Color.LightSkyBlue;
             this.birthDateSV_sua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.birthDateSV_sua.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.birthDateSV_sua.Location = new System.Drawing.Point(413, 132);
+            this.birthDateSV_sua.Location = new System.Drawing.Point(403, 132);
             this.birthDateSV_sua.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.birthDateSV_sua.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.birthDateSV_sua.Name = "birthDateSV_sua";
-            this.birthDateSV_sua.Size = new System.Drawing.Size(320, 36);
+            this.birthDateSV_sua.Size = new System.Drawing.Size(384, 36);
             this.birthDateSV_sua.TabIndex = 40;
             this.birthDateSV_sua.Value = new System.DateTime(2024, 4, 18, 11, 33, 27, 219);
             // 
@@ -346,12 +349,12 @@
             this.xoaSVbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.xoaSVbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.xoaSVbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.xoaSVbtn.FillColor = System.Drawing.Color.Red;
+            this.xoaSVbtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(101)))), ((int)(((byte)(98)))));
             this.xoaSVbtn.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.xoaSVbtn.ForeColor = System.Drawing.Color.White;
-            this.xoaSVbtn.Location = new System.Drawing.Point(297, 233);
+            this.xoaSVbtn.Location = new System.Drawing.Point(267, 221);
             this.xoaSVbtn.Name = "xoaSVbtn";
-            this.xoaSVbtn.Size = new System.Drawing.Size(200, 40);
+            this.xoaSVbtn.Size = new System.Drawing.Size(260, 31);
             this.xoaSVbtn.TabIndex = 41;
             this.xoaSVbtn.Text = "Xóa";
             this.xoaSVbtn.Click += new System.EventHandler(this.xoaSVbtn_Click);
@@ -378,6 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.Controls.Add(this.xoaSVbtn);
             this.Controls.Add(this.birthDateSV_sua);
             this.Controls.Add(this.danhsachLopHocDataGrid);

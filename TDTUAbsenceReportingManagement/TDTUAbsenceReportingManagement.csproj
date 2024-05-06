@@ -179,6 +179,12 @@
     <Compile Include="View\Lecturers\ActorGiangVienForm.Designer.cs">
       <DependentUpon>ActorGiangVienForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Lecturers\Control\DoiMatKhauGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\DoiMatKhauGiangVien.Designer.cs">
+      <DependentUpon>DoiMatKhauGiangVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Lecturers\Control\GuiBaoBuControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -220,6 +226,12 @@
     </Compile>
     <Compile Include="View\Student\ActorSinhVienForm.Designer.cs">
       <DependentUpon>ActorSinhVienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Student\Control\DoiMatKhauSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Student\Control\DoiMatKhauSinhVien.Designer.cs">
+      <DependentUpon>DoiMatKhauSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Student\Control\ThongBaoSinhVien.cs">
       <SubType>UserControl</SubType>
@@ -295,6 +307,9 @@
     <EmbeddedResource Include="View\Lecturers\ActorGiangVienForm.resx">
       <DependentUpon>ActorGiangVienForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Lecturers\Control\DoiMatKhauGiangVien.resx">
+      <DependentUpon>DoiMatKhauGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Lecturers\Control\GuiBaoBuControl.resx">
       <DependentUpon>GuiBaoBuControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Student\ActorSinhVienForm.resx">
       <DependentUpon>ActorSinhVienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Student\Control\DoiMatKhauSinhVien.resx">
+      <DependentUpon>DoiMatKhauSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Student\Control\ThongBaoSinhVien.resx">
       <DependentUpon>ThongBaoSinhVien.cs</DependentUpon>

@@ -16,6 +16,13 @@ namespace DAL
             return Connection.selectQuery(cmd);
         }
 
+        public bool DoiMatKhau(string id, string email, string password, string newPassword)
+        {
+            string cmd = "UPDATE SinhVien SET MatKhau = '" + newPassword + "' WHERE MaSoSinhVien = '" + id + "' AND Email = '" + email + "' AND MatKhau = '" + password + "'";
+
+            return Connection.actionQuery(cmd);
+        }
+
         public DTO_SinhVien HienThongTinSV(string maSV)
         {
             string cmd = "SELECT * FROM SinhVien WHERE MaSoSinhVien = '" + maSV + "'";

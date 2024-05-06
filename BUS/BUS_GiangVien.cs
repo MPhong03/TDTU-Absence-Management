@@ -21,6 +21,10 @@ namespace BUS
         {
             return gv.DanhSachGiangVien();
         }
+        public bool DoiMatKhau(string id, string email, string password, string newPassword)
+        {
+            return gv.DoiMatKhau(id, email, password, newPassword);
+        }
         public DTO_GiangVien ChiTietGiangVien(string maSoGiangVien)
         {
             return gv.ChiTietGiangVien(maSoGiangVien);
