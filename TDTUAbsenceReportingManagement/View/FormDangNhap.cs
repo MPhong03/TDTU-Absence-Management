@@ -2,6 +2,8 @@
 using DAL;
 using System;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using TDTUAbsenceReportingManagement.Data;
 using TDTUAbsenceReportingManagement.View.Admin;
@@ -13,6 +15,7 @@ namespace TDTUAbsenceReportingManagement
     public partial class FormDangNhap : Form
     {
         BUS_Auth auth;
+        private string previousSearchText = "";
         public FormDangNhap()
         {
             InitializeComponent();
@@ -41,6 +44,7 @@ namespace TDTUAbsenceReportingManagement
                 {
                     Session.Login(id, email, role);
                     Debug.WriteLine(Session.UserID + " - " + Session.Username);
+                    SaveEmailToFile(email);
                     switch (role)
                     {
                         case "Quản trị viên":
@@ -81,6 +85,11 @@ namespace TDTUAbsenceReportingManagement
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
             roleLogin.SelectedIndex = 0;
+
+            LoadAutoCompleteData();
+
+            emailLogin.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            emailLogin.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void unHideButton_Click(object sender, EventArgs e)
@@ -100,6 +109,43 @@ namespace TDTUAbsenceReportingManagement
                 unHideButton.BringToFront();
 
                 passwordLogin.PasswordChar = '\0';
+            }
+        }
+
+        private void LoadAutoCompleteData()
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string directoryPath = Path.Combine(appDataPath, "TDTUAbsenceLoginData");
+            string fullPath = Path.Combine(directoryPath, "email.txt");
+
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath); // Tạo thư mục nếu chưa tồn tại
+            }
+
+            if (File.Exists(fullPath))
+            {
+                string[] emails = File.ReadAllLines(fullPath);
+                // Lọc chỉ các email bắt đầu bằng chuỗi đã nhập
+                var filteredEmails = emails.Where(email => email.StartsWith(emailLogin.Text));
+                emailLogin.AutoCompleteCustomSource.AddRange(filteredEmails.ToArray());
+            }
+        }
+
+        private void SaveEmailToFile(string email)
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string directoryPath = Path.Combine(appDataPath, "TDTUAbsenceLoginData");
+            string fullPath = Path.Combine(directoryPath, "email.txt");
+
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath); // Tạo thư mục nếu chưa tồn tại
+            }
+
+            using (StreamWriter writer = new StreamWriter(fullPath, true))
+            {
+                writer.WriteLine(email);
             }
         }
     }

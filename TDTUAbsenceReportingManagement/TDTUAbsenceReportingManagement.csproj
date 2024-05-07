@@ -195,6 +195,12 @@
     <Compile Include="View\Lecturers\Control\Components\LopDayItem.Designer.cs">
       <DependentUpon>LopDayItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Lecturers\Control\Components\ThongBaoItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Lecturers\Control\Components\ThongBaoItem.Designer.cs">
+      <DependentUpon>ThongBaoItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Lecturers\Control\DoiMatKhauGiangVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Lecturers\Control\Components\LopDayItem.resx">
       <DependentUpon>LopDayItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Lecturers\Control\Components\ThongBaoItem.resx">
+      <DependentUpon>ThongBaoItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Lecturers\Control\DoiMatKhauGiangVien.resx">
       <DependentUpon>DoiMatKhauGiangVien.cs</DependentUpon>

@@ -16,7 +16,7 @@ namespace DAL
                     FROM ThongBao tb
                     INNER JOIN ThongBao_GiangVien tbgv ON tb.MaThongBao = tbgv.MaThongBao
                     INNER JOIN GiangVien gv ON tbgv.MaSoGiangVien = gv.MaSoGiangVien
-                    WHERE gv.Email = '" + email + "'";
+                    WHERE gv.Email = '" + email + "' ORDER BY tb.ThoiGianGui DESC";
 
             return Connection.selectQuery(query);
         }
@@ -26,7 +26,7 @@ namespace DAL
                     FROM ThongBao tb
                     INNER JOIN ThongBao_SinhVien tbsv ON tb.MaThongBao = tbsv.MaThongBao
                     INNER JOIN SinhVien sv ON tbsv.MaSoSinhVien = sv.MaSoSinhVien
-                    WHERE sv.Email = '" + email + "'";
+                    WHERE sv.Email = '" + email + "'  ORDER BY tb.ThoiGianGui DESC";
 
             return Connection.selectQuery(query);
         }

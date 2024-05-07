@@ -47,6 +47,7 @@
             // 
             // emailLogin
             // 
+            this.emailLogin.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.emailLogin.BorderColor = System.Drawing.Color.Black;
             this.emailLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.emailLogin.DefaultText = "";
@@ -118,7 +119,7 @@
             this.loginButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(83)))), ((int)(((byte)(79)))));
             this.loginButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.loginButton.ForeColor = System.Drawing.Color.White;
-            this.loginButton.Location = new System.Drawing.Point(34, 291);
+            this.loginButton.Location = new System.Drawing.Point(34, 283);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(275, 45);
             this.loginButton.TabIndex = 4;

@@ -9,17 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TDTUAbsenceReportingManagement.Data;
+using TDTUAbsenceReportingManagement.View.Lecturers.Control.Components;
 
 namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
 {
     public partial class ThongBaoGiangVien : UserControl
     {
         BUS_ThongBao bus_TB;
+        private List<ThongBaoItem> thongBaoItems;
         public ThongBaoGiangVien()
         {
             InitializeComponent();
 
             bus_TB = new BUS_ThongBao();
+            thongBaoItems = new List<ThongBaoItem>();
         }
 
         private void ThongBaoGiangVien_Load(object sender, EventArgs e)
@@ -28,11 +31,26 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
 
             if (data != null)
             {
-                danhSachThongBao.DataSource = data;
+                //danhSachThongBao.DataSource = data;
+
+                // Sử dụng FlowPanelLayout
+
+                foreach (DataRow row in data.Rows)
+                {
+                    ThongBaoItem item = new ThongBaoItem();
+                    item.setID(int.Parse(row["MaThongBao"].ToString()));
+                    item.setTitle(row["TieuDe"].ToString());
+                    item.setDescription(row["NoiDung"].ToString());
+                    item.setDate(DateTime.Parse(row["ThoiGianGui"].ToString()));
+                    item.setSender(row["TenDangNhap"].ToString());
+
+                    flowLayoutPanel1.Controls.Add(item);
+                    thongBaoItems.Add(item);
+                }
             }
             else
             {
-                danhSachThongBao.DataSource = new DataTable();
+                //danhSachThongBao.DataSource = new DataTable();
             }
         }
 
@@ -40,45 +58,39 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
         {
             tieuDeFilter.Clear();
             noiDungFilter.Clear();
-            danhSachThongBao.DataSource = bus_TB.DanhSachThongBaoCuaGiangVien(Session.Username);
+            
+            foreach (ThongBaoItem thongBaoItem in thongBaoItems)
+            {
+                thongBaoItem.Visible = true;
+            }
         }
 
         private void tieuDeFilter_TextChanged(object sender, EventArgs e)
         {
-            string filterExpression = GetFilter();
-            ((DataTable)danhSachThongBao.DataSource).DefaultView.RowFilter = filterExpression;
+            //string filterExpression = GetFilter();
+            //((DataTable)danhSachThongBao.DataSource).DefaultView.RowFilter = filterExpression;
+            FilterThongBaoItems();
         }
 
         private void noiDungFilter_TextChanged(object sender, EventArgs e)
         {
-            string filterExpression = GetFilter();
-            ((DataTable)danhSachThongBao.DataSource).DefaultView.RowFilter = filterExpression;
-
+            //string filterExpression = GetFilter();
+            //((DataTable)danhSachThongBao.DataSource).DefaultView.RowFilter = filterExpression;
+            FilterThongBaoItems();
         }
 
-        private string GetFilter()
+        private void FilterThongBaoItems()
         {
             string tieuDeFilterText = tieuDeFilter.Text.ToLower();
             string noiDungFilterText = noiDungFilter.Text.ToLower();
 
-            // Xây dựng biểu thức lọc
-            string filterExpression = "";
-
-            if (!string.IsNullOrEmpty(tieuDeFilterText))
+            foreach (ThongBaoItem thongBaoItem in thongBaoItems)
             {
-                filterExpression += $"TieuDe LIKE '%{tieuDeFilterText}%'";
+                bool tieuDeMatch = thongBaoItem.getTitle().ToLower().Contains(tieuDeFilterText);
+                bool noiDungMatch = thongBaoItem.getDescription().ToLower().Contains(noiDungFilterText);
+                
+                thongBaoItem.Visible = tieuDeMatch && noiDungMatch;
             }
-
-            if (!string.IsNullOrEmpty(noiDungFilterText))
-            {
-                if (!string.IsNullOrEmpty(filterExpression))
-                {
-                    filterExpression += " AND ";
-                }
-                filterExpression += $"NoiDung LIKE '%{noiDungFilterText}%'";
-            }
-
-            return filterExpression;
         }
     }
 }
