@@ -219,6 +219,7 @@
             this.Controls.Add(this.guna2ControlBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DoiMatKhauSinhVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DoiMatKhauSinhVien";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -355,12 +355,12 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
         {
             string nhom = nhomHocInput.Text.Trim();
             string to = toHocInput.Text.Trim();
-            int soBuoiDay = int.Parse(soBuoiDayInput.Text);
+            string soBuoiDay = soBuoiDayInput.Text;
             string monHoc = LayMaMonHoc(monHocInput.SelectedItem.ToString());
 
             // Kiểm tra xem đã nhập đủ thông tin chưa
             if (string.IsNullOrEmpty(nhom)
-                || !int.TryParse(soBuoiDayInput.Text, out soBuoiDay)
+                || string.IsNullOrEmpty(soBuoiDay)
                 || string.IsNullOrEmpty(monHoc))
             {
                 Debug.WriteLine(nhom + " - " + to + " - " + soBuoiDay + " - " + monHoc);
@@ -379,7 +379,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
 
             DTO_LopDay lopDay = new DTO_LopDay(
                     maLopDay,
-                    soBuoiDay,
+                    int.Parse(soBuoiDay),
                     nhom,
                     to,
                     maSoGiangVien,

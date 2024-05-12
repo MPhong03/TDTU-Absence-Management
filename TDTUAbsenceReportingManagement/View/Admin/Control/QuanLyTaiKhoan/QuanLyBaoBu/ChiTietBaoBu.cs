@@ -210,12 +210,25 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
                             phongBu,
                             "BÙ"
                         );
-
-                    bool newDateCheck = bus_LD.ThemNgayDay(newDate);
-
-                    if (!newDateCheck)
+                    if (ngayBu.Equals(ngayVang))
                     {
-                        errorDialog.Show("Xảy ra lỗi trong quá trình cập nhật ngày bú");
+                        bool updateDate = bus_LD.CapNhatNgayDay(newDate);
+
+                        if (!updateDate)
+                        {
+                            errorDialog.Show("Xảy ra lỗi trong quá trình cập nhật ngày bú");
+
+                        }
+                    }
+                    else
+                    {
+                        bool newDateCheck = bus_LD.ThemNgayDay(newDate);
+
+                        if (!newDateCheck)
+                        {
+                            errorDialog.Show("Xảy ra lỗi trong quá trình cập nhật ngày bú");
+
+                        }
 
                     }
 

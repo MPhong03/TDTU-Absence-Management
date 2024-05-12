@@ -456,6 +456,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChiTietBaoBu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ChiTietBaoBu";
             this.Load += new System.EventHandler(this.ChiTietBaoBu_Load);
             this.ResumeLayout(false);

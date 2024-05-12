@@ -236,6 +236,7 @@
             this.Controls.Add(this.guna2ControlBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "XacNhanImportDSMH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "XacNhanImportDSMH";
             this.Load += new System.EventHandler(this.XacNhanImportDSMH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.danhSachMonHocImport)).EndInit();

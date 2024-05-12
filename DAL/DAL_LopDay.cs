@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
@@ -181,6 +182,11 @@ namespace DAL
                 string cmdDeleteSinhVien_LopDay = "DELETE FROM SinhVien_LopDay WHERE MaLopDay = '" + id + "'";
                 Connection.actionQuery(cmdDeleteSinhVien_LopDay);
 
+                string cmdDeleteBaoBu = "DELETE FROM YeuCauBaoBu WHERE MaLopDay = '" + id + "'";
+                Connection.actionQuery(cmdDeleteBaoBu);
+                string cmdDeleteBaoVang = "DELETE FROM YeuCauBaoVang WHERE MaLopDay = '" + id + "'";
+                Connection.actionQuery(cmdDeleteBaoVang);
+
                 // 3. Xóa dữ liệu từ bảng LopDay
                 string cmdDeleteLopDay = "DELETE FROM LopDay WHERE MaLopDay = '" + id + "'";
                 Connection.actionQuery(cmdDeleteLopDay);
@@ -320,6 +326,13 @@ namespace DAL
         public bool CapNhatTrangThaiNgayDay(int id, DateTime date, string status) 
         {
             string cmdUpdate = $"UPDATE LopDay_NgayDay SET TrangThai = N'{status}' WHERE MaLopDay = {id} AND NgayDay = '{date.ToString("yyyy-MM-dd")}'";
+
+            return Connection.actionQuery(cmdUpdate);
+        }
+
+        public bool CapNhatNgayDay(DTO_LopDay_NgayDay dto)
+        {
+            string cmdUpdate = $"UPDATE LopDay_NgayDay SET TrangThai = N'{dto.TrangThai}' AND CaDay = '{dto.CaDay}' AND Phong = '{dto.Phong}' WHERE MaLopDay = {dto.MaLopDay} AND NgayDay = '{dto.NgayDay.ToString("yyyy-MM-dd")}'";
 
             return Connection.actionQuery(cmdUpdate);
         }

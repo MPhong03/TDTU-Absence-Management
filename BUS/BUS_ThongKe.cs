@@ -37,18 +37,35 @@ namespace BUS
         {
             return dal_BB.DanhSachBaoBu().Rows.Count;
         }
-        public Dictionary<string, int> DuLieuThongKeGiangVienBaoVang()
+        public Dictionary<string, int> DuLieuThongKeGiangVienBaoVang(DateTime start, DateTime end)
         {
             Dictionary<string, int> result = new Dictionary<string, int>();
             DataTable gvList = dal_GV.DanhSachGiangVien();
 
             foreach (DataRow row in gvList.Rows)
             {
-                DataTable bvList = dal_BV.DanhSachBaoVangDaDuyetTheoMaSoGiangVien(row["MaSoGiangVien"].ToString(), "CHẤP NHẬN");
-                string key = row["HoVaTen"].ToString() + "(" + row["MaSoGiangVien"].ToString() + ")";
-                int value = bvList.Rows.Count;
+                int value = 0;
 
-                result[key] = value;
+                DataTable bvList = dal_BV.DanhSachBaoVangDaDuyetTheoMaSoGiangVien(row["MaSoGiangVien"].ToString(), "CHẤP NHẬN");
+
+                foreach (DataRow bv in bvList.Rows)
+                {
+                    DateTime ngayBaoVang;
+                    if (DateTime.TryParse(bv["NgayBaoVang"].ToString(), out ngayBaoVang))
+                    {
+                        if (ngayBaoVang >= start && ngayBaoVang <= end)
+                        {
+                            value++;
+                        }
+                    }
+                }
+
+                if (value > 0)
+                {
+                    string key = row["HoVaTen"].ToString() + "(" + row["MaSoGiangVien"].ToString() + ")";
+
+                    result[key] = value;
+                }
             }
 
             return result;
