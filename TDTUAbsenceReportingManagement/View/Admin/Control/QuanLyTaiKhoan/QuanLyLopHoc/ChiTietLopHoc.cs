@@ -298,56 +298,72 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
 
         private void importCSVMaSoSinhVien_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "CSV Files|*.csv";
-            openFileDialog.Title = "Chọn tệp CSV";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                string filePath = openFileDialog.FileName;
 
-                // Đọc dữ liệu từ tệp CSV
-                string[] lines = File.ReadAllLines(filePath);
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "CSV Files|*.csv";
+                openFileDialog.Title = "Chọn tệp CSV";
 
-                List<string> missingMaSoSinhVien = new List<string>();
-
-                foreach (string line in lines)
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string maSoSV = line.Trim();
-                    if (!string.IsNullOrEmpty(maSoSV))
+                    string filePath = openFileDialog.FileName;
+
+                    // Đọc dữ liệu từ tệp CSV
+                    string[] lines = File.ReadAllLines(filePath);
+
+                    List<string> missingMaSoSinhVien = new List<string>();
+
+                    foreach (string line in lines)
                     {
-                        // Kiểm tra xem mã số sinh viên đã tồn tại trong danhSachSinhVien và cơ sở dữ liệu chưa
-                        if (!MaSoSinhVienTrung(maSoSV))
+                        string maSoSV = line.Trim();
+                        if (!string.IsNullOrEmpty(maSoSV))
                         {
-                            DTO_SinhVien sv = bus_SV.ChiTietSinhVien(maSoSV);
-
-                            if (sv != null)
+                            // Kiểm tra xem mã số sinh viên đã tồn tại trong danhSachSinhVien và cơ sở dữ liệu chưa
+                            if (!MaSoSinhVienTrung(maSoSV))
                             {
-                                int rowIndex = danhSachSinhVien.Rows.Add();
+                                DTO_SinhVien sv = bus_SV.ChiTietSinhVien(maSoSV);
 
-                                DataGridViewRow newRow = danhSachSinhVien.Rows[rowIndex];
+                                if (sv != null)
+                                {
+                                    int rowIndex = danhSachSinhVien.Rows.Add();
 
-                                newRow.Cells["MaSoSinhVien"].Value = sv.MaSoSinhVien;
-                                newRow.Cells["HoVaTen"].Value = sv.HoVaTen;
-                            }
-                            else
-                            {
-                                missingMaSoSinhVien.Add(maSoSV);
+                                    DataGridViewRow newRow = danhSachSinhVien.Rows[rowIndex];
+
+                                    newRow.Cells["MaSoSinhVien"].Value = sv.MaSoSinhVien;
+                                    newRow.Cells["HoVaTen"].Value = sv.HoVaTen;
+                                }
+                                else
+                                {
+                                    missingMaSoSinhVien.Add(maSoSV);
+                                }
                             }
                         }
                     }
-                }
 
-                // Hiển thị cảnh báo về các mã số sinh viên không tồn tại trong cơ sở dữ liệu
-                if (missingMaSoSinhVien.Count > 0)
-                {
-                    string missingMaSoSinhVienMessage = "Các mã số sinh viên sau không tồn tại trong cơ sở dữ liệu:\n";
-                    foreach (string maSoSV in missingMaSoSinhVien)
+                    // Hiển thị cảnh báo về các mã số sinh viên không tồn tại trong cơ sở dữ liệu
+                    if (missingMaSoSinhVien.Count > 0)
                     {
-                        missingMaSoSinhVienMessage += maSoSV + "\n";
+                        string missingMaSoSinhVienMessage = "Các mã số sinh viên sau không tồn tại trong cơ sở dữ liệu:\n";
+                        foreach (string maSoSV in missingMaSoSinhVien)
+                        {
+                            missingMaSoSinhVienMessage += maSoSV + "\n";
+                        }
+                        warningMessage.Show(missingMaSoSinhVienMessage);
                     }
-                    warningMessage.Show(missingMaSoSinhVienMessage);
                 }
+            }
+            catch (FileNotFoundException ex)
+            {
+                errorDialog.Show("Lỗi: " + ex.Message);
+            }
+            catch (IOException ex)
+            {
+                errorDialog.Show("Lỗi: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                errorDialog.Show("Lỗi: " + ex.Message);
             }
         }
 

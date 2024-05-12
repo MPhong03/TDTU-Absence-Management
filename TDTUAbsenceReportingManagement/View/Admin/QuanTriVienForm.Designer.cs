@@ -85,7 +85,7 @@
             this.guna2Panel2.Location = new System.Drawing.Point(0, 46);
             this.guna2Panel2.MinimumSize = new System.Drawing.Size(57, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(204, 508);
+            this.guna2Panel2.Size = new System.Drawing.Size(204, 550);
             this.guna2Panel2.TabIndex = 1;
             // 
             // dangXuatTabButton
@@ -222,7 +222,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.adminContainerControl.Location = new System.Drawing.Point(204, 52);
             this.adminContainerControl.Name = "adminContainerControl";
-            this.adminContainerControl.Size = new System.Drawing.Size(802, 502);
+            this.adminContainerControl.Size = new System.Drawing.Size(802, 543);
             this.adminContainerControl.TabIndex = 2;
             this.adminContainerControl.Text = "guna2ContainerControl1";
             // 
@@ -333,7 +333,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 554);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1006, 596);
             this.Controls.Add(this.adminContainerControl);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);

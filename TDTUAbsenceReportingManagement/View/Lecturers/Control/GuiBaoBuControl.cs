@@ -156,9 +156,9 @@ namespace TDTUAbsenceReportingManagement.View.Lecturers.Control
                 return;
             }
 
-            if (ngayBu.Equals(this.ngayBaoVang.ToString()))
+            if (ngayBu < DateTime.Today)
             {
-                warningDialog.Show("Không thể chọn ngày vắng làm ngày bù");
+                warningDialog.Show("Không thể chọn ngày quá khứ làm ngày bù");
                 return;
             }
 

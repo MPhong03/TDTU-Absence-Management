@@ -105,37 +105,53 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan
         {
             List<DTO_GiangVien> danhSachGiangVien = new List<DTO_GiangVien>();
 
-            using (var reader = new StreamReader(filePath))
+            try
             {
-                // Bỏ qua dòng tiêu đề
-                reader.ReadLine();
 
-                string tuTao = gv.TaoMaTuDong();
-                Console.WriteLine("MÃ: " + tuTao);
-
-                while (!reader.EndOfStream)
+                using (var reader = new StreamReader(filePath))
                 {
-                    var line = reader.ReadLine();
-                    var values = line.Split(',');
+                    // Bỏ qua dòng tiêu đề
+                    reader.ReadLine();
 
+                    string tuTao = gv.TaoMaTuDong();
                     Console.WriteLine("MÃ: " + tuTao);
-                    DTO_GiangVien giangVien = new DTO_GiangVien(
-                        tuTao,
-                        values[0],
-                        values[1],
-                        values[2],
-                        DateTime.Parse(values[3]),
-                        values[4],
-                        values[5],
-                        values[6],
-                        values[7],
-                        values[8]
-                    );
 
-                    danhSachGiangVien.Add(giangVien);
+                    while (!reader.EndOfStream)
+                    {
+                        var line = reader.ReadLine();
+                        var values = line.Split(',');
 
-                    tuTao = TangMaGV(tuTao);
+                        Console.WriteLine("MÃ: " + tuTao);
+                        DTO_GiangVien giangVien = new DTO_GiangVien(
+                            tuTao,
+                            values[0],
+                            values[1],
+                            values[2],
+                            DateTime.Parse(values[3]),
+                            values[4],
+                            values[5],
+                            values[6],
+                            values[7],
+                            values[8]
+                        );
+
+                        danhSachGiangVien.Add(giangVien);
+
+                        tuTao = TangMaGV(tuTao);
+                    }
                 }
+            }
+            catch (FileNotFoundException ex)
+            {
+                warningMessage.Show("Lỗi: " + ex.Message);
+            }
+            catch (IOException ex)
+            {
+                warningMessage.Show("Lỗi: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                warningMessage.Show("Lỗi: " + ex.Message);
             }
 
             return danhSachGiangVien;
