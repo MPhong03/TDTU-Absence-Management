@@ -237,7 +237,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
             string tilteTemplateGV = "DUYỆT YÊU CẦU BÁO VẮNG";
             string contentTemplateGV = "YÊU CẦU BÁO VẮNG ĐƯỢC CHẤP THUẬN" + Environment.NewLine +
                 "Môn: " + this.monHocVang + Environment.NewLine +
-                "Ngày: " + this.date + Environment.NewLine +
+                "Ngày: " + this.date.ToString("dd-MM-yyyy") + Environment.NewLine +
                 "Ca: " + this.caVang + Environment.NewLine +
                 "Nhóm: " + this.nhomVang + ", Tổ: " + this.toVang;
 
@@ -247,7 +247,7 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control.QuanLyTaiKhoan.QuanL
             string tilteTemplateSV = "THÔNG BÁO VẮNG BUỔI HỌC";
             string contentTemplateSV = "Giảng viên: " + this.tenGiangVien + Environment.NewLine +
                 "Môn: " + this.monHocVang + Environment.NewLine +
-                "Ngày: " + this.date + Environment.NewLine +
+                "Ngày: " + this.date.ToString("dd-MM-yyyy") + Environment.NewLine +
                 "Ca: " + this.caVang + Environment.NewLine +
                 "Nhóm: " + this.nhomVang + ", Tổ: " + this.toVang + Environment.NewLine +
                 "Lý do: " + this.reasonGV;

@@ -110,9 +110,17 @@ namespace DAL
         {
             string cmd = "SELECT MaSoGiangVien FROM GiangVien WHERE Email = '" + email +"'";
 
-            DataRow row = Connection.selectQuery(cmd).Rows[0];
+            DataTable result = Connection.selectQuery(cmd);
 
-            return row["MaSoGiangVien"].ToString();
+            if (result.Rows.Count > 0)
+            {
+                DataRow row = result.Rows[0];
+                return row["MaSoGiangVien"].ToString();
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public bool ThemGiangVien(DTO_GiangVien giangVien)

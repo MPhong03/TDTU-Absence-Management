@@ -48,12 +48,22 @@ namespace TDTUAbsenceReportingManagement.View.Admin.Control
         {
             // Căn cước cần phải là số
             numberValidating(sender, e);
+
+            if (cccdGV != null && cccdGV.TextLength >= 12 && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void phoneGV_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Số điện thoại cần phải là số
             numberValidating(sender, e);
+
+            if (phoneGV != null && phoneGV.TextLength >= 10 && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void numberValidating(object sender, KeyPressEventArgs e)
